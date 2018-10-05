@@ -1,0 +1,111 @@
+@import "fonts"
+@import "vars"
+@import "_mixins/media"
+
+
+*
+	box-sizing: border-box
+img
+	max-width: 100%
+body
+	position: relative
+	overflow-x: hidden
+	min-height: 100%
+	min-width: 320px
+
+	z-index: 0
+
+	font-family: $roboto // Основной шрифт
+
+button, input[type="button"], input[type="reset"], input[type="submit"]
+	padding: 0
+a:active,
+a:focus,
+a:hover
+	text-decoration: none
+a
+	text-decoration: none
+.clearfix
+	&:before,
+	&:after
+		content: ''
+		display: table
+		clear: both
+
+.header-top
+	font: 12px $roboto
+	background: #fff
+	color: #8c8c8c
+	padding: 10px
+	border-bottom: 1px solid #d5d6dc
+.company-info
+	color: #8c8c8c
+	display: inline-block
+	a
+		color: #b7b7b7
+		text-decoration: none
+		&:hover
+			color: #353535
+	ul
+		list-style: none
+	li
+		display: inline-block
+		margin-right: 35px
+.main-menu
+	display: flex
+	justify-content: center
+	flex-grow: 1
+	flex-wrap: wrap
+	background: #f6f6f7
+	padding: 50px 0
+.menu__item
+	text-align: center
+	margin: 10px 20px
+	+breakpoint(laptop)
+		margin: 10px 60px
+	&__icon
+		height: 80px
+	&__name
+		font-size: 12px
+		color: #1a1818
+		text-decoration: none
+		text-transform: uppercase
+.brands
+	padding: 70px 0 60px 0
+.brand
+	position: relative
+	display: block
+	margin-bottom: 20px
+	.text
+		position: absolute
+		bottom: 18px
+		left: 18px
+		.name
+			font:  600 24px/36px $roboto
+			color: #fff
+			margin-bottom: 15px
+		.description
+			font:  400 13px/16px $roboto
+			color: #adadb3
+			max-width: 290px
+.car-selection
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-wrap: wrap
+	background: url('../images/photo/background_01.png')
+	background-position: center
+	background-size: cover
+	padding: 120 0 200 0
+	.title
+		width: 100%
+		text-align: center
+		display: block
+		font: 36px
+		color: #fff
+		text-transform: uppercase
+		margin-bottom: 50px
+		text-shadow: 2px 2px 5px black
+	.selection
+		text-align: center
+		width: 100%

@@ -1,0 +1,77 @@
+html
+	head
+		include ./parts/head.pug
+		include ./parts/pgs.pug
+		.header-top
+			.wrapper
+				.company-info.show-laptop-inline
+					ul
+						li
+							a(href="#") О компании
+						li
+							a(href="#") Доставка и оплата
+						li
+							a(href="#") Отзывы
+						li
+							a(href="#") Гарантии
+						li
+							a(href="#") Контакты
+		.car-selection
+			.title
+				|Выберите автомомбиль
+			.selection
+				form
+					select Марка автомобиля
+						option(selected) Марка автомобиля
+						option BMW
+						option VW
+						option Audi
+					select Марка автомобиля
+						option(selected) Модель
+					select Марка автомобиля
+						option(selected) Год Выпуска
+					button(type="submit") Найти
+		.main-menu
+			a(href="#").menu__item
+				.menu__item__icon
+					img(src="images/photo/main-menu-icon_01.png", alt="icon")
+				.menu__item__name
+					|Внешний Тюнинг
+			a(href="#").menu__item
+				.menu__item__icon
+					img(src="images/photo/main-menu-icon_02.png", alt="icon")
+				.menu__item__name
+					|Тюнинг Салона
+			a(href="#").menu__item
+				.menu__item__icon
+					img(src="images/photo/main-menu-icon_03.png", alt="icon")
+				.menu__item__name
+					|Автомобильное освещение
+		.wrapper.clearfix.brands
+			.col-tablet-1-3
+				a(href="#").brand
+					.pic
+						img(src="images/photo/brand-pic_01.png", alt="icon")
+					.text
+						.name
+							|Brembo
+						.description
+							|Truck bed equipment unmatched in functionality and security.
+			.col-tablet-1-3
+				a(href="#").brand
+					.pic
+						img(src="images/photo/brand-pic_02.png", alt="icon")
+					.text
+						.name
+							|LB Works
+						.description
+							|Truck bed equipment unmatched in functionality and security.
+			.col-tablet-1-3
+				a(href="#").brand
+					.pic
+						img(src="images/photo/brand-pic_03.png", alt="icon")
+					.text
+						.name
+							|Toyota Land Cruiser
+						.description
+							|Truck bed equipment unmatched in functionality and security.
