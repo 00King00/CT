@@ -25,6 +25,8 @@ a:hover
 	text-decoration: none
 a
 	text-decoration: none
+ul
+	list-style: none
 .clearfix
 	&:before,
 	&:after
@@ -38,6 +40,8 @@ a
 	color: #8c8c8c
 	padding: 10px
 	border-bottom: 1px solid #d5d6dc
+	
+
 .company-info
 	color: #8c8c8c
 	display: inline-block
@@ -152,3 +156,84 @@ a
 		position: absolute
 		right: 18
 		top: 18
+
+.flex-container
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+.contacts-phone
+	font:  600 14px $roboto
+	font-weight: bold
+	margin-bottom: 12px
+	+breakpoint(tablet)
+		font-size: 21px
+.contacts-info
+	font:  300 12px $roboto
+	color: 717171
+	&:last-child
+		margin-bottom: 25px
+.contacts-email
+	font:  400 12px $roboto
+	color: 717171
+	margin: 5px 0 5px 0
+	+breakpoint(tablet)
+		margin: 15px 0 25px 0
+.footer
+	text-align: center
+	padding-top: 35px
+	+breakpoint(tablet)
+		text-align: left
+	&__title
+		color: #1a1818
+		text-transform: uppercase
+		font:  600 13px $roboto
+		font-weight: bold
+		margin-bottom: 15px
+		cursor: pointer
+	.flex-column
+		flex-basis: 100%
+		+breakpoint(tablet)
+			flex-basis: auto
+		
+	&__list
+		font:  300 12px $roboto
+		display: none
+		li:last-child
+			padding-bottom: 30px
+			display: block
+		+breakpoint(tablet)
+			display: block
+		
+		a
+			color: #717171
+			line-height: 2.3
+			
+	&-rights
+		color: #858585
+		font:  300 11px $roboto
+		text-align: center
+		padding: 20px 0 25px 0
+		+breakpoint(tablet)
+			text-align: left
+			display: inline-block
+	&__design-autor
+		display: none
+		color: #858585
+		font:  300 11px $roboto
+		a
+			text-decoration: underline
+			color: #858585
+		+breakpoint(tablet)
+			display: inline-block
+			float: right
+			font-size: 12px
+			padding: 20px 0 25px 0
+	hr
+		display: block
+		color: #cbcbcb
+		height: 1px
+		border: none
+		background: #cbcbcb
+		
+
+	
