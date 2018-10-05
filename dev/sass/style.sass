@@ -90,18 +90,21 @@ a
 			max-width: 290px
 .car-selection
 	display: flex
+	padding: 0 20px
 	justify-content: center
 	align-items: center
 	flex-wrap: wrap
 	background: url('../images/photo/background_01.png')
 	background-position: center
 	background-size: cover
-	padding: 120 0 200 0
+	padding: 50 0
+	+breakpoint(laptop)
+		padding: 120 0 200 0
 	.title
 		width: 100%
 		text-align: center
 		display: block
-		font: 36px
+		font: 36px/40px $roboto
 		color: #fff
 		text-transform: uppercase
 		margin-bottom: 50px
@@ -109,3 +112,43 @@ a
 	.selection
 		text-align: center
 		width: 100%
+	button
+		height: 50px
+		outline: none
+		background: #f57812
+		text-transform: uppercase
+		color: #fff
+		border: 1px solid #f57812
+		width: 120px
+		position: relative
+		top: -2px
+		left: -1px
+.product
+	width: 280px
+	&:hover
+		box-shadow: 0px 20px 32px -21px rgba(135,135,135,1)
+	&__info
+		position: relative
+		padding: 20px 20px 25px
+	&__name
+		display: block
+		font: 13px/16px $roboto
+		color: #1a1818
+		margin-bottom: 25px
+		&:hover
+			color: #cf650f
+	&__price
+		span
+			color: #1a1818
+			font: bold 16px/14px $roboto
+		i
+			font: 600 16px/14px $ruble
+	.add-to-fav
+		background: url('../images/add-to-fav-18x14.svg')
+		background-position: 0 0
+		background-size: cover
+		width: 25
+		height: 25
+		position: absolute
+		right: 18
+		top: 18
