@@ -128,12 +128,16 @@ ul
 		top: -2px
 		left: -1px
 .product
-	width: 280px
+	text-align: left
+	background: #fff
+	width: 276px
 	&:hover
-		box-shadow: 0px 20px 32px -21px rgba(135,135,135,1)
+		box-shadow: 0px 20px 32px -14px rgba(102,99,102,1)
 	&__info
 		position: relative
 		padding: 20px 20px 25px
+	&__rating
+		margin-bottom: 20px
 	&__name
 		display: block
 		font: 13px/16px $roboto
@@ -148,15 +152,45 @@ ul
 		i
 			font: 600 16px/14px $ruble
 	.add-to-fav
-		background: url('../images/add-to-fav-18x14.svg')
-		background-position: 0 0
-		background-size: cover
-		width: 25
-		height: 25
 		position: absolute
 		right: 18
 		top: 18
-
+		width: 25px
+		height: 25px
+		cursor: pointer
+		top: 20px
+		right: 10px
+		&:after
+			content: ''
+			background: url(../images/add-to-fav-18x14.png) 0 0 no-repeat
+			background-size: 18px 14px
+			width: 18px
+			height: 14px
+			display: block
+	.add-to-cart
+		position: absolute
+		width: 34px
+		height: 34px
+		cursor: pointer
+		bottom: 15px
+		right: 15px
+		&:after
+			content: ''
+			background: url(../images/shopping-cart-33x34.png) 0 0 no-repeat
+			background-size: 34px 34px
+			width: 34px
+			height: 34px
+			display: block
+.last-seen
+	text-align: center
+	background: #f6f6f7
+	padding: 90px 0
+	.title
+		color: #1a1818
+		font: 400 18px/16px $roboto
+		text-transform: uppercase
+		letter-spacing: 4px
+		margin-bottom: 50px
 .flex-container
 	display: flex
 	flex-wrap: wrap
@@ -236,5 +270,3 @@ ul
 		border: none
 		background: #cbcbcb
 		
-
-	
