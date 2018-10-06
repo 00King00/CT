@@ -39,8 +39,8 @@ gulp.task('html', function(){
 });
 
 gulp.task('scss', function() {
-	gulp.src('./dev/sass/*.sass')
-	.pipe(watch('./dev/sass/*.sass'))
+	gulp.src(['./dev/sass/*.sass', './dev/scss/*.scss' ])
+	.pipe(watch(['./dev/sass/*.sass','./dev/scss/*.scss' ]))
   .pipe(plumber())
 	.pipe(scss())
 	.pipe(autoprefixer({
