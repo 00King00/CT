@@ -4,6 +4,7 @@
     position: relative;
     display: block;
     box-sizing: border-box;
+	margin: 0 10px; //my
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -20,6 +21,7 @@
     display: block;
     margin: 0;
     padding: 0;
+	//margin: 0 -10px; //my
 
     &:focus {
         outline: none;
