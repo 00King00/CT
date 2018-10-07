@@ -1,0 +1,41 @@
+.wrapper
+	.footer
+		.flex-container
+			.flex-column
+				mixin footer__list(title, ...items)
+					.footer__title= title
+					ul.footer__list
+						each item in items
+							li
+								a(href="#")= item
+				+footer__list('Внешний Тюнинг', 'Обвесы', 'Решетки радиатора', 'Капоты - тюнинговые', 'Зеркала - боковые', 'Ручки дверей', 'Рейлинги и Поперечины', 'Прочие элементы ')
+				.footer__title Тюнинг Салона
+			.flex-column
+				+footer__list('Автомобильное освещение', 'Передние - стандарт','Передние - альтернатива', 'Задние - стандарт З','Задние - альтернатива','Повторители - поворота','Противотуманные фары', 'Накладки - на фары')
+			.flex-column
+				+footer__list('Информация','О компании', 'Доставка и оплата', 'Отзывы', 'Гарантии', 'Контакты')
+			.flex-column
+				.footer__title Мы в социальных сетях
+				.footer__widget.footer__list widget here
+				.flex-column.hide-laptop
+					.footer__title Контакты
+					.footer__list
+						.contacts-phone 8 800 343 22 21
+						.contacts-info Пн-Пт, 8:30 - 17:30 (МСК)
+						.contacts-email info@centretuning.ru copy
+						.contacts-info г.Москва, ул. Петровка,
+						.contacts-info д. 38, оф.4
+			.flex-column.show-laptop
+				.footer__title Контакты
+				.contacts-phone 8 800 343 22 21
+				.contacts-info Пн-Пт, 8:30 - 17:30 (МСК)
+				.contacts-email info@centretuning.ru copy
+				.contacts-info г.Москва, ул. Петровка,
+				.contacts-info д. 38, оф.4
+hr
+.wrapper
+	.footer-rights Copyright © 2003-2018 CARiD.com.
+	.footer__design-autor
+		span Дизайн сайта -
+		a(href="#") Михаил Соловьев
+

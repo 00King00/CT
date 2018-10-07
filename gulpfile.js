@@ -5,10 +5,10 @@ var gulp 			= require('gulp'),
 	browserSync 	= require("browser-sync"),
 	reload 			= browserSync.reload,
 	server     		= require('gulp-server-livereload'),
-	watch 			= require('gulp-watch');
-	cleancss 		= require('gulp-cleancss');
+	watch 			= require('gulp-watch'),
+	cleancss 		= require('gulp-cleancss'),
 	plumber     = require('gulp-plumber');
-var livereloadPort 	= 37729;
+
 
 
 gulp.task('webserver', function() {
@@ -18,7 +18,7 @@ gulp.task('webserver', function() {
       open: true,
       livereload: {
       enable: true,
-      port: livereloadPort
+
       }
     }))
     .pipe(plumber())
@@ -39,8 +39,8 @@ gulp.task('html', function(){
 });
 
 gulp.task('scss', function() {
-	gulp.src('./dev/sass/*.sass')
-	.pipe(watch('./dev/sass/*.sass'))
+	gulp.src(['./dev/sass/*.sass', './dev/scss/*.scss' ])
+	.pipe(watch(['./dev/sass/*.sass','./dev/scss/*.scss' ]))
   .pipe(plumber())
 	.pipe(scss())
 	.pipe(autoprefixer({
