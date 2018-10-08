@@ -20,18 +20,27 @@
 				.flex-column.hide-laptop
 					.footer__title Контакты
 					.footer__list
-						.contacts-phone 8 800 343 22 21
+						.contacts-phone
+							a(href="tel: 88003432221")
+								span.icon.icon_phone
+								span 8 800 343 22 21
 						.contacts-info Пн-Пт, 8:30 - 17:30 (МСК)
-						.contacts-email info@centretuning.ru copy
+						a(href="mailto: info@centretuning.ru").contacts-email info@centretuning.ru
 						.contacts-info г.Москва, ул. Петровка,
-						.contacts-info д. 38, оф.4
+							br
+							| д. 38, оф.4
 			.flex-column.show-laptop
 				.footer__title Контакты
-				.contacts-phone 8 800 343 22 21
+				.contacts-phone
+					a(href="tel: 88003432221")
+						span.icon.icon_phone
+						span 8 800 343 22 21
 				.contacts-info Пн-Пт, 8:30 - 17:30 (МСК)
-				.contacts-email info@centretuning.ru copy
+				
+				a(href="mailto: info@centretuning.ru").contacts-email info@centretuning.ru
 				.contacts-info г.Москва, ул. Петровка,
-				.contacts-info д. 38, оф.4
+					br
+					|д. 38, оф.4
 hr
 .wrapper
 	.footer-rights Copyright © 2003-2018 CARiD.com.
