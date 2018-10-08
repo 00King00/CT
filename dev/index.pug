@@ -17,6 +17,40 @@ html
 							a(href="#") Гарантии
 						li
 							a(href="#") Контакты
+				.company-contacts
+					a(href="tel:88003432221").phone
+						span.icon.icon_phone
+						span 8 800 343 22 21
+					a(href="mailto:info@centretuning.ru").mail info@centretuning.ru
+		.header-bottom
+			.wrapper.clearfix
+				.logo
+					img(src="images/logo.png",alt="logo")
+				.right-side
+					.first-line
+						.search
+							form
+								input(type="search", placeholder="Поиск", name="search")
+								button(type="submit")
+									i.fa.fa-search
+						.login.show-laptop-inline
+							a(href="#").btn.btn_login
+								|Войти
+							a(href="#").btn.btn_register
+								|Зарегистрироваться
+					.second-line
+						.menu
+							ul
+								li Внешний тюнинг
+								li Автомобильное освещение
+								li Тюнинг Салона
+						.header-user-buttons
+							a(href="#").wishlist
+								span.icon.icon_wishlist
+							a(href="#").cart
+								span.icon.icon_cart
+								span 22 400
+								i "
 		.car-selection
 			.title
 				|Выберите автомомбиль
@@ -56,34 +90,35 @@ html
 					img(src="images/photo/main-menu-icon_03.png", alt="icon")
 				.menu__item__name
 					|Автомобильное освещение
-		.wrapper.clearfix.brands
-			.col-tablet-1-3.col-phablet-1-2
-				a(href="#").brand
-					.pic
-						img(src="images/photo/brand-pic_01.png", alt="icon")
-					.text
-						.name
-							|Brembo
-						.description
-							|Truck bed equipment unmatched in functionality and security.
-			.col-tablet-1-3.col-phablet-1-2
-				a(href="#").brand
-					.pic
-						img(src="images/photo/brand-pic_02.png", alt="icon")
-					.text
-						.name
-							|LB Works
-						.description
-							|Truck bed equipment unmatched in functionality and security.
-			.col-tablet-1-3.col-phablet-1-2
-				a(href="#").brand
-					.pic
-						img(src="images/photo/brand-pic_03.png", alt="icon")
-					.text
-						.name
-							|Toyota Land Cruiser
-						.description
-							|Truck bed equipment unmatched in functionality and security.
+		.wrapper
+			.clearfix.brands
+				.col-tablet-1-3.col-phablet-1-2
+					a(href="#").brand
+						.pic
+							img(src="images/photo/brand-pic_01.png", alt="icon")
+						.text
+							.name
+								|Brembo
+							.description
+								|Truck bed equipment unmatched in functionality and security.
+				.col-tablet-1-3.col-phablet-1-2
+					a(href="#").brand
+						.pic
+							img(src="images/photo/brand-pic_02.png", alt="icon")
+						.text
+							.name
+								|LB Works
+							.description
+								|Truck bed equipment unmatched in functionality and security.
+				.col-tablet-1-3.col-phablet-1-2
+					a(href="#").brand
+						.pic
+							img(src="images/photo/brand-pic_03.png", alt="icon")
+						.text
+							.name
+								|Toyota Land Cruiser
+							.description
+								|Truck bed equipment unmatched in functionality and security.
 		.section-catalog
 			.wrapper
 				.tabs
@@ -93,19 +128,19 @@ html
 						li Тюнинг Салона
 					.tabs__content.active
 						.row.clearfix
-							mixin catalog(url, name)
+							mixin catalog-item(url, name)
 								.col-phablet-1-2.col-table-1-3.col-laptop-1-4
-									a.catalog(href="#")
-										.catalog__img
+									a.catalog-item(href="#")
+										.catalog-item__img
 											img(src=url)
-										.catalog__name= name
-							+catalog('images/photo/otdoor-tune_01.png', 'Обвесы')
-							+catalog('images/photo/otdoor-tune_02.png', 'Решетки радиатора')
-							+catalog('images/photo/otdoor-tune_03.png', 'Капоты - тюнинговые')
-							+catalog('images/photo/otdoor-tune_04.png', 'Зеркала - боковые')
-							+catalog('images/photo/otdoor-tune_05.png', 'Ручки дверей')
-							+catalog('images/photo/otdoor-tune_06.png', 'Рейлинги и Поперечины')
-							+catalog('images/photo/otdoor-tune_01.png', 'Прочие элементы')
+										.catalog-item__name= name
+							+catalog-item('images/photo/outdoor-tuning_01.png', 'Обвесы')
+							+catalog-item('images/photo/outdoor-tuning_02.png', 'Решетки радиатора')
+							+catalog-item('images/photo/outdoor-tuning_03.png', 'Капоты - тюнинговые')
+							+catalog-item('images/photo/outdoor-tuning_04.png', 'Зеркала - боковые')
+							+catalog-item('images/photo/outdoor-tuning_05.png', 'Ручки дверей')
+							+catalog-item('images/photo/outdoor-tuning_06.png', 'Рейлинги и Поперечины')
+							+catalog-item('images/photo/outdoor-tuning_07.png', 'Прочие элементы')
 							
 		include ./parts/review-slider.pug
 				
@@ -115,8 +150,8 @@ html
 					|просмотренные товары
 				.slider-arrows
 					.slider_controls
-						span.icon.ls-prevSlide &#x2329
-						span.icon.ls-nextSlide &#x232A
+						span.icon.ls-prevSlide
+						span.icon.ls-nextSlide
 				ul#last-seen-slider
 					li
 						.product
