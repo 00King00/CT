@@ -371,13 +371,15 @@ ul
 	margin: 5px 0 5px 0
 	+breakpoint(tablet)
 		margin: 15px 0 25px 0
+.right-laptop
+	+breakpoint(laptop)
+			text-align: right
 .footer
 	text-align: center
 	padding-top: 35px
 	+breakpoint(tablet)
 		text-align: left
-	&:last-child
-		text-align: right
+
 	&__title
 		color: #1a1818
 		text-transform: uppercase
@@ -392,6 +394,9 @@ ul
 			flex-basis: auto
 			&_grid-row
 				flex-grow: 4
+				text-align: right
+				+breakpoint(laptop)
+						text-align: center
 
 	&__list
 		font:  300 12px $roboto
