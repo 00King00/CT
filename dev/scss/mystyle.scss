@@ -1,13 +1,13 @@
 .slider-arrows{
-	
+
 	.slider_controls{
-		top: -70px;
+		top: -90px;
 		position: relative;
 		width: 100%;
 		max-width: 1200px;
 		display: flex;
 		justify-content: space-between;
-		
+
 	}
 }
 .section-catalog{
@@ -18,7 +18,7 @@
 	padding: 65px 0 75px 0;
 	&__content {
 	  display: none;
-	margin-top: 20px;
+	margin-top: 40px;
 	}
 	&__content.active {
 	  display: block;
@@ -40,23 +40,22 @@
 	}
 }
 
-.catalog{
+.catalog-item{
 	text-align: center;
 	padding: 30px;
-	height: 230px;
 	background-color: white;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	display: block;
 	color: black;
-	
+	&__img{
+		height: 140px;
+		margin-bottom: 25px;
+	}
 	&:hover{
 		box-shadow: 0px 9px 29px -5px rgba(0,0,0,0.5);
+		color: #f57812;
 	}
 	&__name{
 		font-size: 14px;
-		margin-top: 25px;
-		&:hover{
-			color: #f57812;
-		}
 	}
 }
