@@ -118,7 +118,7 @@ ul
 			&:hover
 				i
 					font-size: 14px
-					color: #858585
+					color: #1a1818
 			@include breakpoint(laptop)
 				flex-grow: 2
 				margin-right: 20px
@@ -144,9 +144,10 @@ ul
 					border: none
 					background: transparent
 				i
-					color: #858585
+					font-size: 14px
+					color: #1a1818
 					&:hover
-						color: #858585
+						color: #1a1818
 				.login
 					// display: inline-block
 					flex-grow: 1
@@ -263,7 +264,7 @@ ul
 			font:  400 13px/16px $roboto
 			color: #adadb3
 			max-width: 290px
-.car-selection
+.car-selection, .model-selection
 	display: flex
 	padding: 0 20px
 	justify-content: center
@@ -299,11 +300,26 @@ ul
 		position: relative
 		top: -2px
 		left: -1px
+.model-selection
+	background: url('../images/photo/background_02.png')
+	background-size: cover
+	margin-bottom: 30px
+	&_grey
+		background: #555551
+		padding: 13px 0
+	+breakpoint(laptop)
+		margin-bottom: 60px
+		background-repeat: no-repeat
+	.nice-select
+		width: 90%
+		+breakpoint(laptop)
+			width: 200px
 .product
 	text-align: left
 	background: #fff
 	margin-bottom: 30px
-	width: 276px
+	max-width: 276px
+	height: 355px
 	&:hover
 		box-shadow: 0px 9px 29px -5px rgba(0,0,0,0.5)
 	&__info
@@ -311,10 +327,14 @@ ul
 		padding: 20px 20px 25px
 	&__rating
 		margin-bottom: 20px
+		.grey
+			color: #bdbdc5
 	&__name
+		overflow: hidden
 		display: block
 		font: 13px/16px $roboto
 		color: #1a1818
+		height: 65px
 		margin-bottom: 25px
 		&:hover
 			color: #cf650f
@@ -398,7 +418,9 @@ ul
 	padding-top: 35px
 	+breakpoint(tablet)
 		text-align: left
-
+	+breakpoint(laptop)
+		&:last-child
+			text-align: right
 	&__title
 		color: #1a1818
 		text-transform: uppercase
@@ -593,3 +615,98 @@ ul
 		font: 400 12px/16px $roboto
 		text-decoration: none
 		color: #8e8e8e
+.parts-menu
+	box-shadow: 0px 9px 29px -5px rgba(0,0,0,0.5)
+	display: flex
+	justify-content: center
+	flex-wrap: wrap
+.parts-menu-item
+	margin: 10px 15px
+	&__img
+		opacity: 0.5
+		height: 50px
+	text-align: center
+	&__name
+		color: #1a1818
+		font-size: 12px
+	&:hover
+		.parts-menu-item__img
+			opacity: 1
+		.parts-menu-item__name
+			color: #f57812
+.filters
+	width: 320px
+	text-align: center
+	box-shadow: 0px 1px 3px 1px rgba(182,183,184,1)
+	padding: 50px
+	height: 100%
+	background: #fff
+	transition: all 0.4s ease
+	position: fixed
+	top: 0
+	right: -320px
+	z-index: 4
+	overflow-y: scroll
+	visibility: hidden
+	-webkit-overflow-scrolling: touch
+	&_active
+		transition: all 0.4s ease
+		right: 0
+		visibility: visible
+		bottom: 0
+		top: 0
+		position: fixed
+	+breakpoint(tablet)
+		display: block
+		width: 100%
+		height: auto
+		overflow: visible
+		right: 0
+		z-index: 4
+		visibility: visible
+		position: relative
+		padding: 30px 20px
+		box-shadow: none
+		margin-bottom: 50px
+	&__close-btn
+		position: absolute
+		right: 15px
+		top: 15px
+.filter__block
+	text-align: left
+	padding: 25px 0
+	input[name="brand"]
+		height: 38px
+		width: 100%
+		outline: none
+		padding: 0 10px
+		border: 1px solid #dadadc
+	&_top
+		padding-top: 0
+	a
+		color: #778d53
+		font-size: 14px
+	a:hover
+		color: #778d53
+	a.active
+		color: #5b7038
+	&__name
+		color: #1a1818
+		font: 600 14px/16px $roboto
+		margin-bottom: 20px
+		text-transform: uppercase
+		&_faq
+			font-size: 24px
+			color: #010101
+			margin-bottom: 30px
+	&__item
+		margin-bottom: 15px
+		color: #5e5e5e
+		font-size: 14px
+		&:last-child
+			margin-bottom: 0px
+	&_slider
+		border: none
+		margin-bottom: 20px
+.page-background
+	background: #f6f6f7
