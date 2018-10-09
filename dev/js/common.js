@@ -93,7 +93,7 @@ $('.right-side>.second-line>.menu>ul>li').click(function(){
 	var review_slider = $("#review-slider").lightSlider({
 			slideMargin: 60,
 			galleryMargin: 55,
-			item: 2.2,
+			item: 2.25,
 			slideMove:1,
 			pager: true,
 			addClass: '',

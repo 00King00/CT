@@ -367,14 +367,21 @@ ul
 	font-weight: bold
 	span
 		vertical-align: middle
-	a
+	&>a
 		color: #1a1818 !important
+		+breakpoint(tablet)
+			line-height: 1.2!important
+		+breakpoint(laptop)
+			line-height: inherit
 
 	margin:
 		bottom: 12px
 		top: 12px
 	+breakpoint(tablet)
 		font-size: 21px
+		margin-bottom: 0
+	+breakpoint(laptop)
+		margin-bottom: 12px
 .contacts-info
 	text-align: right
 	font:  300 12px/1.5 $roboto
@@ -382,6 +389,10 @@ ul
 	margin-bottom: 12px
 	&:last-child
 		margin-bottom: 25px
+	+breakpoint(tablet)
+		margin-bottom: 0
+	+breakpoint(laptop)
+		margin-bottom: inherit
 .contacts-email
 	text-align: right
 	display: block
@@ -389,6 +400,8 @@ ul
 	color: #717171
 	margin: 5px 0 5px 0
 	+breakpoint(tablet)
+		margin: 0
+	+breakpoint(laptop)
 		margin: 15px 0 25px 0
 .right-laptop
 	+breakpoint(laptop)
@@ -415,7 +428,8 @@ ul
 				flex-grow: 4
 				text-align: right
 				+breakpoint(laptop)
-						text-align: center
+						text-align: left
+						margin-left: 20px
 
 	&__list
 		font:  300 12px $roboto
@@ -531,6 +545,7 @@ ul
 	text-align: center
 	margin-bottom: 30px
 	background-color: white
+	padding: 20px
 	&__name
 		height: 40px
 		overflow: hidden
@@ -542,6 +557,16 @@ ul
 
 
 #review-slider_wrapper
+	position: relative
+	&::after
+		right: 0
+		content: ""
+		display: inline-block
+		width: 55px
+		position: absolute
+		top: 0
+		bottom: 0
+		background: linear-gradient( to right, rgba(255,255,255,0.1) 0%, rgba(255,255,255,1) 90%)
 	.lSSlideWrapper
 		+breakpoint(laptop)
 			padding: 0 15px
