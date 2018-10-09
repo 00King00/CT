@@ -376,8 +376,9 @@ ul
 	padding-top: 35px
 	+breakpoint(tablet)
 		text-align: left
-	&:last-child
-		text-align: right
+	+breakpoint(laptop)
+		&:last-child
+			text-align: right
 	&__title
 		color: #1a1818
 		text-transform: uppercase
