@@ -3,7 +3,44 @@ html
 		include ./parts/head.pug
 		include ./parts/pgs.pug
 	body
-		include ./parts/review-slider.pug
+		include ./parts/header.pug
+		.model-selection
+			.title
+				|Выберите  модель
+			.selection
+				form
+					select(name="year")
+						option(selected) 2018
+						option 2017
+						option 2016
+						option 2015
+					select(name="brand")
+						option(selected) BMW
+						option BMW
+						option VW
+						option Audi
+					select(name="door-count")
+						option(selected) 5
+						option 3
+					select(name="type-ofbody")
+						option(selected) Седан
+						option Хетчбек
+						option Пикап
+						option Универсал
+					button(type="submit") Найти
+		.parts-menu
+			mixin parts-menu-item(url, name)
+				a.parts-menu-item(href="#")
+					.parts-menu-item__img
+						img(src=url)
+					.parts-menu-item__name= name
+			+parts-menu-item('images/photo/parts-menu_01.png', 'Обвесы')
+			+parts-menu-item('images/photo/parts-menu_02.png', 'Решетки радиатора')
+			+parts-menu-item('images/photo/parts-menu_03.png', 'Капоты - тюнинговые')
+			+parts-menu-item('images/photo/parts-menu_04.png', 'Зеркала - боковые')
+			+parts-menu-item('images/photo/parts-menu_05.png', 'Ручки дверей')
+			+parts-menu-item('images/photo/parts-menu_06.png', 'Рейлинги и Поперечины')
+			+parts-menu-item('images/photo/parts-menu_07.png', 'Прочие элементы')
 		.section-product-catalog
 			.wrapper
 				.title Каталог товаров
@@ -35,5 +72,5 @@ html
 					+product()
 					+product()
 					+product()
-                    
+		include ./parts/review-slider.pug
 		include ./parts/footer.pug

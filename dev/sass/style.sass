@@ -99,7 +99,7 @@ ul
 			&:hover
 				i
 					font-size: 14px
-					color: #858585
+					color: #1a1818
 			@include breakpoint(laptop)
 				flex-grow: 2
 				margin-right: 20px
@@ -125,9 +125,10 @@ ul
 					border: none
 					background: transparent
 				i
-					color: #858585
+					font-size: 14px
+					color: #1a1818
 					&:hover
-						color: #858585
+						color: #1a1818
 				.login
 					// display: inline-block
 					flex-grow: 1
@@ -244,7 +245,7 @@ ul
 			font:  400 13px/16px $roboto
 			color: #adadb3
 			max-width: 290px
-.car-selection
+.car-selection, .model-selection
 	display: flex
 	padding: 0 20px
 	justify-content: center
@@ -280,6 +281,17 @@ ul
 		position: relative
 		top: -2px
 		left: -1px
+.model-selection
+	background: url('../images/photo/background_02.png')
+	background-size: cover
+	margin-bottom: 30px
+	+breakpoint(laptop)
+		margin-bottom: 60px
+		background-repeat: no-repeat
+	.nice-select
+		width: 90%
+		+breakpoint(laptop)
+			width: 200px
 .product
 	text-align: left
 	background: #fff
@@ -559,3 +571,22 @@ ul
 		font: 400 12px/16px $roboto
 		text-decoration: none
 		color: #8e8e8e
+.parts-menu
+	box-shadow: 0px 9px 29px -5px rgba(0,0,0,0.5)
+	display: flex
+	justify-content: center
+	flex-wrap: wrap
+.parts-menu-item
+	margin: 10px 15px
+	&__img
+		opacity: 0.5
+		height: 50px
+	text-align: center
+	&__name
+		color: #1a1818
+		font-size: 12px
+	&:hover
+		.parts-menu-item__img
+			opacity: 1
+		.parts-menu-item__name
+			color: #f57812
