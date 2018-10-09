@@ -129,9 +129,12 @@ html
 			.wrapper
 				.tabs
 					ul.tabs__caption
-						li.active Внешний Тюнинг
-						li Автомобильное освещение
-						li Тюнинг Салона
+						li.active
+							span Внешний Тюнинг
+						li
+							span Автомобильное освещение
+						li
+							span Тюнинг Салона
 					.tabs__content.active
 						.row.clearfix
 							mixin catalog-item(url, name)
@@ -147,7 +150,12 @@ html
 							+catalog-item('images/photo/outdoor-tuning_05.png', 'Ручки дверей')
 							+catalog-item('images/photo/outdoor-tuning_06.png', 'Рейлинги и Поперечины')
 							+catalog-item('images/photo/outdoor-tuning_07.png', 'Прочие элементы')
-							
+					.tabs__content.active
+						.row.clearfix
+							+catalog-item('images/photo/outdoor-tuning_01.png', 'Обвесы')
+							+catalog-item('images/photo/outdoor-tuning_02.png', 'Решетки радиатора')
+							+catalog-item('images/photo/outdoor-tuning_03.png', 'Капоты - тюнинговые')
+								
 		include ./parts/review-slider.pug
 				
 		.last-seen

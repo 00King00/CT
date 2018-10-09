@@ -503,7 +503,11 @@ ul
 				display: inline-block
 				margin-bottom: 0
 			&.active
-				border-bottom: 3px solid #f57812
+				+breakpoint(phablet)
+					border-bottom: 3px solid #f57812
+				+breakpoint(mobileonly)
+					span
+						border-bottom: 3px solid #f57812
 			&:not(:last-child)
 				margin-right: 10px
 				+breakpoint(tablet)
