@@ -20,15 +20,18 @@
 				.flex-column.hide-laptop
 					.footer__title Контакты
 					.footer__list
-						.contacts-phone
-							a(href="tel: 88003432221")
-								span.icon.icon_phone
-								span 8 800 343 22 21
-						.contacts-info Пн-Пт, 8:30 - 17:30 (МСК)
-						a(href="mailto: info@centretuning.ru").contacts-email info@centretuning.ru
-						.contacts-info г.Москва, ул. Петровка,
-							br
-							| д. 38, оф.4
+						.row
+							.col-mobileonly-1-2.col-phablet-1-2.left-mobileonly-phablet.padding-off_right.col-off-tablet
+								.contacts-phone
+									a(href="tel: 88003432221")
+										span.icon.icon_phone
+										span 8 800 343 22 21
+								.contacts-info.left-mobileonly-phablet Пн-Пт, 8:30 - 17:30 (МСК)
+							.col-mobileonly-1-2.col-phablet-1-2.left-mobileonly-phablet.padding-off_left.col-off-tablet
+								a(href="mailto: info@centretuning.ru").contacts-email info@centretuning.ru
+								.contacts-info г.Москва, ул. Петровка,
+									br
+									| д. 38, оф.4
 			.flex-column.show-laptop.right-laptop
 				.footer__title Контакты
 				.contacts-phone
