@@ -199,15 +199,16 @@
 }
 .lSAction > .lSPrev {
     background-position: 0px 0;
-	left: -26px;
+	left: 0px;
     @include breakpoint(phablet){
         transition: all 1s ease;
     }
+
 }
 .lSAction > .lSNext {
     background-position: 56px 0;
+    right: 1px;
     @include breakpoint(phablet){
-        right: -0px;
         transition: all 1s ease;
     }
 }

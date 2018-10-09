@@ -22,6 +22,7 @@ $('.footer__title').click(function(){
 		}
 
 });
+// end for footer
 //add item to favorites
 $('.add-to-fav').click(function(){
 	console.log(1);
@@ -34,43 +35,8 @@ $('.right-side>.second-line>.menu>ul>li').click(function(){
 	$(this).toggleClass('open')
 })
 
-// end for footer
-//	$("#last-seen-slider").slick({
-//		dots: true,
-//		infinite: true,
-//		speed: 300,
-//		slidesToShow: 3,
-//		adaptiveHeight: false,
-//		centerPadding: '12%',
-//		slidesToScroll: 3,
-//		centerMode: true,
-//		arrows: true,
-//		responsive: [
-//		{
-//		  breakpoint: 1300,
-//		  settings: {
-//			slidesToShow: 3,
-//			slidesToScroll: 3,
-//			infinite: true,
-//			adaptiveHeight: true,
-//			  centerPadding: '12%',
-//		  }
-//		},
-//		{
-//		  breakpoint: 1000,
-//		  settings: {
-//			slidesToShow: 2,
-//			slidesToScroll: 2
-//		  }
-//		},
-//		{
-//		  breakpoint: 600,
-//		  settings: {
-//			slidesToShow: 1,
-//			slidesToScroll: 1
-//		  }
-//		}]
-//	});
+
+
 
 	var last_seen_slider=$('#last-seen-slider').lightSlider({
 			slideMargin: 35,
@@ -111,7 +77,8 @@ $('.right-side>.second-line>.menu>ul>li').click(function(){
 						{
 							item:1.2,
 							slideMove:1,
-							slideMargin: 35
+							slideMargin: 35,
+
 						}
 				},
 				],
@@ -148,7 +115,8 @@ $('.right-side>.second-line>.menu>ul>li').click(function(){
 						{
 							item:1.2,
 							slideMove:1,
-							slideMargin: 35
+							slideMargin: 35,
+							controls: false
 						}
 				},
 				],
