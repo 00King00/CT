@@ -129,4 +129,17 @@ $('.right-side>.second-line>.menu>ul>li').click(function(){
       .closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
   });
 
+	// show-hide filters
+		$('#show-filter-mobile').click(function(){
+			$(".filters").addClass('filters_active');
+			$('.backdrop').toggleClass('on');
+			$('body').toggleClass('no-scroll');
+		})
+		$('.filters__close-btn').click(function(){
+			$(".filters").removeClass('filters_active');
+			$('.backdrop').toggleClass('on');
+			$('body').toggleClass('no-scroll');
+		})
+	// end show-hide filters
+
 });

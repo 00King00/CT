@@ -3,60 +3,7 @@ html
 		include ./parts/head.pug
 		include ./parts/pgs.pug
 	body
-		.header-top
-			.wrapper
-				.company-info.show-laptop-inline
-					ul
-						li
-							a(href="#") О компании
-						li
-							a(href="#") Доставка и оплата
-						li
-							a(href="#") Отзывы
-						li
-							a(href="#") Гарантии
-						li
-							a(href="#") Контакты
-				.company-contacts
-					a(href="tel:88003432221").phone
-						span.icon.icon_phone
-						span 8 800 343 22 21
-					a(href="mailto:info@centretuning.ru").mail.show-laptop-inline info@centretuning.ru
-				.header-login
-					a(href="#")
-						span.sign-in Вход
-					span.separate |
-					a(href="#")
-						span.underline Регистрация
-		.header-bottom
-			.wrapper.clearfix
-				.logo
-					img(src="images/logo.png",alt="logo")
-				.right-side
-					.first-line
-						.search
-							form
-								input(type="search", placeholder="Поиск", name="search")
-								button(type="submit")
-									i.fa.fa-search
-						.login.show-laptop-inline
-							a(href="#").btn.btn_login
-								|Войти
-							a(href="#").btn.btn_register
-								|Зарегистрироваться
-					.second-line
-						.menu.show-tablet-inline
-							ul
-								li Внешний тюнинг
-								li Автомобильное освещение
-								li Тюнинг Салона
-						.header-user-buttons
-							a(href="#").wishlist
-								span.icon.icon_wishlist
-							a(href="#").cart
-								span.icon.icon_cart
-								span.show-laptop-inline 22 400
-								i.show-laptop-inline "
+		include ./parts/header.pug
 		.car-selection
 			.title
 				|Выберите автомомбиль
@@ -177,7 +124,7 @@ html
 									i.fa.fa-star
 									i.fa.fa-star
 									i.fa.fa-star
-									i.fa.fa-star
+									i.fa.fa-star.grey
 								a(href="#").product__name
 									|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
 								.product__price
@@ -194,8 +141,8 @@ html
 									i.fa.fa-star
 									i.fa.fa-star
 									i.fa.fa-star
-									i.fa.fa-star
-									i.fa.fa-star
+									i.fa.fa-star.grey
+									i.fa.fa-star.grey
 								a(href="#").product__name
 									|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
 								.product__price
@@ -213,7 +160,7 @@ html
 									i.fa.fa-star
 									i.fa.fa-star
 									i.fa.fa-star
-									i.fa.fa-star
+									i.fa.fa-star.grey
 								a(href="#").product__name
 									|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
 								.product__price
@@ -249,7 +196,7 @@ html
 									i.fa.fa-star
 									i.fa.fa-star
 									i.fa.fa-star
-									i.fa.fa-star
+									i.fa.fa-star.grey
 								a(href="#").product__name
 									|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
 								.product__price
