@@ -1,7 +1,5 @@
 .filters
 	form
-		.section__title.hide-tablet
-			|Фильтр
 		.filters__close-btn.hide-tablet
 			img(src="images/remove_item.png", alt="Спрятать фильтр")
 		.filter__block.filter__block_top
@@ -51,9 +49,12 @@
 				label(for="chkbox11")
 					span 500-700
 			.filter__block__item
-				input(type="text",name="price-from")
-				span
-				input(type="text",name="price-to")
+				.price-filter
+					form
+						input(type="text",name="price-from")
+						span.separate &mdash;
+						input(type="text",name="price-to")
+						button(type="submit") ОК
 		.filter__block
 			.filter__block__name brand
 			.filter__block__item

@@ -44,6 +44,15 @@ ul
 		font: 400 12px/28px $roboto
 	&_login
 		border-right: none
+	&_show-filter
+		display: block
+		border: 1px solid #f57812
+		text-align: center
+		color: #353535
+		margin: 10px auto
+		width: 320px
+		padding: 15px
+
 .breadcrumbs
 	a
 		color: #7c7c7c
@@ -273,7 +282,7 @@ ul
 	background: url('../images/photo/background_01.png')
 	background-position: center
 	background-size: cover
-	padding: 50 0
+	padding: 50px 0
 	+breakpoint(laptop)
 		padding: 120 0 200 0
 	.title
@@ -307,6 +316,7 @@ ul
 	&_grey
 		background: #555551
 		padding: 13px 0
+		margin-bottom: 0
 	+breakpoint(laptop)
 		margin-bottom: 60px
 		background-repeat: no-repeat
@@ -418,9 +428,7 @@ ul
 	padding-top: 35px
 	+breakpoint(tablet)
 		text-align: left
-	+breakpoint(laptop)
-		&:last-child
-			text-align: right
+
 	&__title
 		color: #1a1818
 		text-transform: uppercase
@@ -656,7 +664,7 @@ ul
 		bottom: 0
 		top: 0
 		position: fixed
-	+breakpoint(tablet)
+	+breakpoint(laptop)
 		display: block
 		width: 100%
 		height: auto
@@ -675,12 +683,38 @@ ul
 .filter__block
 	text-align: left
 	padding: 25px 0
+	.price-filter
+		display: flex
+		align-items: center
+		justify-content: space-between
 	input[name="brand"]
 		height: 38px
 		width: 100%
 		outline: none
 		padding: 0 10px
 		border: 1px solid #dadadc
+	input[type="text"]
+		height: 38px
+		padding: 0 10px
+		border: 1px solid #dadadc
+		outline: none
+		flex-grow: 2
+		display: inline-block
+		width: 50px
+		+breakpoint(desktop)
+			width: 75px
+	.separate
+		flex-grow: 1
+		margin: 0 5px
+		flex-grow: 1
+	button
+		height: 38px
+		background: #f57812
+		color: #fff
+		padding: 0 20px
+		border-radius: 3px
+		border: none
+		margin-left: 10px
 	&_top
 		padding-top: 0
 	a
@@ -710,3 +744,40 @@ ul
 		margin-bottom: 20px
 .page-background
 	background: #f6f6f7
+.item-show-params
+	padding: 0 15px
+	display: flex
+	align-items: center
+	margin-bottom: 20px
+	justify-content: space-between
+.show-items-on-page
+	display: inline-block
+	margin: 20px 0
+	font-size: 13px
+	color: #8b8b8b
+	span
+		margin-right: 6px
+		+breakpoint(tablet)
+			margin-right: 10px
+	a
+		color: #f57812
+		margin-right: 6px
+		+breakpoint(tablet)
+			margin-right: 10px
+	a.active
+		span
+			color: #fff
+			background: #f57812
+			padding: 4px 6px
+			border-radius: 3px
+			color: #fff
+.sort-items
+	display: inline-block
+	.nice-select
+		height: 38px
+		width: 190px
+		color: #8b8b8b
+		font: 400 13px/38px $roboto
+.items-found
+	color: 8b8b8b
+	font: 400 13px/38px $roboto
