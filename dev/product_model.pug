@@ -3,6 +3,44 @@ html
 		include ./parts/head.pug
 		include ./parts/pgs.pug
 	body
+		.section-catalog.section-catalog_padding
+			.wrapper
+				ul.breadcrumbs
+					li
+						a(href="#") Главная
+					li
+						a(href="#") Обвесы
+				.title Внешний тюнинг
+				.row.row_padding-bottom.clearfix
+					mixin product-item(imgUrl,name)
+						.col-mobileonly-1-2.col-phablet-1-3.col-tablet-1-4.col-laptop-1-5
+							.product-item
+								.product-item__img
+									img(src=imgUrl)
+								.product-item__name= name
+					+product-item("images/photo/body-elements/body-element_01.png", "Бамперы")
+					+product-item("images/photo/body-elements/body-element_02.png", "Накладки и Сетки - бампера")
+					+product-item("images/photo/body-elements/body-element_03.png", "Губа - передний бампер")
+					+product-item("images/photo/body-elements/body-element_04.png", "Диффузоры - задний бампер")
+					+product-item("images/photo/body-elements/body-element_05.png", "Спойлеры и дефлекторы")
+					+product-item("images/photo/body-elements/body-element_06.png", "Пороги")
+					+product-item("images/photo/body-elements/body-element_07.png", "Крылья")
+					+product-item("images/photo/body-elements/body-element_08.png", "Накладки - на арки")
+					+product-item("images/photo/body-elements/body-element_09.png", "Накладки - боковые")
+					+product-item("images/photo/body-elements/body-element_10.png", "Накладки - на фары")
+				.title Автомобильное освещение
+				.row.row_padding-bottom.clearfix
+					+product-item("images/photo/lighting/lighting_01.png", "Передние - стандарт")
+					+product-item("images/photo/lighting/lighting_02.png", "Передние - альтернатива")
+					+product-item("images/photo/lighting/lighting_03.png", "Задние - стандарт")
+					+product-item("images/photo/lighting/lighting_04.png", "Задние - альтернатива")
+					+product-item("images/photo/lighting/lighting_05.png", "Противотуманные фары")
+					+product-item("images/photo/lighting/lighting_06.png", "Накладки - на фары")
+				.title Тюнинг салона
+				.row.row_padding-bottom.clearfix
+					+product-item("images/photo/body-elements/body-element_01.png", "Бамперы")
+					+product-item("images/photo/body-elements/body-element_02.png", "Накладки и Сетки - бампера")
+					+product-item("images/photo/body-elements/body-element_03.png", "Губа - передний бампер")
 		include ./parts/review-slider.pug
 
 		include ./parts/footer.pug
