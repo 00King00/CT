@@ -1,0 +1,93 @@
+html
+	head
+		include ./parts/head.pug
+		include ./parts/pgs.pug
+	body
+		include ./parts/header.pug
+		.page-base
+			.wrapper
+				ul.breadcrumbs.breadcrumbs_cart
+					li
+						a(href="#") Главная
+					li
+						a(href="#") Оформление заказа
+				.page-title
+					|Оформление заказа
+				.row.clearfix.cart-section
+					.col-laptop-3-4
+						form.order-form
+							.form-section
+								.title Информация
+								.inner-wrap
+									input#registers_1(type="radio" name="registers")
+									label( for="registers_1") Я новый пользователь
+									input#registers_2(type="radio" name="registers")
+									label( for="registers_2") Я ранее делал заказы
+							.form-section
+								.title Адрес доставки
+								.input-wrap
+									span.name Фамилия
+									input(type="text")
+								.input-wrap
+									span.name  Имя
+									input(type="text")
+								.input-wrap.input-wrap_checkbox
+									input#agred(type="checkbox")
+									label.agred(for="agred") Это юридический адрес
+								.input-wrap
+									span.name  Город
+									input(type="text")
+								.input-wrap
+									span.name  Область
+									select(type="text")
+								.input-wrap
+									span.name  Город
+									select(type="text")
+								.input-wrap
+									span.name  Адрес
+									input(type="text")
+								.input-wrap
+									span.name  Индекс
+									input.index(type="text")
+							.form-section
+								.title Контакты
+								.input-wrap
+									span.name  Телефон
+									input(type="text")
+								.input-wrap.clearfix
+									span.name  E-mail
+									input(type="text")
+							.form-section
+								.input-wrap
+									input#create-account(type="checkbox",name='create-account')
+									label.options(for="create-account") Создать новый аккаунт
+									input#subscribe(type="checkbox",name='subscribe')
+									label.options(for="subscribe") Подписка на новости
+								a(href="#").btn.btn_submit-order.btn_so-order-page
+									|Оформить заказ
+					.col-laptop-1-4
+						.your-order.your-order_order-page
+							.your-order__title
+								|Суммареый счет
+							.your-order__items-count
+								|1 товар
+							table
+								tr
+									td Стоимость
+									td
+										.cart-item-price
+											span 24 500
+											i "
+								tr
+									td Стоимость доставки:
+									td
+										.cart-item-price
+											span 24 500
+											i "
+								tr
+									td Итого:
+									td
+										.cart-item-price.order-sum
+											span 24 500
+											i "
+		include ./parts/footer.pug

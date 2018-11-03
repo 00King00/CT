@@ -1,0 +1,289 @@
+html
+	head
+		include ./parts/head.pug
+		include ./parts/pgs.pug
+	body
+		include ./parts/header.pug
+		.page-base
+			.wrapper
+				ul.breadcrumbs.breadcrumbs_cart
+					li
+						a(href="#") Главная
+					li
+						a(href="#") Корзина
+				.page-title
+					|Корзина
+				.row.clearfix.cart-section
+					.col-laptop-3-4
+						table.cart.show-laptop-table
+							tr
+								th(colspan="2") Фотография
+								th Количество
+								th Цена
+								th.remove-item Удалить
+							tr
+								td.picture
+									img(src="images/photo/product_04.png",alt="pic")
+								td.description
+									.cart-item-name
+										|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+									.cart-item-description
+										|Отзывы о нашей продукции в группе вконтакте. Только реальные отзывы от реальных людей.
+								td.count
+									input(type="text", value="1")
+								td.price
+									.cart-item-price
+										span 24 500
+										i "
+								td.remove-item
+									a(href="#")
+										span.icon.icon_remove-item
+							tr
+								td.picture
+									img(src="images/photo/product_04.png",alt="pic")
+								td.description
+									.cart-item-name
+										|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+									.cart-item-description
+										|Отзывы о нашей продукции в группе вконтакте. Только реальные отзывы от реальных людей.
+								td.count
+									input(type="text", value="1")
+								td.price
+									.cart-item-price
+										span 24 500
+										i "
+								td.remove-item
+									a(href="#")
+										span.icon.icon_remove-item
+								
+					.col-laptop-1-4
+						.your-order
+							.your-order__title
+								|Суммареый счет
+							.your-order__items-count
+								|1 товар
+							table
+								tr
+									td Стоимость
+									td
+										.cart-item-price
+											span 24 500
+											i "
+								tr
+									td Стоимость доставки:
+									td
+										.cart-item-price
+											span 24 500
+											i "
+								tr
+									td Итого:
+									td
+										.cart-item-price.order-sum
+											span 24 500
+											i "
+							.coupon
+								a(href="#") Имеется купон?
+							a(href="#").btn.btn_submit-order
+								|Оформить заказ
+							.separator
+								span
+									|или
+							a(href="#").btn.btn_one-click-buy
+								|Купить в 1 клик
+				.title
+					|Могут потребоваться
+				.slider-arrows
+					.slider_controls
+						span.icon.ls-prevSlide
+						span.icon.ls-nextSlide
+				ul#recommend-slider
+					li
+						.product
+							a(href="#").product__pic
+								img(src="images/photo/product_03.png", alt="icon")
+							.product__info
+								.product__rating
+									i.fa.fa-star
+									i.fa.fa-star
+									i.fa.fa-star
+									i.fa.fa-star
+									i.fa.fa-star.grey
+								a(href="#").product__name
+									|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+								.product__price
+									span 24 500
+									i "
+								.add-to-fav
+								.add-to-cart
+					li
+						.product
+							a(href="#").product__pic
+								img(src="images/photo/product_01.png", alt="icon")
+							.product__info
+								.product__rating
+									i.fa.fa-star
+									i.fa.fa-star
+									i.fa.fa-star
+									i.fa.fa-star.grey
+									i.fa.fa-star.grey
+								a(href="#").product__name
+									|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+								.product__price
+									span 24 500
+									i "
+								.add-to-fav
+								.add-to-cart
+					li
+						.product
+							a(href="#").product__pic
+								img(src="images/photo/product_02.png", alt="icon")
+							.product__info
+								.product__rating
+									i.fa.fa-star
+									i.fa.fa-star
+									i.fa.fa-star
+									i.fa.fa-star
+									i.fa.fa-star.grey
+								a(href="#").product__name
+									|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+								.product__price
+									span 24 500
+									i "
+								.add-to-fav
+								.add-to-cart
+					li
+						.product
+							a(href="#").product__pic
+								img(src="images/photo/product_04.png", alt="icon")
+							.product__info
+								.product__rating
+									i.fa.fa-star
+									i.fa.fa-star
+									i.fa.fa-star
+									i.fa.fa-star
+									i.fa.fa-star
+								a(href="#").product__name
+									|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+								.product__price
+									span 24 500
+									i "
+								.add-to-fav
+								.add-to-cart
+					li
+						.product
+							a(href="#").product__pic
+								img(src="images/photo/product_03.png", alt="icon")
+							.product__info
+								.product__rating
+									i.fa.fa-star
+									i.fa.fa-star
+									i.fa.fa-star
+									i.fa.fa-star
+									i.fa.fa-star.grey
+								a(href="#").product__name
+									|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+								.product__price
+									span 24 500
+									i "
+								.add-to-fav
+								.add-to-cart
+				.last-seen
+					.wrapper
+						.title
+							|просмотренные товары
+						.slider-arrows
+							.slider_controls
+								span.icon.ls-prevSlide
+								span.icon.ls-nextSlide
+						ul#last-seen-slider
+							li
+								.product
+									a(href="#").product__pic
+										img(src="images/photo/product_03.png", alt="icon")
+									.product__info
+										.product__rating
+											i.fa.fa-star
+											i.fa.fa-star
+											i.fa.fa-star
+											i.fa.fa-star
+											i.fa.fa-star.grey
+										a(href="#").product__name
+											|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+										.product__price
+											span 24 500
+											i "
+										.add-to-fav
+										.add-to-cart
+							li
+								.product
+									a(href="#").product__pic
+										img(src="images/photo/product_01.png", alt="icon")
+									.product__info
+										.product__rating
+											i.fa.fa-star
+											i.fa.fa-star
+											i.fa.fa-star
+											i.fa.fa-star.grey
+											i.fa.fa-star.grey
+										a(href="#").product__name
+											|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+										.product__price
+											span 24 500
+											i "
+										.add-to-fav
+										.add-to-cart
+							li
+								.product
+									a(href="#").product__pic
+										img(src="images/photo/product_02.png", alt="icon")
+									.product__info
+										.product__rating
+											i.fa.fa-star
+											i.fa.fa-star
+											i.fa.fa-star
+											i.fa.fa-star
+											i.fa.fa-star.grey
+										a(href="#").product__name
+											|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+										.product__price
+											span 24 500
+											i "
+										.add-to-fav
+										.add-to-cart
+							li
+								.product
+									a(href="#").product__pic
+										img(src="images/photo/product_04.png", alt="icon")
+									.product__info
+										.product__rating
+											i.fa.fa-star
+											i.fa.fa-star
+											i.fa.fa-star
+											i.fa.fa-star
+											i.fa.fa-star
+										a(href="#").product__name
+											|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+										.product__price
+											span 24 500
+											i "
+										.add-to-fav
+										.add-to-cart
+							li
+								.product
+									a(href="#").product__pic
+										img(src="images/photo/product_03.png", alt="icon")
+									.product__info
+										.product__rating
+											i.fa.fa-star
+											i.fa.fa-star
+											i.fa.fa-star
+											i.fa.fa-star
+											i.fa.fa-star.grey
+										a(href="#").product__name
+											|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+										.product__price
+											span 24 500
+											i "
+										.add-to-fav
+										.add-to-cart
+		include ./parts/footer.pug
