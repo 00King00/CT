@@ -4,6 +4,11 @@ html
 		include ./parts/pgs.pug
 	body
 		include ./parts/header.pug
+		.head-image
+			.head-image__title
+				span.year 2014
+				span.brand Mitsubishi
+				span.model Lancer
 		.section-catalog.section-catalog_padding
 			.wrapper
 				ul.breadcrumbs
@@ -66,59 +71,62 @@ html
 							option Универсал
 						button(type="submit") Найти
 			.wrapper.clearfix
-				a.btn.btn_show-filter.hide-tablet(id="show-filter-mobile")
-					|Показать фильтрацию
-				.col-laptop-1-4.no-padding
-					include ./parts/filters.pug
-				.col-laptop-3-4
-					.item-show-params
-						.items-found
-							|Найдено: 4 987 товаров
-						.show-items-on-page.show-tablet-inline
+				//- a.btn.btn_show-filter.hide-tablet(id="show-filter-mobile")
+				//- 	|Показать фильтрацию
+				//- .col-laptop-1-4.no-padding
+				//- 	include ./parts/filters.pug
+				//- .col-laptop-3-4
+				.item-show-params
+					.items-found
+						|Найдено: 4 987 товаров
+					.show-items-on-page.show-tablet-inline
+						span
+							|Показывать по:
+						a(href="#")
 							span
-								|Показывать по:
-							a(href="#")
-								span
-									|15
-							a(href="#").active
-								span
-									|25
-							a(href="#")
-								span
-									|35
-						.sort-items
-							select
-								option(selected) Рекомендуемое
-								option Популярное
-					.clearfix
-						mixin product(url)
-							.col-phablet-1-2.col-tablet-1-3
-								.product
-									a(href="#").product__pic
-										img(src=url, alt="icon")
-									.product__info
-										.product__rating
-											i.fa.fa-star
-											i.fa.fa-star
-											i.fa.fa-star
-											i.fa.fa-star
-											i.fa.fa-star
-										a(href="#").product__name
-											|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
-										.product__price
-											span 24 500
-											i "
-										.add-to-fav
-										.add-to-cart
-						+product("images/photo/product_04.png")
-						+product("images/photo/product_02.png")
-						+product("images/photo/product_03.png")
-						+product("images/photo/product_01.png")
-						+product("images/photo/product_02.png")
-						+product("images/photo/product_04.png")
-						+product("images/photo/product_02.png")
-						+product("images/photo/product_03.png")
-						+product("images/photo/product_01.png")
+								|15
+						a(href="#").active
+							span
+								|25
+						a(href="#")
+							span
+								|35
+					.sort-items
+						select
+							option(selected) Рекомендуемое
+							option Популярное
+				.clearfix
+					mixin product(url)
+						.col-phablet-1-3.col-tablet-1-4
+							.product
+								a(href="#").product__pic
+									img(src=url, alt="icon")
+								.product__info
+									.product__rating
+										i.fa.fa-star
+										i.fa.fa-star
+										i.fa.fa-star
+										i.fa.fa-star
+										i.fa.fa-star
+									a(href="#").product__name
+										|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+									.product__price
+										span 24 500
+										i "
+									.add-to-fav
+									.add-to-cart
+					+product("images/photo/product_04.png")
+					+product("images/photo/product_02.png")
+					+product("images/photo/product_03.png")
+					+product("images/photo/product_01.png")
+					+product("images/photo/product_02.png")
+					+product("images/photo/product_04.png")
+					+product("images/photo/product_02.png")
+					+product("images/photo/product_03.png")
+					+product("images/photo/product_01.png")
+				.btn.btn_show-more
+					img(src="images/photo/show-more.png")
+					span Показать еще
 		include ./parts/review-slider.pug
 
 		include ./parts/footer.pug

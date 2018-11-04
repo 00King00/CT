@@ -33,7 +33,7 @@ $('.right-side>.second-line>.menu>ul>li').click(function(){
 	$(this).toggleClass('open')
 })
 	var last_seen_slider=$('#last-seen-slider').lightSlider({
-			slideMargin: 35,
+			slideMargin: 25,
 			item: 4,
 			slideMove:1,
 			pager: false,
@@ -83,6 +83,51 @@ $('.right-side>.second-line>.menu>ul>li').click(function(){
 		});
 		$(".ls-nextSlide").click(function(){
 			last_seen_slider.goToNextSlide();
+		});
+	var recommend_slider=$('#recommend-slider').lightSlider({
+			slideMargin: 25,
+			item: 4,
+			slideMove:1,
+			pager: false,
+			addClass: '',
+			mode: "slide",
+			useCSS: true,
+			cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',//
+			easing: 'linear', //'for jquery animation',////
+			speed: 400, //ms'
+			auto: true,
+			loop: true,
+			slideEndAnimation: true,
+			pause: 10000,
+			controls: false,
+			responsive:[
+				{
+					breakpoint: 1200,
+					settings:
+						{
+							item:3,
+							slideMove:1,
+						}
+				},
+				{
+					breakpoint: 800,
+					settings:
+						{
+							item:2,
+							slideMove:1,
+						}
+				},
+				{
+					breakpoint: 600,
+					settings:
+						{
+							item:1.2,
+							slideMove:1,
+							slideMargin: 35,
+
+						}
+				},
+				],
 		});
 	var review_slider = $("#review-slider").lightSlider({
 			slideMargin: 60,
