@@ -925,7 +925,10 @@ table.cart
 	top: 36px
 	&_order-page
 		top: 0
-		padding-bottom: 150px
+		margin-bottom: 40px
+		+breakpoint(laptop)
+			padding-bottom: 150px
+
 	&__title
 		text-transform: uppercase
 		color: #1a1818
@@ -973,7 +976,7 @@ table.cart
 			right: auto
 			left: 180%
 .page-title
-	font: 400 30px/16px $roboto
+	font: 400 30px/32px $roboto
 	text-transform: uppercase
 	margin-bottom: 30px
 	letter-spacing: 3px
@@ -1001,6 +1004,7 @@ table.cart
 			display: block
 			margin-bottom: 0
 	input
+		border: 1px solid #d3d3d3
 		font: 400 12px/35px $roboto
 		height: 35px
 		outline: none
@@ -1098,6 +1102,29 @@ input[type="radio"]
 .options
 	text-transform: uppercase
 	font: 600 12px/12px $roboto
+.order-steps
+	+breakpoint(laptop)
+		float: right
+		position: relative
+		top: -90px
+		margin-bottom: -80px
+	.step
+		display: block
+		margin: 20px 10px
+		opacity: 0.3
+		&.active
+			opacity: 1
+		&__img
+			display: inline-block
+			vertical-align: middle
+		&__name
+			display: inline-block
+			vertical-align: middle
+			font: 600 12px/18px $roboto
+			+breakpoint(phablet)
+				max-width: 72px
+		+breakpoint(phablet)
+			display: inline-block
 .head-image
 	height: 340px
 	background: url(../images/photo/background_03.png)
