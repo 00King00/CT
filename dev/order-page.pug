@@ -13,6 +13,22 @@ html
 						a(href="#") Оформление заказа
 				.page-title
 					|Оформление заказа
+				.order-steps
+					.step.active
+						.step__img
+							img(src="images/man-icon.png")
+						.step__name
+							|Общая информация
+					.step
+						.step__img
+							img(src="images/card-icon.png")
+						.step__name
+							|Оплата заказа
+					.step
+						.step__img
+							img(src="images/receipt-icon.png")
+						.step__name
+							|Чек об оплате
 				.row.clearfix.cart-section
 					.col-laptop-3-4
 						form.order-form
@@ -57,18 +73,18 @@ html
 								.input-wrap.clearfix
 									span.name  E-mail
 									input(type="text")
-							.form-section
-								.input-wrap
-									input#create-account(type="checkbox",name='create-account')
-									label.options(for="create-account") Создать новый аккаунт
-									input#subscribe(type="checkbox",name='subscribe')
-									label.options(for="subscribe") Подписка на новости
-								a(href="#").btn.btn_submit-order.btn_so-order-page
-									|Оформить заказ
+
+							.input-wrap
+								input#create-account(type="checkbox",name='create-account')
+								label.options(for="create-account") Создать новый аккаунт
+								input#subscribe(type="checkbox",name='subscribe')
+								label.options(for="subscribe") Подписка на новости
+							a(href="#").btn.btn_submit-order.btn_so-order-page
+								|Оформить заказ
 					.col-laptop-1-4
 						.your-order.your-order_order-page
 							.your-order__title
-								|Суммареый счет
+								|Суммарный счет
 							.your-order__items-count
 								|1 товар
 							table
