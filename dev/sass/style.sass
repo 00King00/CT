@@ -974,6 +974,47 @@ h3.text
 			padding-right: 15px
 		i
 			font: 600 26px $ruble
+#comments
+	position: relative
+.form-label
+	max-width: 300px
+	position: absolute
+	right: -300px
+	top: 0
+	&__title
+		margin-bottom: 15px
+		text-transform: uppercase
+		font: 600 14px/45px $roboto
+		color: #1a1818
+	form
+		border: 2px solid #dedfe3
+		padding: 25px 20px
+	input
+		width: 100%
+		display: block
+		&[type="text"]
+			height: 35px
+			border: 1px solid #dedfe3
+			padding: 0 20px
+			outline: none
+			margin-bottom: 20px
+		&[type="submit"]
+			width: 100%
+			border-radius: 5px
+			text-align: center
+			background-color: #f57812
+			font: 600 16px/45px $roboto
+			color: white
+			outline: none
+			border: none
+	.label
+		margin-bottom: 15px
+		font: bold 12px $roboto
+		text-transform: uppercase
+		color: #1a1818
+		span
+			color: red
+
 .advantages
 	margin: 45px 0
 	li
@@ -1031,6 +1072,12 @@ h3.text
 		margin-bottom: 10px
 .product_card-slider
 	margin-bottom: 50px
+.mt
+	&-85
+		margin-top: 85px
+.mb
+	&-75
+		margin-bottom: 75px
 .flex-column
 	&__thumbnail
 		justify-content: space-between
