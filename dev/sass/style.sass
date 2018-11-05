@@ -286,14 +286,15 @@ h3.text
 		+breakpoint(tablet)
 			justify-content: space-between
 		.menu
-			ul
-				li
+			&>ul
+				&>li
 					position: relative
 					display: inline-block
 					margin-right: 20px
 					text-transform: uppercase
 					font: 600 12px/16px $roboto
 					color: #1a1818
+					cursor: pointer
 					+breakpoint(laptop)
 						margin-right: 45px
 					&:after
@@ -321,6 +322,20 @@ h3.text
 							-webkit-transform: rotate(-135deg)
 							-ms-transform: rotate(-135deg)
 							transform: rotate(-135deg)
+
+			.sub-menu
+				display: none
+				width: 190px
+				position: absolute
+				top: 39px
+				background: white
+				color: #8b8b8b
+				font: 400 13px $roboto
+				text-transform: capitalize
+				padding: 15px 15px 10px 15px
+				border-top: 3px solid #f57812
+				li
+					margin-bottom: 10px
 		.header-user-buttons
 			display: inline-block
 			+breakpoint(laptop)

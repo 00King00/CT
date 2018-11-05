@@ -12,7 +12,6 @@ $(window).resize(function(){
 	if (browserMinWidth >= 800){
 		$(".footer__list").show();
 	}
-
 });
 $('.footer__title').click(function(){
 	var browserMinWidth = $(window).width();
@@ -29,8 +28,13 @@ $('.add-to-fav').click(function(){
 });
 
 //
-$('.right-side>.second-line>.menu>ul>li').click(function(){
-	$(this).toggleClass('open')
+$('.right-side>.second-line>.menu>ul>li').click(function(e){
+	if(e.target.nodeName == "A" || e.target.className=="sub-list"){
+		return false;
+	} else{
+		$(this).toggleClass('open');
+	}
+	$(this).find(".sub-menu").slideToggle();
 })
 	var last_seen_slider=$('#last-seen-slider').lightSlider({
 			slideMargin: 25,
