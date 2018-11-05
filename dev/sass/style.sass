@@ -60,6 +60,10 @@ h3.text
 		content: ''
 		display: table
 		clear: both
+.background_white
+	background: white
+.pt-30
+	padding-top: 30px
 .btn
 	display: inline-block
 	&_login, &_register
@@ -103,6 +107,45 @@ h3.text
 			transition: 1s all ease
 		span
 			vertical-align: middle
+	&_all
+		cursor: pointer
+		width: 100%
+		margin: 15px 0
+		border-radius: 5px
+		text-align: center
+		color: #f57812
+		font: 600 16px/41px $roboto
+		border: 2px solid #f57812
+	&_choose
+		cursor: pointer
+		width: 100%
+		max-width: 250px
+		border-radius: 5px
+		text-align: center
+		color: #f57812
+		font: 600 16px/41px $roboto
+		border: 2px solid #f57812
+	&_add-to-card
+		cursor: pointer
+		width: 100%
+		max-width: 250px
+		margin: 15px 0
+		margin-right: 15px
+		background: #f57812
+		border-radius: 5px
+		text-align: center
+		color: #fff
+		font: 600 16px/41px $roboto
+		position: relative
+		&::before
+			content: ""
+			height: 34px
+			width: 34px
+			display: inline-block
+			position: absolute
+			left: 10px
+			top: 3px
+			background-image: url('../images/shopping-cart-33x34.png')
 	&_submit-order, &_one-click-buy
 		width: 100%
 		height: 45px
@@ -118,6 +161,10 @@ h3.text
 		background: #cdcdd2
 		color: #616176
 		margin-bottom: 0
+.one-click-buy
+	color: #f57812
+	font: 400 14px $roboto
+	text-decoration: underline
 .breadcrumbs
 	text-align: center
 	margin-bottom: 20px
@@ -464,6 +511,8 @@ h3.text
 	display: flex
 	flex-wrap: wrap
 	justify-content: space-between
+	&.column
+		flex-direction: column
 	&.no-wrap
 		flex-wrap: nowrap
 	&.show-laptop
@@ -615,6 +664,7 @@ h3.text
 	text-align: center
 	&.normal
 		letter-spacing: normal
+		margin-bottom: 25px
 	&.left
 		text-align: left
 .tabs

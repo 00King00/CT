@@ -4,116 +4,235 @@ html
 		include ./parts/pgs.pug
 	body
 		include ./parts/header.pug
-		.wrapper
-			ul.breadcrumbs
-				li
-					a(href="#") Главная
-				li
-					a(href="#") Обвесы
-			.row.clearfix
-				.col-tablet-1-2.col-laptop-2-3
-					.product_card-slider.hide-laptop
-						.ul#product_card-slider
-							- var n = 0;
-							while n < 11
-								li(data-thumb="images/photo/slider-image.png" data-src="images/photo/slider-image.png" )
-									img(src="images/photo/slider-image.png")
-								- n++;
-						
-					.flex-container.no-wrap.show-laptop
-						.flex-column.flex-column__thumbnail
-							- var n = 0;
-							while n < 11
-								a.fancybox(href="images/photo/slider-image.png" data-fancybox="images")
-									img(src="images/photo/slider-image.png")
-								- n++;
-							a.fancybox(href="images/photo/brand-pic_02.png" data-fancybox="images")
-								img(src="images/photo/brand-pic_02.png")
-						.flex-column.flex-column__main
-							a.fancybox(href="images/photo/brand-pic_02.png" data-fancybox="images")
-								img(src="images/photo/brand-pic_02.png")
-					ul.tabs__caption
-						li.active
-							a#butt(href="#description") Описание товара
-						li
-							a(href="#warranty") Гарантия
-						li
-							a(href="#comments") Отзывы
-					p.text Bumper by RKSport®. Leave a trail of turned heads while cruising down the road with this stylish and bold-looking RKSport product. The unique design that follows the lines of your vehicle along with highly durable and lightweight materials make this product an ideal solution to add a significant boost in both appearance and performance. 
-					img.article(src="images/photo/description-image.png")
-					p.text Bumper by RKSport®. Leave a trail of turned heads while cruising down the road with this stylish and bold-looking RKSport product. The unique design that follows the lines of your vehicle along with highly durable and lightweight materials make this product an ideal solution to add a significant boost in both appearance and performance. 
-					h3.text#warranty Гарантия
-					p.text Bumper by RKSport®. Leave a trail of turned heads while cruising down the road with this stylish and bold-looking RKSport product. The unique design that follows the lines of your vehicle along with highly durable and lightweight materials make this product an ideal solution to add a significant boost in both appearance and performance.
-					ul.text
-						li Perfect to improve your vehicle’s style and aerodynamics
-						li Engineered to provide ultimate strength and reliability
-						li Custom designed for each application
-						li Made with pride in the United States more details on https://www.carid.com/rksport/bumper.html
-					h3.text#comments Отзывы
-					.comments
-						.comments__name Сергей Иванов
-						.rating
-							i.fa.fa-star
-							i.fa.fa-star
-							i.fa.fa-star
-							i.fa.fa-star-half-o
-							i.fa.fa-star-o
+		.page-base
+			.wrapper
+				ul.breadcrumbs.breadcrumbs_cart
+					li
+						a(href="#") Главная
+					li
+						a(href="#") Обвесы
+			.wrapper.background_white
+				.row.clearfix.pt-30
+					.col-tablet-1-2.col-laptop-2-3
+						.product_card-slider.hide-laptop
+							.ul#product_card-slider
+								- var n = 0;
+								while n < 11
+									li(data-thumb="images/photo/slider-image.png" data-src="images/photo/slider-image.png" )
+										img(src="images/photo/slider-image.png")
+									- n++;
+							
+						.flex-container.no-wrap.show-laptop
+							.flex-column.flex-column__thumbnail
+								- var n = 0;
+								while n < 11
+									a.fancybox(href="images/photo/slider-image.png" data-fancybox="images")
+										img(src="images/photo/slider-image.png")
+									- n++;
+								a.fancybox(href="images/photo/brand-pic_02.png" data-fancybox="images")
+									img(src="images/photo/brand-pic_02.png")
+							.flex-column.flex-column__main
+								a.fancybox(href="images/photo/brand-pic_02.png" data-fancybox="images")
+									img(src="images/photo/brand-pic_02.png")
+						ul.tabs__caption
+							li.active
+								a#butt(href="#description") Описание товара
+							li
+								a(href="#warranty") Гарантия
+							li
+								a(href="#comments") Отзывы
+						p.text Bumper by RKSport®. Leave a trail of turned heads while cruising down the road with this stylish and bold-looking RKSport product. The unique design that follows the lines of your vehicle along with highly durable and lightweight materials make this product an ideal solution to add a significant boost in both appearance and performance. 
+						img.article(src="images/photo/description-image.png")
+						p.text Bumper by RKSport®. Leave a trail of turned heads while cruising down the road with this stylish and bold-looking RKSport product. The unique design that follows the lines of your vehicle along with highly durable and lightweight materials make this product an ideal solution to add a significant boost in both appearance and performance. 
+						h3.text#warranty Гарантия
 						p.text Bumper by RKSport®. Leave a trail of turned heads while cruising down the road with this stylish and bold-looking RKSport product. The unique design that follows the lines of your vehicle along with highly durable and lightweight materials make this product an ideal solution to add a significant boost in both appearance and performance.
-					.comments
-						.comments__name Сергей Иванов
-						.rating
-							i.fa.fa-star
-							i.fa.fa-star
-							i.fa.fa-star
-							i.fa.fa-star-half-o
-							i.fa.fa-star-o
-						p.text Bumper by RKSport®. Leave a trail of turned heads while cruising down the road with this stylish and bold-looking RKSport product. The unique design that follows the lines of your vehicle along with highly durable and lightweight materials make this product an ideal solution to add a significant boost in both appearance and performance.
-				.col-tablet-1-2.col-laptop-1-3
-					.article Артикул: 5834201
-					.product_card__title RKSport® -Bumper
-					.rating
-						i.fa.fa-star
-						i.fa.fa-star
-						i.fa.fa-star
-						i.fa.fa-star-half-o
-						i.fa.fa-star-o
-					.product_card__price
-						span 24 500
-						i "
-					.btn.btn__choose Выбрать модель
-					.btn.btn__add-to-card Добавить в корзину
-					ul.advantages
-						li.price
-							a(href="#")
-								span.advantages__title Низкая цена. 
-								span.advantages__text Гарантия соответствия цены
-						li.warranty
-							a(href="#")
-								span.advantages__title Гарантия на продукцию.
-								span.advantages__text Всегда правильные и подходящие части
-						li.experts
-							a(href="#")
-								span.advantages__title Эксперты в штате. 
-								span.advantages__text Мы знаем свою продукцию
-						li.refund
-							a(href="#")
-								span.advantages__title Легкий Возврат. 
-								span.advantages__text Быстро и без заморочек
-						
-					.title.normal.left Другие аксессуары
-					.product_card__products
-						.row.clearfix
-							mixin product-item(imgUrl,name)
-								.col-mobileonly-1-2.col-phablet-1-3.padding-off
-									a.product-item(href="#")
-										.product-item__img
-											img(src=imgUrl)
-										.product-item__name= name
-							+product-item("images/photo/body-elements/body-element_01.png", "Бамперы")
-							+product-item("images/photo/body-elements/body-element_02.png", "Накладки и Сетки - бампера")
-							+product-item("images/photo/body-elements/body-element_03.png", "Губа - передний бампер")
-							+product-item("images/photo/body-elements/body-element_04.png", "Диффузоры - задний бампер")
-							+product-item("images/photo/body-elements/body-element_05.png", "Спойлеры и дефлекторы")
-							+product-item("images/photo/body-elements/body-element_06.png", "Пороги")
-		include ./parts/review-slider.pug
+						ul.text
+							li Perfect to improve your vehicle’s style and aerodynamics
+							li Engineered to provide ultimate strength and reliability
+							li Custom designed for each application
+							li Made with pride in the United States more details on https://www.carid.com/rksport/bumper.html
+						h3.text#comments Отзывы
+						.comments
+							.comments__name Сергей Иванов
+							.rating
+								i.fa.fa-star
+								i.fa.fa-star
+								i.fa.fa-star
+								i.fa.fa-star-half-o
+								i.fa.fa-star-o
+							p.text Bumper by RKSport®. Leave a trail of turned heads while cruising down the road with this stylish and bold-looking RKSport product. The unique design that follows the lines of your vehicle along with highly durable and lightweight materials make this product an ideal solution to add a significant boost in both appearance and performance.
+						.comments
+							.comments__name Сергей Иванов
+							.rating
+								i.fa.fa-star
+								i.fa.fa-star
+								i.fa.fa-star
+								i.fa.fa-star-half-o
+								i.fa.fa-star-o
+							p.text Bumper by RKSport®. Leave a trail of turned heads while cruising down the road with this stylish and bold-looking RKSport product. The unique design that follows the lines of your vehicle along with highly durable and lightweight materials make this product an ideal solution to add a significant boost in both appearance and performance.
+					.col-tablet-1-2.col-laptop-1-3
+						.flex-container.column
+						.flex-column
+							.article Артикул: 5834201
+							.product_card__title RKSport® -Bumper
+							.rating
+								i.fa.fa-star
+								i.fa.fa-star
+								i.fa.fa-star
+								i.fa.fa-star-half-o
+								i.fa.fa-star-o
+							.product_card__price
+								span 24 500
+								i "
+							.btn.btn_choose Выбрать модель
+							.btn.btn_add-to-card Добавить в корзину
+							a.one-click-buy(href="#") Купить в 1 клик
+							ul.advantages
+								li.price
+									a(href="#")
+										span.advantages__title Низкая цена. 
+										span.advantages__text Гарантия соответствия цены
+								li.warranty
+									a(href="#")
+										span.advantages__title Гарантия на продукцию.
+										span.advantages__text Всегда правильные и подходящие части
+								li.experts
+									a(href="#")
+										span.advantages__title Эксперты в штате. 
+										span.advantages__text Мы знаем свою продукцию
+								li.refund
+									a(href="#")
+										span.advantages__title Легкий Возврат. 
+										span.advantages__text Быстро и без заморочек
+								
+							.title.normal.left Другие аксессуары
+							.product_card__products
+								.row.clearfix
+									mixin product-item(imgUrl,name)
+										.col-mobileonly-1-2.col-phablet-1-3.padding-off
+											a.product-item(href="#")
+												.product-item__img
+													img(src=imgUrl)
+												.product-item__name= name
+									+product-item("images/photo/body-elements/body-element_01.png", "Бамперы")
+									+product-item("images/photo/body-elements/body-element_02.png", "Накладки и Сетки - бампера")
+									+product-item("images/photo/body-elements/body-element_03.png", "Губа - передний бампер")
+									+product-item("images/photo/body-elements/body-element_04.png", "Диффузоры - задний бампер")
+									+product-item("images/photo/body-elements/body-element_05.png", "Спойлеры и дефлекторы")
+									+product-item("images/photo/body-elements/body-element_06.png", "Пороги")
+							a.btn.btn_all(href="#") Все аксессуары
+						.flex-column
+							.form
+								.form__title Оставить отзывы
+								form
+									.label Представьтесь*
+									input
+									.label Ваш отзыв
+									input
+									.label Ваша оценка
+										.rating
+											i.fa.fa-star
+											i.fa.fa-star
+											i.fa.fa-star
+											i.fa.fa-star-half-o
+											i.fa.fa-star-o
+									input(type="submit" value=" Отправить")
+			.wrapper
+				.title
+					|просмотренные товары
+				.slider-arrows
+					.slider_controls
+						span.icon.ls-prevSlide
+						span.icon.ls-nextSlide
+				ul#last-seen-slider
+						li
+							.product
+								a(href="#").product__pic
+									img(src="images/photo/product_03.png", alt="icon")
+								.product__info
+									.product__rating
+										i.fa.fa-star
+										i.fa.fa-star
+										i.fa.fa-star
+										i.fa.fa-star
+										i.fa.fa-star.grey
+									a(href="#").product__name
+										|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+									.product__price
+										span 24 500
+										i "
+									.add-to-fav
+									.add-to-cart
+						li
+							.product
+								a(href="#").product__pic
+									img(src="images/photo/product_01.png", alt="icon")
+								.product__info
+									.product__rating
+										i.fa.fa-star
+										i.fa.fa-star
+										i.fa.fa-star
+										i.fa.fa-star.grey
+										i.fa.fa-star.grey
+									a(href="#").product__name
+										|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+									.product__price
+										span 24 500
+										i "
+									.add-to-fav
+									.add-to-cart
+						li
+							.product
+								a(href="#").product__pic
+									img(src="images/photo/product_02.png", alt="icon")
+								.product__info
+									.product__rating
+										i.fa.fa-star
+										i.fa.fa-star
+										i.fa.fa-star
+										i.fa.fa-star
+										i.fa.fa-star.grey
+									a(href="#").product__name
+										|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+									.product__price
+										span 24 500
+										i "
+									.add-to-fav
+									.add-to-cart
+						li
+							.product
+								a(href="#").product__pic
+									img(src="images/photo/product_04.png", alt="icon")
+								.product__info
+									.product__rating
+										i.fa.fa-star
+										i.fa.fa-star
+										i.fa.fa-star
+										i.fa.fa-star
+										i.fa.fa-star
+									a(href="#").product__name
+										|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+									.product__price
+										span 24 500
+										i "
+									.add-to-fav
+									.add-to-cart
+						li
+							.product
+								a(href="#").product__pic
+									img(src="images/photo/product_03.png", alt="icon")
+								.product__info
+									.product__rating
+										i.fa.fa-star
+										i.fa.fa-star
+										i.fa.fa-star
+										i.fa.fa-star
+										i.fa.fa-star.grey
+									a(href="#").product__name
+										|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+									.product__price
+										span 24 500
+										i "
+									.add-to-fav
+									.add-to-cart
 		include ./parts/footer.pug
