@@ -155,8 +155,11 @@ h3.text
 		text-align: center
 		color: #fff
 		font: 600 16px/45px $roboto
+		border: none
 	&_so-order-page
 		width: 255px
+		+breakpoint(mobileonly)
+			width: 100%
 	&_one-click-buy
 		background: #cdcdd2
 		color: #616176
@@ -464,6 +467,8 @@ h3.text
 	margin-bottom: 30px
 	max-width: 276px
 	height: 355px
+	+breakpoint(mobileonly)
+		margin: 0 auto 30px auto
 	&:hover
 		box-shadow: 0px 9px 29px -5px rgba(0,0,0,0.5)
 	&__info
@@ -660,6 +665,8 @@ h3.text
 		max-width: 1200px
 		display: flex
 		justify-content: space-between
+		&.product_card_page
+			top: -40px
 .section
 	&-catalog
 		background-color: #f6f6f7
@@ -1093,6 +1100,8 @@ h3.text
 .mb
 	&-75
 		margin-bottom: 75px
+	&-0
+		margin-bottom: 0
 .flex-column
 	&__thumbnail
 		justify-content: space-between
@@ -1122,6 +1131,7 @@ h3.text
 		img
 			display: inline-block
 			cursor: pointer
+//end product_card
 table.cart
 	background: #fff
 	margin-bottom: 55px
@@ -1168,6 +1178,7 @@ table.cart
 	font: 400 13px/16px $roboto
 .page-base
 	background: #f6f6f7
+	border-bottom: 1px solid transparent
 .cart-item-price
 	span
 		color: #1a1818
@@ -1812,4 +1823,63 @@ input[type="radio"]
 	font: 400 18px/12px $roboto
 	text-transform: uppercase
 	margin-bottom: 10px
+.filters-select
+	display: none
+	justify-content: space-between
+	align-items: center
+	margin-bottom: 35px
+	flex-wrap: wrap
+	padding-top: 55px
+	+breakpoint(tablet)
+		display: flex
+	+breakpoint(laptop)
+		padding: 0
 
+	input, select
+		height: 40px
+		border: solid 1px #d3d3d3
+		outline: none
+		padding: 10px
+	input
+		width: 100px
+
+	.nice-select
+		height: 40px
+		border: solid 1px #d3d3d3
+		width: 130px
+		margin: 0
+	&__left
+		display: flex
+		justify-content: space-between
+		align-items: center
+		flex-basis: 100%
+		margin-bottom: 20px
+		+breakpoint(laptop)
+			flex-basis: 515px
+			margin: 0
+	&__center
+		display: none
+		+breakpoint(tablet)
+			display: inline-block
+	&__right
+		.label
+			color: #8b8b8b
+			font: 400 13px $roboto
+			padding-right: 10px
+		.nice-select
+			width: 200px
+	.show-
+		&3,&4
+			display: inline-block
+			cursor: pointer
+			&.active span
+				background-color: #f57812
+
+			span
+				display: inline-block
+				width: 15px
+				height: 15px
+				margin-right: 4px
+				background-color: #555551
+		&4
+			margin-left: 30px

@@ -188,14 +188,12 @@ html
 								+product-item("images/photo/body-elements/body-element_04.png", "Диффузоры - задний бампер")
 								+product-item("images/photo/body-elements/body-element_05.png", "Спойлеры и дефлекторы")
 								+product-item("images/photo/body-elements/body-element_06.png", "Пороги")
-						a.btn.btn_all(href="#") Все аксессуары
-						
-							
+						a.btn.btn_all(href="#") Все аксессуары				
 			.wrapper
-				.title.mt-85
+				.title.mt-85.mb-0
 					|просмотренные товары
 				.slider-arrows
-					.slider_controls
+					.slider_controls.product_card_page
 						span.icon.ls-prevSlide
 						span.icon.ls-nextSlide
 				ul#last-seen-slider
@@ -289,4 +287,98 @@ html
 										i "
 									.add-to-fav
 									.add-to-cart
+		.fixed-overlay.fixed-overlay__modal.fast-cart-modal
+			.modal
+					.fast-cart.clearfix
+						.close-btn
+							img(src="images/remove_item.png", alt="Спрятать фильтр")
+						.fast-cart__left-side
+							.cart-item-count
+								|1 товар добавлен в корзину
+							.cart-block
+								table.cart
+									tr
+										td.picture
+											img(src="images/photo/product_04.png",alt="pic")
+										td.description
+											a(href="#").cart-item-name
+												|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+											.cart-item-price
+												span 1 x 
+												span 24 500
+												i "
+									tr
+										td.picture
+											img(src="images/photo/product_04.png",alt="pic")
+										td.description
+											a(href="#").cart-item-name
+												|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+											.cart-item-price
+												span 1 x 
+												span 24 500
+												i "
+									tr
+										td.picture
+											img(src="images/photo/product_04.png",alt="pic")
+										td.description
+											a(href="#").cart-item-name
+												|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+											.cart-item-price
+												span 1 x 
+												span 24 500
+												i "
+							.final-price
+								span Итого:
+								span.cart-item-price.order-sum
+									span 24 500
+									i "
+							.buttons
+								.clearfix.row-5
+									.col-tablet-1-2.padding-5
+										a(href="#").btn.btn_all-recommendations
+											|Продолжить покупки
+									.col-tablet-1-2.padding-5
+										input.btn.btn_submit-order(type="submit" value="Оформить заказ")
+											
+						.fast-cart__right-side
+							.title
+								|Вам может пригодиться
+							.recommend-block
+								table.cart
+									tr
+										td.picture
+											img(src="images/photo/product_04.png",alt="pic")
+										td.description
+											.cart-item-name
+												|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+											.cart-item-price
+												span 24 500
+												i "
+											.add-to-cart
+							.recommend-block
+								table.cart
+									tr
+										td.picture
+											img(src="images/photo/product_04.png",alt="pic")
+										td.description
+											a(href="#").cart-item-name
+												|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+											.cart-item-price
+												span 24 500
+												i "
+											.add-to-cart
+							.recommend-block
+								table.cart
+									tr
+										td.picture
+											img(src="images/photo/product_04.png",alt="pic")
+										td.description
+											a(href="#").cart-item-name
+												|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+											.cart-item-price
+												span 24 500
+												i "
+											.add-to-cart
+							.btn.btn_all-recommendations
+								|Смотреть все								
 		include ./parts/footer.pug

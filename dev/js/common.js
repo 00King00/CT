@@ -82,7 +82,6 @@ $('.right-side>.second-line>.menu>ul>li').click(function(e){
 				},
 				],
 		});
-
 		$(".ls-prevSlide").click(function(){
 			last_seen_slider.goToPrevSlide();
 		});
@@ -210,16 +209,6 @@ $('.right-side>.second-line>.menu>ul>li').click(function(e){
 			$('body').toggleClass('no-scroll');
 		})
 	// end show-hide filters
-
-	// $(".fancybox").attr('rel', 'images').fancybox({
-	//     beforeLoad: function() {
-	//         this.title = $(this.element).attr('caption');
-	//     }
-	// });
-	// $(".flex-column__main img").click(function(){
-	// 	var el = $(this).prop("src");
-	// 	console.log(el)
-	// })
 	$(".fancybox").fancybox({
 	 toolbar  : true,
 	 thumbs: {
@@ -229,59 +218,34 @@ $('.right-side>.second-line>.menu>ul>li').click(function(e){
 		    console.info( slide.$content );
 		  }
   });
-
-	//scroll anchor
-	$("#butt").on("click","a", function (event) {
-		//отменяем стандартную обработку нажатия по ссылке
-		event.preventDefault();
-
-		//забираем идентификатор бока с атрибута href
-		var id  = $(this).attr('href'),
-
-		//узнаем высоту от начала страницы до блока на который ссылается якорь
-			top = $(id).offset().top;
-
-		//анимируем переход на расстояние - top за 1500 мс
-		$('body,html').animate({scrollTop: top}, 1500);
-	});
-	$("#menu-butt").on("click","a", function (event) {
-		//отменяем стандартную обработку нажатия по ссылке
-		event.preventDefault();
-
-		//забираем идентификатор бока с атрибута href
-		var id  = $(this).attr('href'),
-
-		//узнаем высоту от начала страницы до блока на который ссылается якорь
-			top = $(id).offset().top;
-
-		//анимируем переход на расстояние - top за 1500 мс
-		$('body,html').animate({scrollTop: top}, 1500);
-	});
-
-	//product_card
+	//product_card script
 	$(".flex-column__thumbnail .fancybox").mouseover(function(){
 		var src = $(this).prop('href');
 		var srcChild = $(this).children().prop('src');
 		$(".flex-column__main .fancybox").prop('href', src)
 		$(".flex-column__main .fancybox").children().prop('src', srcChild)
 	});
+	//end product_card script
 	//close modal window
-	$(".fixed-overlay__modal .icon_remove-item").click(function(){
+	$(".close-btn").click(function(){
 		$(".fixed-overlay").removeClass('active');
 	});
 	$(".fixed-overlay__modal input[type='submit']").click(function(){
 		$(".fixed-overlay").removeClass('active');
 	});
-	$(".fixed-overlay__modal .icon-remove-item").click(function(){
-		$(".fixed-overlay").removeClass('active');
-	});
-
 	//open modal window
-	$("a.cart-modal").click(function(){
+	$(".btn_add-to-card").click(function(){
 		$(".fixed-overlay.fast-cart-modal").addClass('active');
 	});
-	//close modal
-	$(".close-btn").click(function(){
-		$(".fixed-overlay").removeClass('active');
-	});
+	//change number column
+	$(".show-3").click(function(){
+		$(".show-4").removeClass("active")
+		$('.filters-select-col').addClass("active")
+		$(this).addClass("active")
+	})
+	$(".show-4").click(function(){
+		$(".show-3").removeClass("active")
+		$('.filters-select-col').removeClass("active")
+		$(this).addClass("active")
+	})
 });
