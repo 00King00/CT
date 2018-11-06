@@ -116,16 +116,6 @@ h3.text
 		color: #f57812
 		font: 600 16px/41px $roboto
 		border: 2px solid #f57812
-	&_all-recommendations
-		height: 45px
-		margin-top: 10px
-		cursor: pointer
-		width: 100%
-		font: 600 16px/41px $roboto
-		border: 1px solid #a4a7b2
-		color: #5d5e65
-		border-radius: 5px
-		text-align: center
 	&_choose
 		cursor: pointer
 		width: 100%
@@ -165,8 +155,11 @@ h3.text
 		text-align: center
 		color: #fff
 		font: 600 16px/45px $roboto
+		border: none
 	&_so-order-page
 		width: 255px
+		+breakpoint(mobileonly)
+			width: 100%
 	&_one-click-buy
 		background: #cdcdd2
 		color: #616176
@@ -296,14 +289,15 @@ h3.text
 		+breakpoint(tablet)
 			justify-content: space-between
 		.menu
-			ul
-				li
+			&>ul
+				&>li
 					position: relative
 					display: inline-block
 					margin-right: 20px
 					text-transform: uppercase
 					font: 600 12px/16px $roboto
 					color: #1a1818
+					cursor: pointer
 					+breakpoint(laptop)
 						margin-right: 45px
 					&:after
@@ -331,6 +325,20 @@ h3.text
 							-webkit-transform: rotate(-135deg)
 							-ms-transform: rotate(-135deg)
 							transform: rotate(-135deg)
+
+			.sub-menu
+				display: none
+				width: 190px
+				position: absolute
+				top: 39px
+				background: white
+				color: #8b8b8b
+				font: 400 13px $roboto
+				text-transform: capitalize
+				padding: 15px 15px 10px 15px
+				border-top: 3px solid #f57812
+				li
+					margin-bottom: 10px
 		.header-user-buttons
 			display: inline-block
 			+breakpoint(laptop)
@@ -459,6 +467,8 @@ h3.text
 	margin-bottom: 30px
 	max-width: 276px
 	height: 355px
+	+breakpoint(mobileonly)
+		margin: 0 auto 30px auto
 	&:hover
 		box-shadow: 0px 9px 29px -5px rgba(0,0,0,0.5)
 	&__info
@@ -655,6 +665,8 @@ h3.text
 		max-width: 1200px
 		display: flex
 		justify-content: space-between
+		&.product_card_page
+			top: -40px
 .section
 	&-catalog
 		background-color: #f6f6f7
@@ -1088,6 +1100,8 @@ h3.text
 .mb
 	&-75
 		margin-bottom: 75px
+	&-0
+		margin-bottom: 0
 .flex-column
 	&__thumbnail
 		justify-content: space-between
@@ -1117,6 +1131,286 @@ h3.text
 		img
 			display: inline-block
 			cursor: pointer
+//end product_card
+table.cart
+	background: #fff
+	margin-bottom: 55px
+	width: 100%
+	border-spacing: 0
+	th
+		color: #858585
+		padding: 10px 0 10px 25px
+		text-align: left
+		font-size: 12px
+		background: #f6f6f7
+	th.remove-item
+		text-align: right
+	td
+		vertical-align: top
+		padding: 25px 0 25px 25px
+		border-top: 1px solid #d5d6dc
+	td.picture
+		width: 20%
+	td.description
+		width: 40%
+	td.price,td.count
+		width: 15%
+		input
+			position: relative
+			top: -6px
+			text-align: center
+			outline: none
+			width: 60px
+			height: 33px
+			line-height: 33px
+			font: 400 14px/14px $roboto
+	td.remove-item
+		padding-right: 25px
+		width: 10%
+		text-align: right
+.cart-item-name
+	font: 600 13px/16px $roboto
+	margin-bottom: 20px
+	color: #1a1818
+.cart-item-description
+	max-width: 248px
+	color: #aeaeae
+	font: 400 13px/16px $roboto
+.page-base
+	background: #f6f6f7
+	border-bottom: 1px solid transparent
+.cart-item-price
+	span
+		color: #1a1818
+		font: bold 16px/14px $roboto
+	i
+		font: 600 16px/14px $ruble
+.order-sum
+	color: #d31d1d
+	span
+		color: #d31d1d
+.your-order
+	background: #fff
+	padding: 20px
+	position: relative
+	top: 36px
+	&_order-page
+		top: 0
+		margin-bottom: 40px
+		+breakpoint(laptop)
+			padding-bottom: 150px
+
+	&__title
+		text-transform: uppercase
+		color: #1a1818
+		font: 600 12px/16px $roboto
+	&__items-count
+		margin-bottom: 10px
+		color: #858585
+		font: 400 12px/16px $roboto
+	table
+		border-spacing: 0
+		margin-bottom: 15px
+		border-collapse: collapse
+		width: 100%
+		font: bold 14px/16px $roboto
+		td:last-child
+			text-align: right
+		td
+			padding: 10px 0 10px 0
+		tr
+			border-top: 1px solid #d5d6dc
+		tr:first-child
+			border: none
+.coupon
+	text-align: right
+	a
+		color: #8e8e8e
+		font: 400 12px/16px $roboto
+.separator
+	text-align: center
+	overflow: hidden
+	span
+		position: relative
+		color: #8c8c8c
+		font: 400 12px/16px $roboto
+	span:before, span:after
+		content: ''
+		position: absolute
+		width: 1000px
+		height: 1px
+		background: #b8b8b8
+		top: 50%
+		transform: translateY(-50%)
+		right: 180%
+	span:after
+			right: auto
+			left: 180%
+.page-title
+	font: 400 30px/32px $roboto
+	text-transform: uppercase
+	margin-bottom: 30px
+	letter-spacing: 3px
+.order-form
+	background: #fff
+	padding: 35px
+	margin-bottom: 70px
+	font: 400 12px/16px $roboto
+	.title
+		margin: 0 0 25px 0
+		text-align: left
+	.form-section
+		margin-bottom: 60px
+.input-wrap
+	text-align: left
+	position: relative
+	&.input-wrap_checkbox
+		margin-top: 15px
+		+breakpoint(tablet)
+			margin-top: 0
+			margin-bottom: 0
+			width: auto
+			padding-left: 105px
+		+breakpoint(laptop)
+			display: block
+			margin-bottom: 0
+	input
+		border: 1px solid #d3d3d3
+		font: 400 12px/35px $roboto
+		height: 35px
+		outline: none
+		padding: 0 10px
+		width: 100%
+		+breakpoint(tablet)
+			width: 350px
+
+	+breakpoint(tablet)
+		margin: 0 0 15px 0
+
+	span
+		display: inline-block
+		font: 600 12px/16px $roboto
+		text-transform: uppercase
+	.nice-select
+		border: 1px solid #d3d3d3
+		margin: 0
+		vertical-align: middle
+		font: 400 12px/35px $roboto
+		height: 35px
+		outline: none
+		padding: 0 10px
+		width: 100%
+		+breakpoint(tablet)
+			width: 350px
+	.name
+		font-size: 12px
+		width: 105px
+		margin-top: 15px
+		margin-bottom: 5px
+		+breakpoint(tablet)
+			width: 105px
+			margin-top: 0
+			margin-bottom: 5px
+		&:after
+			content: "*"
+			color: #f57812
+			padding-left: 5px
+		&:last-child
+			color: #f52424
+			font-size: 12px
+			margin-top: 5px
+			font-weight: normal
+			display: none
+	.index
+		width: 100%
+		+breakpoint(tablet)
+			width: 100px
+input[type="checkbox"]
+	color: #9d9e9f
+	font-size: 11px
+	width: 20px
+	height: auto
+	// background-color: transparent
+	// margin-top: -16px
+	// visibility: hidden
+	padding-left: 30px
+	margin-bottom: 13px
+	// vertical-align: top
+	display: inline-block
+label
+	font: 400 12px/12px $roboto
+	margin-right: 25px
+	+breakpoint(mobileonly)
+		margin-right: 15px
+input[type="radio"]
+	height: auto
+	float: none
+	visibility: hidden
+	& + label
+		font: 400 12px/16px $roboto
+		margin-right: 50px
+		position: relative
+		right: -25px
+		display: block
+		+breakpoint(phablet)
+			display: inline-block
+			right: -10px
+	& + label:before
+		content: ""
+		display: inline-block
+		width: 18px
+		height: 18px
+		position: absolute
+		background-image: url(../images/radio-unchecked.png)
+		margin-left: -25px
+		background-repeat: no-repeat
+	&:checked + label:before
+		background-image: url(../images/radio-checked.png)
+#registers_1,#registers_2
+	height: auto
+	width: auto
+	display: inline-block
+.options
+	text-transform: uppercase
+	font: 600 12px/12px $roboto
+.order-steps
+	+breakpoint(laptop)
+		float: right
+		position: relative
+		top: -90px
+		margin-bottom: -80px
+	.step
+		display: block
+		margin: 20px 10px
+		opacity: 0.3
+		&.active
+			opacity: 1
+		&__img
+			display: inline-block
+			vertical-align: middle
+		&__name
+			display: inline-block
+			vertical-align: middle
+			font: 600 12px/18px $roboto
+			+breakpoint(phablet)
+				max-width: 72px
+		+breakpoint(phablet)
+			display: inline-block
+.head-image
+	height: 340px
+	background: url(../images/photo/background_03.png)
+	background-size: cover
+	display: flex
+	justify-content: center
+	align-items: center
+	span
+		text-transform: uppercase
+		color: #fff
+		font: 600 36px/12px $roboto
+		letter-spacing: 4px
+		margin: 30px 5px
+	.model
+		font: 300 36px/12px $roboto
 table.cart, table.cart-mobile
 	background: #fff
 	margin-bottom: 55px
@@ -1529,3 +1823,63 @@ input[type="radio"]
 	font: 400 18px/12px $roboto
 	text-transform: uppercase
 	margin-bottom: 10px
+.filters-select
+	display: none
+	justify-content: space-between
+	align-items: center
+	margin-bottom: 35px
+	flex-wrap: wrap
+	padding-top: 55px
+	+breakpoint(tablet)
+		display: flex
+	+breakpoint(laptop)
+		padding: 0
+
+	input, select
+		height: 40px
+		border: solid 1px #d3d3d3
+		outline: none
+		padding: 10px
+	input
+		width: 100px
+
+	.nice-select
+		height: 40px
+		border: solid 1px #d3d3d3
+		width: 130px
+		margin: 0
+	&__left
+		display: flex
+		justify-content: space-between
+		align-items: center
+		flex-basis: 100%
+		margin-bottom: 20px
+		+breakpoint(laptop)
+			flex-basis: 515px
+			margin: 0
+	&__center
+		display: none
+		+breakpoint(tablet)
+			display: inline-block
+	&__right
+		.label
+			color: #8b8b8b
+			font: 400 13px $roboto
+			padding-right: 10px
+		.nice-select
+			width: 200px
+	.show-
+		&3,&4
+			display: inline-block
+			cursor: pointer
+			&.active span
+				background-color: #f57812
+
+			span
+				display: inline-block
+				width: 15px
+				height: 15px
+				margin-right: 4px
+				background-color: #555551
+		&4
+			margin-left: 30px
