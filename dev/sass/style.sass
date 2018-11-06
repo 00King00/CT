@@ -116,6 +116,16 @@ h3.text
 		color: #f57812
 		font: 600 16px/41px $roboto
 		border: 2px solid #f57812
+	&_all-recommendations
+		height: 45px
+		margin-top: 10px
+		cursor: pointer
+		width: 100%
+		font: 600 16px/41px $roboto
+		border: 1px solid #a4a7b2
+		color: #5d5e65
+		border-radius: 5px
+		text-align: center
 	&_choose
 		cursor: pointer
 		width: 100%
@@ -1107,7 +1117,7 @@ h3.text
 		img
 			display: inline-block
 			cursor: pointer
-table.cart
+table.cart, table.cart-mobile
 	background: #fff
 	margin-bottom: 55px
 	width: 100%
@@ -1127,7 +1137,12 @@ table.cart
 	td.picture
 		width: 20%
 	td.description
+		position: relative
 		width: 40%
+		.icon_remove-item
+			position: absolute
+			right: 7px
+			top: 7px
 	td.price,td.count
 		width: 15%
 		input
@@ -1143,6 +1158,19 @@ table.cart
 		padding-right: 25px
 		width: 10%
 		text-align: right
+table.cart-mobile
+	margin-bottom: 20px
+	input
+		// position: relative
+		// top: -6px
+		margin-top: 15px
+		margin-right: 10px
+		text-align: center
+		outline: none
+		width: 40px
+		height: 33px
+		line-height: 33px
+		font: 400 14px/14px $roboto
 .cart-item-name
 	font: 600 13px/16px $roboto
 	margin-bottom: 20px
@@ -1385,3 +1413,117 @@ input[type="radio"]
 		margin: 30px 5px
 	.model
 		font: 300 36px/12px $roboto
+.fixed-overlay
+	position: fixed
+	overflow: auto
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%
+	background-color: rgba(70,70,70,0.9)
+	z-index: 100
+	display: none
+	&.fast-cart-modal.active
+		display: block
+	&__modal
+		text-align: center
+		&::after
+			display: inline-block
+			vertical-align: middle
+			width: 0
+			height: 100%
+			content: ''
+.modal
+	display: inline-block
+	vertical-align: middle
+	opacity: 1
+	background-color: white
+	position: relative
+.fast-cart
+	height: 509px
+	background: #fff
+	max-width: 800px
+	position: relative
+	.close-btn
+		position: absolute
+		right: 10px
+		top: 10px
+	table
+		margin-bottom: 0
+		td
+			border: none
+	&__left-side
+		height: 509px
+		position: relative
+		padding: 30px 20px
+		float: left
+		width: 54%
+		.cart-item-name
+			display: inline-block
+		.cart-block
+			height: 320px
+			overflow-x: scroll
+		.buttons
+			width: 100%
+			padding: 0 20px
+			position: absolute
+			bottom: 28px
+			left: 0
+		.btn_submit-order
+			margin: 0
+			margin-top: 10px
+		.picture
+			padding: 25px 0 25px 0px
+		.final-price
+			width: 90%
+			position: absolute
+			bottom: 97px
+			left: 22px
+			border-top: 1px solid #d3d3d7
+			padding-top: 20px
+			text-align: right
+			span
+				font: 600 18px/12px $roboto
+				margin: 0 5px
+	&__right-side
+		table
+			td
+				padding: 15px 15px 10px 15px
+		.title
+			margin: 0 0 30px 0
+			font: 400 18px/12px $roboto
+			letter-spacing: normal
+			text-transform: none
+			text-align: left
+		padding: 30px 20px
+		float: left
+		background: #f1f1f1
+		width: 46%
+.recommend-block
+	margin-bottom: 3px
+	.cart-item-name
+		margin-bottom: 10px
+	.cart-item-price
+		display: inline-block
+		position: relative
+		top: -12px
+	.add-to-cart
+		margin-left: 5px
+		display: inline-block
+		width: 34px
+		height: 34px
+		cursor: pointer
+		bottom: 15px
+		right: 15px
+		&:after
+			content: ''
+			background: url(../images/shopping-cart-33x34.png) 0 0 no-repeat
+			background-size: 34px 34px
+			width: 34px
+			height: 34px
+			display: block
+.cart-item-count
+	text-align: left
+	font: 400 18px/12px $roboto
+	text-transform: uppercase
+	margin-bottom: 10px
