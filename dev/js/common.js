@@ -260,5 +260,23 @@ $('.right-side>.second-line>.menu>ul>li').click(function(){
 		$(".flex-column__main .fancybox").prop('href', src)
 		$(".flex-column__main .fancybox").children().prop('src', srcChild)
 	});
+	//close modal window
+	$(".fixed-overlay__modal .icon_remove-item").click(function(){
+		$(".fixed-overlay").removeClass('active');
+	});
+	$(".fixed-overlay__modal input[type='submit']").click(function(){
+		$(".fixed-overlay").removeClass('active');
+	});
+	$(".fixed-overlay__modal .icon-remove-item").click(function(){
+		$(".fixed-overlay").removeClass('active');
+	});
 
+	//open modal window
+	$("a.cart-modal").click(function(){
+		$(".fixed-overlay.fast-cart-modal").addClass('active');
+	});
+	//close modal
+	$(".close-btn").click(function(){
+		$(".fixed-overlay").removeClass('active');
+	});
 });
