@@ -12,7 +12,7 @@ html
 					li
 						a(href="#") Обвесы
 			.wrapper.background_white
-				.row.clearfix.pt-30
+				.row.clearfix.pt-30.border-transparent
 					.col-tablet-1-2.col-laptop-2-3
 						.product_card-slider.hide-laptop
 							.ul#product_card-slider
@@ -21,7 +21,6 @@ html
 									li(data-thumb="images/photo/slider-image.png" data-src="images/photo/slider-image.png" )
 										img(src="images/photo/slider-image.png")
 									- n++;
-							
 						.flex-container.no-wrap.show-laptop
 							.flex-column.flex-column__thumbnail
 								- var n = 0;
@@ -83,16 +82,13 @@ html
 									+product-item("images/photo/body-elements/body-element_05.png", "Спойлеры и дефлекторы")
 									+product-item("images/photo/body-elements/body-element_06.png", "Пороги")
 							a.btn.btn_all(href="#") Все аксессуары
-						ul.tabs__caption
+						ul.product_card-menu
 							li.active
-								span 
-									a(href="#description") Описание товара 
+								a(href="#description") Описание товара 
 							li
-								span 
-									a(href="#warranty") Гарантия
-							li
-								span 
-									a(href="#comments") Отзывы
+								a(href="#warranty") Гарантия
+							li 
+								a(href="#comments") Отзывы
 						p.text Bumper by RKSport®. Leave a trail of turned heads while cruising down the road with this stylish and bold-looking RKSport product. The unique design that follows the lines of your vehicle along with highly durable and lightweight materials make this product an ideal solution to add a significant boost in both appearance and performance. 
 						img.article(src="images/photo/description-image.png")
 						p.text Bumper by RKSport®. Leave a trail of turned heads while cruising down the road with this stylish and bold-looking RKSport product. The unique design that follows the lines of your vehicle along with highly durable and lightweight materials make this product an ideal solution to add a significant boost in both appearance and performance. 
@@ -104,24 +100,9 @@ html
 							li Engineered to provide ultimate strength and reliability
 							li Custom designed for each application
 							li Made with pride in the United States more details on https://www.carid.com/rksport/bumper.html
-						h3.text#comments 
+						h3.text
 							| Отзывы
-							.form-label.show-tablet
-								.form-label__title Оставить отзывы
-								form
-									.label Представьтесь
-										span *
-									input(type="text")
-									.label Ваш отзыв
-									input(type="text")
-									.label Ваша оценка
-									.rating
-										i.fa.fa-star
-										i.fa.fa-star
-										i.fa.fa-star
-										i.fa.fa-star-half-o
-										i.fa.fa-star-o
-									input(type="submit" value=" Отправить")
+							a.btn.btn_left-comments(href="#") Оставить отзыв
 						.comments
 							.comments__name Сергей Иванов
 							.rating
@@ -190,7 +171,7 @@ html
 								+product-item("images/photo/body-elements/body-element_06.png", "Пороги")
 						a.btn.btn_all(href="#") Все аксессуары				
 			.wrapper
-				.title.mt-85.mb-0
+				.title.mt-85.mb-0-phablet.mt-20-mobileonly
 					|просмотренные товары
 				.slider-arrows
 					.slider_controls.product_card_page
@@ -289,96 +270,116 @@ html
 									.add-to-cart
 		.fixed-overlay.fixed-overlay__modal.fast-cart-modal
 			.modal
-					.fast-cart.clearfix
-						.close-btn
-							img(src="images/remove_item.png", alt="Спрятать фильтр")
-						.fast-cart__left-side
-							.cart-item-count
-								|1 товар добавлен в корзину
-							.cart-block
-								table.cart
-									tr
-										td.picture
-											img(src="images/photo/product_04.png",alt="pic")
-										td.description
-											a(href="#").cart-item-name
-												|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
-											.cart-item-price
-												span 1 x 
-												span 24 500
-												i "
-									tr
-										td.picture
-											img(src="images/photo/product_04.png",alt="pic")
-										td.description
-											a(href="#").cart-item-name
-												|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
-											.cart-item-price
-												span 1 x 
-												span 24 500
-												i "
-									tr
-										td.picture
-											img(src="images/photo/product_04.png",alt="pic")
-										td.description
-											a(href="#").cart-item-name
-												|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
-											.cart-item-price
-												span 1 x 
-												span 24 500
-												i "
-							.final-price
-								span Итого:
-								span.cart-item-price.order-sum
-									span 24 500
-									i "
-							.buttons
-								.clearfix.row-5
-									.col-tablet-1-2.padding-5
-										a(href="#").btn.btn_all-recommendations
-											|Продолжить покупки
-									.col-tablet-1-2.padding-5
-										input.btn.btn_submit-order(type="submit" value="Оформить заказ")
-											
-						.fast-cart__right-side
-							.title
-								|Вам может пригодиться
-							.recommend-block
-								table.cart
-									tr
-										td.picture
-											img(src="images/photo/product_04.png",alt="pic")
-										td.description
-											.cart-item-name
-												|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
-											.cart-item-price
-												span 24 500
-												i "
-											.add-to-cart
-							.recommend-block
-								table.cart
-									tr
-										td.picture
-											img(src="images/photo/product_04.png",alt="pic")
-										td.description
-											a(href="#").cart-item-name
-												|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
-											.cart-item-price
-												span 24 500
-												i "
-											.add-to-cart
-							.recommend-block
-								table.cart
-									tr
-										td.picture
-											img(src="images/photo/product_04.png",alt="pic")
-										td.description
-											a(href="#").cart-item-name
-												|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
-											.cart-item-price
-												span 24 500
-												i "
-											.add-to-cart
-							.btn.btn_all-recommendations
-								|Смотреть все								
+				.fast-cart.clearfix
+					.close-btn
+						img(src="images/remove_item.png", alt="Закрыть")
+					.fast-cart__left-side
+						.cart-item-count
+							|1 товар добавлен в корзину
+						.cart-block
+							table.cart
+								tr
+									td.picture
+										img(src="images/photo/product_04.png",alt="pic")
+									td.description
+										a(href="#").cart-item-name
+											|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+										.cart-item-price
+											span 1 x 
+											span 24 500
+											i "
+								tr
+									td.picture
+										img(src="images/photo/product_04.png",alt="pic")
+									td.description
+										a(href="#").cart-item-name
+											|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+										.cart-item-price
+											span 1 x 
+											span 24 500
+											i "
+								tr
+									td.picture
+										img(src="images/photo/product_04.png",alt="pic")
+									td.description
+										a(href="#").cart-item-name
+											|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+										.cart-item-price
+											span 1 x 
+											span 24 500
+											i "
+						.final-price
+							span Итого:
+							span.cart-item-price.order-sum
+								span 24 500
+								i "
+						.buttons
+							.clearfix.row-5
+								.col-tablet-1-2.padding-5
+									a(href="#").btn.btn_all-recommendations
+										|Продолжить покупки
+								.col-tablet-1-2.padding-5
+									input.btn.btn_submit-order(type="submit" value="Оформить заказ")
+					.fast-cart__right-side
+						.title
+							|Вам может пригодиться
+						.recommend-block
+							table.cart
+								tr
+									td.picture
+										img(src="images/photo/product_04.png",alt="pic")
+									td.description
+										.cart-item-name
+											|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+										.cart-item-price
+											span 24 500
+											i "
+										.add-to-cart
+						.recommend-block
+							table.cart
+								tr
+									td.picture
+										img(src="images/photo/product_04.png",alt="pic")
+									td.description
+										a(href="#").cart-item-name
+											|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+										.cart-item-price
+											span 24 500
+											i "
+										.add-to-cart
+						.recommend-block
+							table.cart
+								tr
+									td.picture
+										img(src="images/photo/product_04.png",alt="pic")
+									td.description
+										a(href="#").cart-item-name
+											|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+										.cart-item-price
+											span 24 500
+											i "
+										.add-to-cart
+						.btn.btn_all-recommendations.arrow
+							| Смотреть все
+		.fixed-overlay.fixed-overlay__modal.form-label-modal
+			.modal
+				.form-label
+					.close-btn
+						img(src="images/remove_item.png", alt="Закрыть")
+					.form-label__title 
+						| Оставить отзывы	
+					form
+						.label Представьтесь
+							span *
+						input(type="text")
+						.label Ваш отзыв
+						input(type="text")
+						.label Ваша оценка
+						.rating
+							i.fa.fa-star
+							i.fa.fa-star
+							i.fa.fa-star
+							i.fa.fa-star-half-o
+							i.fa.fa-star-o
+						input(type="submit" value=" Отправить")
 		include ./parts/footer.pug
