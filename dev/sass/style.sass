@@ -116,6 +116,27 @@ h3.text
 		color: #f57812
 		font: 600 16px/41px $roboto
 		border: 2px solid #f57812
+	&_all-recommendations
+		height: 45px
+		margin-top: 10px
+		cursor: pointer
+		width: 100%
+		font: 600 16px/41px $roboto
+		border: 1px solid #a4a7b2
+		color: #5d5e65
+		border-radius: 5px
+		text-align: center
+		position: relative
+		&.arrow::after
+			content: ""
+			position: absolute
+			display: inline-block
+			width: 15px
+			height: 15px
+			right: 15px
+			top: 13px
+			background-image: url("../images/right_arrow.png")
+
 	&_choose
 		cursor: pointer
 		width: 100%
@@ -164,6 +185,17 @@ h3.text
 		background: #cdcdd2
 		color: #616176
 		margin-bottom: 0
+	&_left-comments
+		padding: 0 20px
+		border-radius: 5px
+		text-align: center
+		background-color: #f57812
+		font: 600 16px/45px $roboto
+		color: white
+		text-transform: none
+		float: right
+		margin-top: -12px
+
 .one-click-buy
 	color: #f57812
 	font: 400 14px $roboto
@@ -189,7 +221,6 @@ h3.text
 			right: -10px
 			top: 0px
 			color: #7c7c7c
-
 .icon
 	display: inline-block
 	&_wishlist
@@ -333,6 +364,7 @@ h3.text
 				top: 39px
 				background: white
 				color: #8b8b8b
+				z-index: 10
 				font: 400 13px $roboto
 				text-transform: capitalize
 				padding: 15px 15px 10px 15px
@@ -539,7 +571,6 @@ h3.text
 		+breakpoint(laptop)
 			display: flex
 
-
 .contacts-phone
 	font:  600 14px $roboto
 	font-weight: bold
@@ -722,6 +753,27 @@ h3.text
 				margin-right: 10px
 				+breakpoint(tablet)
 					margin-right: 30px
+.product_card-menu
+	padding: 65px 0 25px 0
+	font: 400 13px $roboto
+	color: #1a1818
+	background-color: white
+	// position: fixed
+	// top: 0
+	// display: block
+	li
+		text-transform: uppercase
+		margin-bottom: 10px
+		display: inline-block
+		+breakpoint(phablet)
+			padding-bottom: 12px
+			margin-bottom: 0
+		&.active
+			border-bottom: 3px solid #f57812
+		&:not(:last-child)
+			margin-right: 10px
+			+breakpoint(tablet)
+				margin-right: 30px
 .catalog-item
 	text-align: center
 	padding: 30px
@@ -732,6 +784,9 @@ h3.text
 	&__img
 		height: 140px
 		margin-bottom: 25px
+		display: flex
+		justify-content: center
+		align-items: center
 	&:hover
 		box-shadow: 0px 9px 29px -5px rgba(0,0,0,0.5)
 		color: #f57812
@@ -996,13 +1051,16 @@ h3.text
 			padding-right: 15px
 		i
 			font: 600 26px $ruble
-#comments
-	position: relative
+
 .form-label
 	max-width: 300px
-	position: absolute
-	right: -300px
-	top: 0
+	margin: 0 20px 20px 20px
+	text-align: left
+	position: relative
+	.close-btn
+		position: absolute
+		top: 15
+		right: 0
 	&__title
 		margin-bottom: 15px
 		text-transform: uppercase
@@ -1097,11 +1155,15 @@ h3.text
 .mt
 	&-85
 		margin-top: 85px
+	&-20-mobileonly
+		+breakpoint(mobileonly)
+		 	margin-top: 20px
 .mb
 	&-75
 		margin-bottom: 75px
-	&-0
-		margin-bottom: 0
+	&-0-phablet
+		+breakpoint(phablet)
+			margin-bottom: 0
 .flex-column
 	&__thumbnail
 		justify-content: space-between
@@ -1721,6 +1783,8 @@ input[type="radio"]
 	display: none
 	&.fast-cart-modal.active
 		display: block
+	&.form-label-modal.active
+		display: block
 	&__modal
 		text-align: center
 		&::after
@@ -1824,7 +1888,7 @@ input[type="radio"]
 	text-transform: uppercase
 	margin-bottom: 10px
 .filters-select
-	display: none
+	display: flex
 	justify-content: space-between
 	align-items: center
 	margin-bottom: 35px
@@ -1840,20 +1904,31 @@ input[type="radio"]
 		border: solid 1px #d3d3d3
 		outline: none
 		padding: 10px
+		&::placeholder
+			color: #8b8b8b
+
 	input
 		width: 100px
+
 
 	.nice-select
 		height: 40px
 		border: solid 1px #d3d3d3
 		width: 130px
 		margin: 0
+		line-height: 40px
+		color: #8b8b8b
 	&__left
 		display: flex
 		justify-content: space-between
 		align-items: center
 		flex-basis: 100%
 		margin-bottom: 20px
+		+breakpoint(mobileonly)
+			flex-wrap: wrap
+			.nice-select
+				order: -1
+
 		+breakpoint(laptop)
 			flex-basis: 515px
 			margin: 0
@@ -1883,3 +1958,5 @@ input[type="radio"]
 				background-color: #555551
 		&4
 			margin-left: 30px
+.border-transparent
+	border: 1px solid transparent
