@@ -356,19 +356,31 @@ h3.text
 							-webkit-transform: rotate(-135deg)
 							-ms-transform: rotate(-135deg)
 							transform: rotate(-135deg)
-
+					&:hover
+						&::after
+							//transform: rotate(-135deg)
+						.sub-menu
+							display: block
 			.sub-menu
 				display: none
 				width: 190px
 				position: absolute
-				top: 39px
 				background: white
 				color: #8b8b8b
 				z-index: 10
 				font: 400 13px $roboto
 				text-transform: capitalize
-				padding: 15px 15px 10px 15px
-				border-top: 3px solid #f57812
+				padding: 40px 15px 10px 15px
+				&::before
+					content: ""
+					display: block
+					width: 100%
+					height: 6px
+					border-top: 3px solid #f57812
+					position: absolute
+					top: 23px
+					left: 0
+
 				li
 					margin-bottom: 10px
 		.header-user-buttons
@@ -629,7 +641,8 @@ h3.text
 	padding-top: 35px
 	+breakpoint(tablet)
 		text-align: left
-
+	&__payment
+		margin-bottom: 25px
 	&__title
 		color: #1a1818
 		text-transform: uppercase
@@ -758,9 +771,10 @@ h3.text
 	font: 400 13px $roboto
 	color: #1a1818
 	background-color: white
-	// position: fixed
-	// top: 0
-	// display: block
+	&.fixed
+		position: fixed
+		top: 0
+
 	li
 		text-transform: uppercase
 		margin-bottom: 10px
