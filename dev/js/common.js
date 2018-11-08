@@ -29,6 +29,20 @@ $('.add-to-fav').click(function(){
 });
 
 //
+<<<<<<< HEAD
+=======
+$('.right-side>.second-line>.menu>ul>li').mouseover(function(e){
+	$(this).addClass('open');
+	// if(e.target.nodeName == "A" || e.target.className=="sub-list"){
+	// 	return false;
+	// } else{
+	// 	$(this).toggleClass('open');
+	// }
+	$(this).find(".sub-menu").slideDown();
+})
+
+//
+>>>>>>> 1d85da03d122b24e3d929ce8c7546544c579ef2e
 	var last_seen_slider=$('#last-seen-slider').lightSlider({
 			slideMargin: 25,
 			item: 4,
@@ -285,4 +299,19 @@ $('.add-to-fav').click(function(){
 		$('.filters-select-col').removeClass("active")
 		$(this).addClass("active")
 	})
+	//show menu parts
+$(window).scroll(function(){
+		var scrollTop = $('body').scrollTop();
+		if (window.location.pathname == '/catalog.html'){
+			var pos_top = $('.section-product-catalog').offset().top;
+		}
+		if(scrollTop > pos_top){
+			$(".parts-menu").addClass("active")
+		}
+		else {
+			$(".parts-menu").removeClass("active")
+		}
+
+	});
+
 });
