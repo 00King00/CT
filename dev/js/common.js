@@ -29,14 +29,17 @@ $('.add-to-fav').click(function(){
 });
 
 //
-$('.right-side>.second-line>.menu>ul>li').click(function(e){
-	if(e.target.nodeName == "A" || e.target.className=="sub-list"){
-		return false;
-	} else{
-		$(this).toggleClass('open');
-	}
-	$(this).find(".sub-menu").slideToggle();
+$('.right-side>.second-line>.menu>ul>li').mouseover(function(e){
+	$(this).addClass('open');
+	// if(e.target.nodeName == "A" || e.target.className=="sub-list"){
+	// 	return false;
+	// } else{
+	// 	$(this).toggleClass('open');
+	// }
+	$(this).find(".sub-menu").slideDown();
 })
+
+//
 	var last_seen_slider=$('#last-seen-slider').lightSlider({
 			slideMargin: 25,
 			item: 4,
@@ -284,4 +287,19 @@ $('.right-side>.second-line>.menu>ul>li').click(function(e){
 		$('.filters-select-col').removeClass("active")
 		$(this).addClass("active")
 	})
+	//show menu parts
+$(window).scroll(function(){
+		var scrollTop = $('body').scrollTop();
+		if (window.location.pathname == '/catalog.html'){
+			var pos_top = $('.section-product-catalog').offset().top;
+		}
+		if(scrollTop > pos_top){
+			$(".parts-menu").addClass("active")
+		}
+		else {
+			$(".parts-menu").removeClass("active")
+		}
+
+	});
+
 });
