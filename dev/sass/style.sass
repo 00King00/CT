@@ -262,14 +262,17 @@ h3.text
 		.separate
 			margin: 0 5px
 .header-bottom
-	padding: 20px 0
+	padding: 20px 0 0 0
 	.logo
 		float: left
 		margin:
 			right: 10px
+			bottom: 20px
+		+breakpoint(mobileonly)
 		+breakpoint(phablet)
 			margin-right: 20px
 		+breakpoint(laptop)
+			margin-bottom: 0px
 			margin-right: 50px
 .right-side
 	.first-line
@@ -329,15 +332,21 @@ h3.text
 					font: 600 12px/16px $roboto
 					color: #1a1818
 					// cursor: pointer
+					+breakpoint(phablet)
+						padding-bottom: 20px
 					+breakpoint(laptop)
 						margin-right: 45px
+
 					&:hover
-						ul
-							display: block
 						&:after
 							-webkit-transform: rotate(-135deg)
 							-ms-transform: rotate(-135deg)
 							transform: rotate(-135deg)
+						ul
+							display: block
+							li
+								&:hover
+									color: #1a1818
 					&:after
 						border-bottom: 1px solid #1a1818
 						border-right: 1px solid #1a1818
@@ -348,7 +357,7 @@ h3.text
 						pointer-events: none
 						position: absolute
 						right: -12px
-						top: 50%
+						top: 9px
 						-webkit-transform-origin: 66% 66%
 						-ms-transform-origin: 66% 66%
 						transform-origin: 66% 66%
@@ -358,16 +367,11 @@ h3.text
 						-webkit-transition: all 0.15s ease-in-out
 						transition: all 0.15s ease-in-out
 						width: 5px
-					&.open
-						&:after
-							-webkit-transform: rotate(-135deg)
-							-ms-transform: rotate(-135deg)
-							transform: rotate(-135deg)
-					&:hover
-						&::after
-							//transform: rotate(-135deg)
-						.sub-menu
-							display: block
+					// &.open
+					// 	&:after
+					// 		-webkit-transform: rotate(-135deg)
+					// 		-ms-transform: rotate(-135deg)
+					// 		transform: rotate(-135deg)
 			.sub-menu
 				display: none
 				width: 190px
