@@ -84,12 +84,11 @@ h3.text
 		width: 320px
 		padding: 15px
 	&_show-more
-		display: block
+		display: inline-block
 		margin: 10px auto
 		margin-bottom: 45px
 		text-align: center
-		width: 270px
-		height: 50px
+		padding: 0px 65px 0px 30px
 		background: #f57812
 		color: #fff
 		font: 400 14px/50px $roboto
@@ -102,7 +101,7 @@ h3.text
 				transition: 1s all ease
 		img
 			margin: 0 5px
-			margin-right: 40px
+			margin-right: 30px
 			vertical-align: middle
 			transition: 1s all ease
 		span
@@ -789,6 +788,10 @@ h3.text
 	&.fixed
 		position: fixed
 		top: 0
+		left: 0
+		right: 0
+		z-index: 10
+		padding: 16px 0 0 55px
 
 	li
 		text-transform: uppercase
@@ -2013,3 +2016,4 @@ input[type="radio"]
 			margin-left: 30px
 .border-transparent
 	border: 1px solid transparent
+	text-align: center
