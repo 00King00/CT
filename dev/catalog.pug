@@ -62,6 +62,37 @@ html
 			+parts-menu-item('images/photo/parts-menu_07.png', 'Прочие элементы')
 		.section-product-catalog
 			.wrapper
+				.filters-select
+					.filters-select__left
+						select(name="materials")
+							option(selected) Материал
+							option Материал 2017
+							option Материал 2016
+							option Материал 2015
+						input(type="number" placeholder="Цена от" min="0")
+						input(type="number" placeholder="Цена до" min="0")
+						select(name="brands")
+							option(selected) Бренд
+							option Бренд 1 
+							option Бренд 2
+							option Бренд 3
+					.filters-select__center
+						.show-3
+							span
+							span
+							span
+						.show-4.active
+							span
+							span
+							span
+							span
+					.filters-select__right
+						span.label Сортировать по:
+						select(name="general")
+							option(selected) Рекомендуемое
+							option Рекомендуемое 1 
+							option Рекомендуемое 2
+							option Рекомендуемое 3
 				.title Каталог товаров
 				.row.clearfix
 					mixin product(imgUrl)
