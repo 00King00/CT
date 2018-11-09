@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
 $('select').niceSelect();
 // pgs-panel
 
@@ -285,6 +286,9 @@ $('.add-to-fav').click(function(){
 		$(this).addClass("active")
 	})
 	//show menu parts
+	if (window.location.pathname == '/product_card.html'){
+		var menu_pos = $('.product_card-menu').offset().top + 50;
+	}
 $(window).scroll(function(){
 		var scrollTop = $('body').scrollTop();
 		if (window.location.pathname == '/catalog.html'){
@@ -296,7 +300,27 @@ $(window).scroll(function(){
 		else {
 			$(".parts-menu").removeClass("active")
 		}
-
+		if(scrollTop > menu_pos){
+			$(".product_card-menu").addClass("fixed")
+		}
+		else {
+			$(".product_card-menu").removeClass("fixed")
+		}
 	});
 
+	// scroll to anchor
+
+	$(".product_card-menu").on("click","a", function (event) {
+		//отменяем стандартную обработку нажатия по ссылке
+		event.preventDefault();
+
+		//забираем идентификатор бока с атрибута href
+		var id  = $(this).attr('href'),
+
+		//узнаем высоту от начала страницы до блока на который ссылается якорь
+			top = $(id).offset().top - 50;
+
+		//анимируем переход на расстояние - top за 1500 мс
+		$('body,html').animate({scrollTop: top}, 1500);
+	});
 });
