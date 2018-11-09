@@ -28,18 +28,6 @@ $('.add-to-fav').click(function(){
 	$(this).toggleClass('active')
 });
 
-//
-$('.right-side>.second-line>.menu>ul>li').mouseover(function(e){
-	$(this).addClass('open');
-	// if(e.target.nodeName == "A" || e.target.className=="sub-list"){
-	// 	return false;
-	// } else{
-	// 	$(this).toggleClass('open');
-	// }
-	$(this).find(".sub-menu").slideDown();
-})
-
-//
 	var last_seen_slider=$('#last-seen-slider').lightSlider({
 			slideMargin: 25,
 			item: 4,
@@ -228,20 +216,29 @@ $('.right-side>.second-line>.menu>ul>li').mouseover(function(e){
 		  }
   });
 	//product_card script
-	$("body").click(fixMenuBar)
-	function fixMenuBar(){
-		var heightMenu = window.innerHeight - document.querySelector(".product_card-menu").getBoundingClientRect().bottom + "px";
-		var menuPosition = document.querySelector(".product_card-menu").getBoundingClientRect().top;
-		console.log("menuPosition: " + menuPosition)
-		console.log("heightMenu: " + heightMenu)
-			// if(scrolTop>=41){
-			// 	$(".product_card-menu").addClass("fixed");
-			// 	$('body').addClass("scroll_padding-top")
-			// } else {
-			// 	$(".header-bottom").removeClass("fixed");
-			// 	$('body').removeClass("scroll_padding-top")
-			//
+	//$("body").click(fixMenuBar)
+	$(window).scroll(function(){
+			// var menuPosition = +document.querySelector(".product_card-menu").getBoundingClientRect().top;
+			// var elem = $(".product_card-menu");
+			// if( menuPosition <= -45 && !elem.hasClass('fixed')){
+			// 	elem.addClass("fixed");
+			// }else {
+			// 	elem.removeClass("fixed");
 			// }
+	});
+	function fixMenuBar(){
+		//var heightMenu = window.innerHeight - document.querySelector(".product_card-menu").getBoundingClientRect().bottom + "px";
+
+		console.log("menuPosition: " + menuPosition)
+		//console.log("heightMenu: " + heightMenu)
+			if( menuPosition <= -45){
+				$(".product_card-menu").addClass("fixed");
+
+			} else {
+				$(".product_card-menu").removeClass("fixed");
+
+
+			}
 	}
 	$(".flex-column__thumbnail .fancybox").mouseover(function(){
 		var src = $(this).prop('href');

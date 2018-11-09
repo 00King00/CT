@@ -8,15 +8,18 @@
 						each item in items
 							li
 								a(href="#")= item
-				+footer__list('Внешний Тюнинг', 'Обвесы', 'Решетки радиатора', 'Капоты - тюнинговые', 'Зеркала - боковые', 'Ручки дверей', 'Рейлинги и Поперечины', 'Прочие элементы ')
-				.footer__title Тюнинг Салона
-			.flex-column
-				+footer__list('Автомобильное освещение', 'Передние - стандарт','Передние - альтернатива', 'Задние - стандарт З','Задние - альтернатива','Повторители - поворота','Противотуманные фары', 'Накладки - на фары')
+				.footer__title
+					a(href="#") Внешний Тюнинг
+				.footer__title
+					a(href="#") Автомобильное освещение
+				.footer__title
+					a(href="#") Тюнинг Салона 
 			.flex-column
 				+footer__list('Информация','О компании', 'Доставка и оплата', 'Отзывы', 'Гарантии', 'Контакты')
 			.flex-column.flex-column_grid-row
 				.footer__title Мы в социальных сетях
-				.footer__widget.footer__list widget here
+				.footer__widget.footer__list
+					img(src="images/widget.png")
 				.flex-column.hide-laptop
 					.footer__title Контакты
 					.footer__list
@@ -44,6 +47,8 @@
 				.contacts-info г.Москва, ул. Петровка,
 					br
 					|д. 38, оф.4
+		.footer__payment.show-tablet
+			img(src="images/footer-payment.png")
 hr
 .wrapper
 	.footer-rights Copyright © 2003-2018 CARiD.com.
