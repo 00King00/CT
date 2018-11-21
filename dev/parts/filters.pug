@@ -3,62 +3,38 @@
 		.filters__close-btn.hide-tablet
 			img(src="images/remove_item.png", alt="Спрятать фильтр")
 		.filter__block.filter__block_top
-			.filter__block__name  Department
+			.filter__block__name  Тип кузова
 			.filter__block__item
 				input(type="checkbox" name="s1", id="chkbox1")
 				label(for="chkbox1")
-					span Exterior Accessories
+					span Седан
 			.filter__block__item
 				input(type="checkbox" name="s2", id="chkbox2")
 				label(for="chkbox2")
-					span Auto Body Parts
+					span Хетчбэк
 		.filter__block
-			.filter__block__name  FITMENT
+			.filter__block__name  Категория товара
 			.filter__block__item
 				input(type="checkbox", name="s4", id="chkbox4")
 				label(for="chkbox4")
-					span Vehicle Specific
+					span Левая
 			.filter__block__item
 				input(type="checkbox" name="s5", id="chkbox5")
 				label(for="chkbox5")
-					span Universal Fit
-			.filter__block__item
-				input(type="checkbox" name="s6", id="chkbox6")
-				label(for="chkbox6")
-					span Custom Built
+					span Правая
 		.filter__block
-			.filter__block__name price
-			.filter__block__item
-				input(type="checkbox" name="s7", id="chkbox7")
-				label(for="chkbox7")
-					span < 50
-			.filter__block__item
-				input(type="checkbox" name="s8", id="chkbox8")
-				label(for="chkbox8")
-					span 50-100
-			.filter__block__item
-				input(type="checkbox" name="s9", id="chkbox9")
-				label(for="chkbox9")
-					span 100-300
-			.filter__block__item
-				input(type="checkbox" name="s10", id="chkbox10")
-				label(for="chkbox10")
-					span 300-500
-			.filter__block__item
-				input(type="checkbox" name="s11", id="chkbox11")
-				label(for="chkbox11")
-					span 500-700
+			.filter__block__name Цена,руб.
 			.filter__block__item
 				.price-filter
 					form
-						input(type="text",name="price-from")
+						input(type="text",name="price-from", placeholder="от")
 						span.separate &mdash;
-						input(type="text",name="price-to")
+						input(type="text",name="price-to", placeholder="до")
 						button(type="submit") ОК
 		.filter__block
-			.filter__block__name brand
+			.filter__block__name Бренд
 			.filter__block__item
-				input(type="search" name="brand")
+				input(type="search" name="brand", placeholder="Введите название")
 			.filter__block__item
 				input(type="checkbox" name="s12", id="chkbox12")
 				label(for="chkbox12")
@@ -74,7 +50,7 @@
 			.filter__block__item
 				input(type="checkbox" name="s15", id="chkbox15")
 				label(for="chkbox15")
-					span Advanced Fiberglass Concepts
+					span AFCO
 			.filter__block__item
 				input(type="checkbox" name="s16", id="chkbox16")
 				label(for="chkbox16")
@@ -111,3 +87,9 @@
 				input(type="checkbox" name="s24", id="chkbox24")
 				label(for="chkbox24")
 					span All-Fit Automotive
+		.filter__block
+			.filter__block__name Рейтинг
+			.filter__block__item
+				.rating
+					.rating-hover
+					input(type="hidden" name="rating" value="")

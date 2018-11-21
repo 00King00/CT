@@ -62,65 +62,56 @@ html
 			+parts-menu-item('images/photo/parts-menu_07.png', 'Прочие элементы')
 		.section-product-catalog
 			.wrapper
-				.filters-select
-					.filters-select__left
-						select(name="materials")
-							option(selected) Материал
-							option Материал 2017
-							option Материал 2016
-							option Материал 2015
-						input(type="number" placeholder="Цена от" min="0")
-						input(type="number" placeholder="Цена до" min="0")
-						select(name="brands")
-							option(selected) Бренд
-							option Бренд 1 
-							option Бренд 2
-							option Бренд 3
-					.filters-select__center
-						.show-3
-							span
-							span
-							span
-						.show-4.active
-							span
-							span
-							span
-							span
-					.filters-select__right
-						span.label Сортировать по:
-						select(name="general")
-							option(selected) Рекомендуемое
-							option Рекомендуемое 1 
-							option Рекомендуемое 2
-							option Рекомендуемое 3
 				.title Каталог товаров
 				.row.clearfix
-					mixin product(imgUrl)
-						.col-phablet-1-2.col-tablet-1-3.col-laptop-1-4
-							.product
-								a(href="#").product__pic
-									img(src=imgUrl, alt="icon")
-								.product__info
-									.product__rating
-										i.fa.fa-star
-										i.fa.fa-star
-										i.fa.fa-star
-										i.fa.fa-star
-										i.fa.fa-star
-									a(href="#").product__name
-										|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
-									.product__price
-										span 24 500
-										i "
-									.add-to-fav
-									.add-to-cart
-					+product("images/photo/product_04.png")
-					+product("images/photo/product_02.png")
-					+product("images/photo/product_03.png")
-					+product("images/photo/product_01.png")
-					+product("images/photo/product_02.png")
-					+product("images/photo/product_04.png")
-					+product("images/photo/product_02.png")
-					+product("images/photo/product_03.png")
+					.col-laptop-1-6.no-padding-right
+						include ./parts/filters.pug
+					.col-laptop-5-6
+						.filters-select
+							.filters-select__center
+								.show-3
+									span
+									span
+									span
+								.show-4.active
+									span
+									span
+									span
+									span
+							.filters-select__right
+								span.label Сортировать по:
+								select(name="general")
+									option(selected) Рекомендуемое
+									option Рекомендуемое 1 
+									option Рекомендуемое 2
+									option Рекомендуемое 3
+						.clearfix.filters-select-col
+							mixin product(url)
+								.col-phablet-1-3.col-tablet-1-4
+									.product.product_catalog
+										a(href="#").product__pic
+											img(src=url, alt="icon")
+										.product__info
+											.product__rating
+												i.fa.fa-star
+												i.fa.fa-star
+												i.fa.fa-star
+												i.fa.fa-star
+												i.fa.fa-star
+											a(href="#").product__name
+												|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
+											.product__price
+												span 24 500
+												i "
+											.add-to-fav
+											.add-to-cart
+							+product("images/photo/product_04.png")
+							+product("images/photo/product_02.png")
+							+product("images/photo/product_03.png")
+							+product("images/photo/product_01.png")
+							+product("images/photo/product_02.png")
+							+product("images/photo/product_04.png")
+							+product("images/photo/product_02.png")
+							+product("images/photo/product_03.png")
 		include ./parts/review-slider.pug
 		include ./parts/footer.pug

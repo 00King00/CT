@@ -66,6 +66,16 @@ h3.text
 	padding-top: 30px
 .btn
 	display: inline-block
+	&_add-photo
+		cursor: pointer
+		width: 100%
+		display: block
+		text-align: center
+		height: 35px
+		color: #f57812
+		font: 400 12px/35px $roboto
+		border: 1px solid #f57812
+		margin: 20px 0
 	&_login, &_register
 		margin: 0 -3px
 		border: 1px solid #d5d6dc
@@ -75,13 +85,15 @@ h3.text
 		font: 400 12px/28px $roboto
 	&_login
 		border-right: none
-	&_show-filter
+	&_buy
 		display: block
-		border: 1px solid #f57812
+		// border: 1px solid #f57812
+		background: #f57812
 		text-align: center
-		color: #353535
-		margin: 10px auto
-		width: 320px
+		color: #fff
+		border-radius: 3px
+		margin: 30px auto
+		width: 220px
 		padding: 15px
 	&_show-more
 		display: inline-block
@@ -518,15 +530,20 @@ h3.text
 	max-width: 276px
 	height: 355px
 	&_catalog
+		display: flex
+		flex-wrap: wrap
 		+breakpoint(tablet)
 			max-width: 100%
 			height: 355px
 			img
+				display: block
 				width: 100%
 	+breakpoint(mobileonly)
 		margin: 0 auto 30px auto
 	&:hover
 		box-shadow: 0px 9px 29px -5px rgba(0,0,0,0.5)
+	&__pic
+		flex-basis: 100%
 	&__info
 		position: relative
 		padding: 20px 20px 25px
@@ -544,6 +561,9 @@ h3.text
 		&:hover
 			color: #cf650f
 	&__price
+		position: absolute
+		bottom: 25px
+		display: inline-block
 		span
 			color: #1a1818
 			font: bold 16px/14px $roboto
@@ -789,10 +809,9 @@ h3.text
 	&.fixed
 		position: fixed
 		top: 0
-		left: 0
-		right: 0
+		width: 1280px
 		z-index: 10
-		padding: 16px 0 0 55px
+		padding: 16px 0 0 0px
 
 	li
 		text-transform: uppercase
@@ -843,8 +862,10 @@ h3.text
 		overflow: hidden
 		img
 			max-height: 100%
-
-
+	&_small
+		&:hover
+			color: #f57812
+			box-shadow: none
 #review-slider_wrapper
 	position: relative
 	&::after
@@ -920,8 +941,9 @@ h3.text
 	top: -3000px
 	transition: 1s all ease
 	&.active
-		top: 0
-		transition: 1s all ease
+		+breakpoint(laptop)
+			top: 0
+			transition: 1s all ease
 .parts-menu-item
 	margin: 10px 15px
 	&__img
@@ -946,9 +968,9 @@ h3.text
 	width: 320px
 	text-align: center
 	box-shadow: 0px 1px 3px 1px rgba(182,183,184,1)
-	padding: 50px
+	// padding: 50px
 	height: 100%
-	background: #fff
+	background: none
 	transition: all 0.4s ease
 	position: fixed
 	top: 0
@@ -973,7 +995,7 @@ h3.text
 		z-index: 4
 		visibility: visible
 		position: relative
-		padding: 30px 20px
+		padding: 30px 0px 30px 10px
 		box-shadow: none
 		margin-bottom: 50px
 	&__close-btn
@@ -982,7 +1004,7 @@ h3.text
 		top: 15px
 .filter__block
 	text-align: left
-	padding: 25px 0
+	padding: 25px 0 0 0
 	.price-filter
 		display: flex
 		align-items: center
@@ -992,26 +1014,29 @@ h3.text
 		width: 100%
 		outline: none
 		padding: 0 10px
+		margin-bottom: 10px
 		border: 1px solid #dadadc
 	input[type="text"]
-		height: 38px
+		height: 30px
 		padding: 0 10px
 		border: 1px solid #dadadc
 		outline: none
 		flex-grow: 2
 		display: inline-block
 		width: 50px
+		+breakpoint(laptop)
+			width: 45px
 		+breakpoint(desktop)
-			width: 75px
+			width: 55px
 	.separate
 		flex-grow: 1
 		margin: 0 5px
 		flex-grow: 1
 	button
-		height: 38px
+		height: 30px
 		background: #f57812
 		color: #fff
-		padding: 0 20px
+		padding: 0 15px
 		border-radius: 3px
 		border: none
 		margin-left: 10px
@@ -1034,7 +1059,7 @@ h3.text
 			color: #010101
 			margin-bottom: 30px
 	&__item
-		margin-bottom: 15px
+		margin-bottom: 5px
 		color: #5e5e5e
 		font-size: 14px
 		&:last-child
@@ -1190,7 +1215,7 @@ h3.text
 	color: #858585
 	font: 400 12px $roboto
 	margin-bottom: 10px
-.rating
+.product-card-rating
 	margin-bottom: 25px
 .comments
 	p
@@ -1436,6 +1461,10 @@ table.cart
 			margin-top: 5px
 			font-weight: normal
 			display: none
+		&_modal
+			display: block
+			text-transform: none
+			width: 200px !important
 	.index
 		width: 100%
 		+breakpoint(tablet)
@@ -1454,7 +1483,7 @@ input[type="checkbox"]
 	display: inline-block
 label
 	font: 400 12px/12px $roboto
-	margin-right: 25px
+	// margin-right: 25px
 	+breakpoint(mobileonly)
 		margin-right: 15px
 input[type="radio"]
@@ -1752,7 +1781,7 @@ input[type="checkbox"]
 	display: inline-block
 label
 	font: 400 12px/12px $roboto
-	margin-right: 25px
+	// margin-right: 25px
 	+breakpoint(mobileonly)
 		margin-right: 15px
 input[type="radio"]
@@ -1852,6 +1881,37 @@ input[type="radio"]
 	opacity: 1
 	background-color: white
 	position: relative
+	textarea
+		width: 100%
+		padding: 10px
+		outline: none
+		border: 1px solid #d3d3d3
+		height: 100px
+		resize: none
+	.input-wrap
+		input
+			width: 100%
+			border: 1px solid #d3d3d3
+		input[type="checkbox"]
+			width: 20px
+	.title
+		text-align: center
+		font: 600 36px/46px $roboto
+		letter-spacing: normal
+		margin: 0px auto
+		margin-bottom: 20px
+		&_rewiev
+			font: 600 24px/46px $roboto
+	.sub-title
+		max-width: 250px
+		margin-bottom: 30px
+	&_fast-order
+		padding: 30px 30px 10px 30px
+		position: relative
+		.close-btn
+			position: absolute
+			top: 10px
+			right: 10px
 .fast-cart
 	height: 509px
 	background: #fff
@@ -1946,7 +2006,7 @@ input[type="radio"]
 	align-items: center
 	margin-bottom: 35px
 	flex-wrap: wrap
-	padding-top: 55px
+	// padding-top: 55px
 	+breakpoint(tablet)
 		display: flex
 	+breakpoint(laptop)
@@ -1954,12 +2014,12 @@ input[type="radio"]
 
 	input, select
 		height: 40px
+		margin: 10px
 		border: solid 1px #d3d3d3
 		outline: none
 		padding: 10px
 		&::placeholder
 			color: #8b8b8b
-
 	input
 		width: 100px
 
@@ -1968,12 +2028,12 @@ input[type="radio"]
 		height: 40px
 		border: solid 1px #d3d3d3
 		width: 130px
-		margin: 0
+		margin: 10px
 		line-height: 40px
 		color: #8b8b8b
 	&__left
 		display: flex
-		justify-content: space-between
+		justify-content: left
 		align-items: center
 		flex-basis: 100%
 		margin-bottom: 20px
@@ -1988,8 +2048,10 @@ input[type="radio"]
 	&__center
 		display: none
 		+breakpoint(tablet)
+			margin-left: 10px
 			display: inline-block
 	&__right
+		margin-left: 10px
 		.label
 			color: #8b8b8b
 			font: 400 13px $roboto
@@ -2019,3 +2081,12 @@ input[type="radio"]
 	border: 1px solid transparent
 .text-align
 	text-align: center
+.rating
+	width: 128px
+	height: 21px
+	background: url(../images/rating.png)
+.rating-hover
+		margin-top: 0px
+		width: 0%
+		height: 21px
+		background: url(../images/rating.png) 0 -22px

@@ -13,7 +13,9 @@ $(window).resize(function(){
 	if (browserMinWidth >= 800){
 		$(".footer__list").show();
 	}
-
+	else {
+		$('.filters-select-col').removeClass("active")
+	}
 });
 $('.footer__title').click(function(){
 	var browserMinWidth = $(window).width();
@@ -24,6 +26,11 @@ $('.footer__title').click(function(){
 
 });
 // end for footer
+
+// input-mask
+	$('input[type="tel"]').inputmask('+7(999) 999 - 99 - 99');
+// end input-mask
+
 //add item to favorites
 $('.add-to-fav').click(function(){
 	$(this).toggleClass('active')
@@ -264,6 +271,12 @@ $('.add-to-fav').click(function(){
 			if (!elem.is(e.target) && elem.has(e.target).length === 0) elem.parent().removeClass('active');
 	});
 	//open modal window
+	$(".btn btn_left-comments").click(function(){
+		var browserMinWidth = window.innerWidth;
+		if (browserMinWidth >= 800){
+			$(".fixed-overlay.review-modal").addClass('active');
+		}
+	});
 	$(".btn_add-to-card").click(function(){
 		var browserMinWidth = window.innerWidth;
 		if (browserMinWidth >= 800){
@@ -273,6 +286,13 @@ $('.add-to-fav').click(function(){
 	$(".btn_left-comments").click(function(e){
 		e.preventDefault()
 		$(".fixed-overlay.form-label-modal").addClass('active');
+	});
+
+	$(".one-click-buy").click(function(){
+		var browserMinWidth = window.innerWidth;
+		if (browserMinWidth >= 800){
+			$(".fixed-overlay.fast-order-modal").addClass('active');
+		}
 	});
 	//change number column
 	$(".show-3").click(function(){
@@ -308,6 +328,7 @@ $(window).scroll(function(){
 		}
 	});
 
+
 	// scroll to anchor
 
 	$(".product_card-menu").on("click","a", function (event) {
@@ -323,4 +344,36 @@ $(window).scroll(function(){
 		//анимируем переход на расстояние - top за 1500 мс
 		$('body,html').animate({scrollTop: top}, 1500);
 	});
+		//this part for rating
+		$(".rating").mousemove(function(e){
+			if($(".rating").hasClass("rated")){
+				return false;
+			}
+			var offset = $(this).offset();
+			coords = e.pageX - offset.left;
+			var ratingWidth = $(this).width();
+			star = ratingWidth/5;
+			var rating = Math.round((coords+(star*0.25))/(star*0.5));
+			var stars_width =rating*10 + "%";
+
+			$(".rating-hover").css("width",stars_width);
+		});
+		$(".rating").mouseleave(function(){
+			if($(this).hasClass("rated")){
+				return false;
+			}
+			$(".rating-hover").css("width",0);
+		});
+		$(".rating").click(function(e){
+			var offset = $(this).offset();
+			coords = e.clientX - offset.left;
+			var ratingWidth = $(this).width();
+			star = ratingWidth/5;
+			var rating = Math.round((coords+(star*0.25))/(star*0.5));
+			var stars_width =rating*10 + "%";
+			$('.rating>input').attr('value',rating/2);
+			$(".rating-hover").css("width",stars_width);
+			$(this).addClass("rated")
+			console.log(rating);
+		});
 });
