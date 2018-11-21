@@ -95,6 +95,10 @@
     padding: 0;
     text-align: center;
 	margin-bottom: 40px;
+	@include breakpoint(mobileonly){
+        opacity: 0;
+		margin: 25px 0
+    }
 }
 .lSSlideOuter .lSPager.lSpg > li {
     cursor: pointer;
@@ -115,6 +119,8 @@
     z-index: 4;
     -webkit-transition: all 0.5s linear 0s;
     transition: all 0.5s linear 0s;
+
+
 
 
 }
