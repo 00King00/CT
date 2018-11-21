@@ -561,6 +561,9 @@ h3.text
 		&:hover
 			color: #cf650f
 	&__price
+		position: absolute
+		bottom: 25px
+		display: inline-block
 		span
 			color: #1a1818
 			font: bold 16px/14px $roboto
@@ -806,7 +809,7 @@ h3.text
 	&.fixed
 		position: fixed
 		top: 0
-		width: 1180px
+		width: 1280px
 		z-index: 10
 		padding: 16px 0 0 0px
 
@@ -849,7 +852,7 @@ h3.text
 	display: block
 	color: inherit
 	&:hover
-		// box-shadow: 0px 9px 29px -5px rgba(0,0,0,0.5)
+		box-shadow: 0px 9px 29px -5px rgba(0,0,0,0.5)
 		color: #f57812
 	&__name
 		height: 40px
@@ -859,8 +862,10 @@ h3.text
 		overflow: hidden
 		img
 			max-height: 100%
-
-
+	&_small
+		&:hover
+			color: #f57812
+			box-shadow: none
 #review-slider_wrapper
 	position: relative
 	&::after
@@ -963,9 +968,9 @@ h3.text
 	width: 320px
 	text-align: center
 	box-shadow: 0px 1px 3px 1px rgba(182,183,184,1)
-	padding: 50px
+	// padding: 50px
 	height: 100%
-	background: #fff
+	background: none
 	transition: all 0.4s ease
 	position: fixed
 	top: 0
@@ -990,7 +995,7 @@ h3.text
 		z-index: 4
 		visibility: visible
 		position: relative
-		padding: 30px 20px
+		padding: 30px 0px 30px 10px
 		box-shadow: none
 		margin-bottom: 50px
 	&__close-btn
@@ -999,7 +1004,7 @@ h3.text
 		top: 15px
 .filter__block
 	text-align: left
-	padding: 25px 0
+	padding: 25px 0 0 0
 	.price-filter
 		display: flex
 		align-items: center
@@ -1009,26 +1014,29 @@ h3.text
 		width: 100%
 		outline: none
 		padding: 0 10px
+		margin-bottom: 10px
 		border: 1px solid #dadadc
 	input[type="text"]
-		height: 38px
+		height: 30px
 		padding: 0 10px
 		border: 1px solid #dadadc
 		outline: none
 		flex-grow: 2
 		display: inline-block
 		width: 50px
+		+breakpoint(laptop)
+			width: 45px
 		+breakpoint(desktop)
-			width: 75px
+			width: 55px
 	.separate
 		flex-grow: 1
 		margin: 0 5px
 		flex-grow: 1
 	button
-		height: 38px
+		height: 30px
 		background: #f57812
 		color: #fff
-		padding: 0 20px
+		padding: 0 15px
 		border-radius: 3px
 		border: none
 		margin-left: 10px
@@ -1051,7 +1059,7 @@ h3.text
 			color: #010101
 			margin-bottom: 30px
 	&__item
-		margin-bottom: 15px
+		margin-bottom: 5px
 		color: #5e5e5e
 		font-size: 14px
 		&:last-child
@@ -1475,7 +1483,7 @@ input[type="checkbox"]
 	display: inline-block
 label
 	font: 400 12px/12px $roboto
-	margin-right: 25px
+	// margin-right: 25px
 	+breakpoint(mobileonly)
 		margin-right: 15px
 input[type="radio"]
@@ -1773,7 +1781,7 @@ input[type="checkbox"]
 	display: inline-block
 label
 	font: 400 12px/12px $roboto
-	margin-right: 25px
+	// margin-right: 25px
 	+breakpoint(mobileonly)
 		margin-right: 15px
 input[type="radio"]
@@ -1875,8 +1883,11 @@ input[type="radio"]
 	position: relative
 	textarea
 		width: 100%
+		padding: 10px
+		outline: none
 		border: 1px solid #d3d3d3
 		height: 100px
+		resize: none
 	.input-wrap
 		input
 			width: 100%
@@ -1995,7 +2006,7 @@ input[type="radio"]
 	align-items: center
 	margin-bottom: 35px
 	flex-wrap: wrap
-	padding-top: 55px
+	// padding-top: 55px
 	+breakpoint(tablet)
 		display: flex
 	+breakpoint(laptop)
