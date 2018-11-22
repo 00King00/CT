@@ -706,9 +706,10 @@ h3.text
 		letter-spacing: 4px
 		margin-bottom: 50px
 .flex-container
-	display: flex
-	flex-wrap: wrap
-	justify-content: space-between
+	+breakpoint(laptop)
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
 	&.column
 		flex-direction: column
 	&.no-wrap
