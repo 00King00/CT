@@ -27,23 +27,24 @@ html
 						option 2013
 						option 2014
 					button(type="submit") Найти
-		.main-menu
-			a(href="#").menu__item
-				.menu__item__icon
-					img(src="images/photo/main-menu-icon_01.png", alt="icon")
-				.menu__item__name
-					|Внешний Тюнинг
-			a(href="#").menu__item
-				.menu__item__icon
-					img(src="images/photo/main-menu-icon_02.png", alt="icon")
-				.menu__item__name
-					|Тюнинг Салона
-			a(href="#").menu__item
-				.menu__item__icon
-					img(src="images/photo/main-menu-icon_03.png", alt="icon")
-				.menu__item__name
-					|Автомобильное освещение
+		//- .main-menu
+		//- 	a(href="#").menu__item
+		//- 		.menu__item__icon
+		//- 			img(src="images/photo/main-menu-icon_01.png", alt="icon")
+		//- 		.menu__item__name
+		//- 			|Внешний Тюнинг
+		//- 	a(href="#").menu__item
+		//- 		.menu__item__icon
+		//- 			img(src="images/photo/main-menu-icon_02.png", alt="icon")
+		//- 		.menu__item__name
+		//- 			|Тюнинг Салона
+		//- 	a(href="#").menu__item
+		//- 		.menu__item__icon
+		//- 			img(src="images/photo/main-menu-icon_03.png", alt="icon")
+		//- 		.menu__item__name
+		//- 			|Автомобильное освещение
 		.wrapper
+			.section__title.section__title_news Новинки
 			.clearfix.brands
 				.col-tablet-1-3.col-phablet-1-2
 					a(href="#").brand
@@ -74,6 +75,7 @@ html
 								|Truck bed equipment unmatched in functionality and security.0
 		.section-catalog
 			.wrapper
+				.section__title Выбор категорий тюнинга
 				.tabs
 					ul.tabs__caption
 						li.active
@@ -97,26 +99,26 @@ html
 											img(src=url)
 										.catalog-item__name= name
 										.catalog-item__sub-text= text
-							+catalog-item('images/photo/outdoor-tuning_01.png', 'Обвесы',"Заводские, Альтернатиыне, LED copy 4")
-							+catalog-item('images/photo/outdoor-tuning_02.png', 'Решетки радиатора',"Заводские, Альтернатиыне, LED copy 4")
-							+catalog-item('images/photo/outdoor-tuning_03.png', 'Капоты - тюнинговые',"Заводские, Альтернатиыне, LED copy 4")
-							+catalog-item('images/photo/outdoor-tuning_04.png', 'Зеркала - боковые',"Заводские, Альтернатиыне, LED copy 4")
-							+catalog-item('images/photo/outdoor-tuning_05.png', 'Ручки дверей',"Заводские, Альтернатиыне, LED copy 4")
-							+catalog-item('images/photo/outdoor-tuning_06.png', 'Рейлинги и Поперечины',"Заводские, Альтернатиыне, LED copy 4")
-							+catalog-item('images/photo/outdoor-tuning_07.png', 'Прочие элементы',"Заводские, Альтернатиыне, LED copy 4")
+							+catalog-item('images/photo/outdoor-tuning/outdoor-tuning_01.png', 'Обвесы',"Заводские, Альтернатиыне, LED")
+							+catalog-item('images/photo/outdoor-tuning/outdoor-tuning_02.png', 'Решетки радиатора',"Заводские, Альтернатиыне, LED")
+							+catalog-item('images/photo/outdoor-tuning/outdoor-tuning_03.png', 'Капоты - тюнинговые',"Заводские, Альтернатиыне, LED")
+							+catalog-item('images/photo/outdoor-tuning/outdoor-tuning_04.png', 'Зеркала - боковые',"Заводские, Альтернатиыне, LED ")
+							+catalog-item('images/photo/outdoor-tuning/outdoor-tuning_05.png', 'Ручки дверей',"Заводские, Альтернатиыне, LED")
+							+catalog-item('images/photo/outdoor-tuning/outdoor-tuning_06.png', 'Рейлинги и Поперечины',"Заводские, Альтернатиыне, LED")
+							+catalog-item('images/photo/outdoor-tuning/outdoor-tuning_07.png', 'Прочие элементы',"Заводские, Альтернатиыне, LED")
 					.tabs__content
 						.row.clearfix
-							+catalog-item('images/photo/lighting/lighting_01.png', 'Передние фары',"Заводские, Альтернатиыне, LED copy 4")
-							+catalog-item('images/photo/lighting/lighting_03.png', 'Задние фары',"Заводские, Альтернатиыне, LED copy 4")
-							+catalog-item('images/photo/lighting/lighting_05.png', 'Поворотники',"Заводские, Альтернатиыне, LED copy 4")
-							+catalog-item('images/photo/lighting/lighting_06.png', 'Противотуманные',"Заводские, Альтернатиыне, LED copy 4")
-							+catalog-item('images/photo/lighting/lighting_05.png', 'Сигнальный свет',"Заводские, Альтернатиыне, LED copy 4")
+							+catalog-item('images/photo/lighting/lighting_01.png', 'Передние фары',"Заводские, Альтернатиыне, LED")
+							+catalog-item('images/photo/lighting/lighting_03.png', 'Задние фары',"Заводские, Альтернатиыне, LED")
+							+catalog-item('images/photo/lighting/lighting_08.png', 'Поворотники',"Заводские, Альтернатиыне, LED")
+							+catalog-item('images/photo/lighting/lighting_06.png', 'Противотуманные',"Заводские, Альтернатиыне, LED")
+							+catalog-item('images/photo/lighting/lighting_05.png', 'Сигнальный свет',"Заводские, Альтернатиыне, LED")
 							
 					.tabs__content
 						.row.clearfix
-							+catalog-item('images/photo/outdoor-tuning_01.png', 'Панель приборов','Сигнальный свет',"Заводские, Альтернатиыне, LED copy 4")
-							+catalog-item('images/photo/main-menu-icon_02.png', 'Элементы салона','Сигнальный свет',"Заводские, Альтернатиыне, LED copy 4")
-							+catalog-item('images/photo/outdoor-tuning_01.png', 'Обивка потолка','Сигнальный свет',"Заводские, Альтернатиыне, LED copy 4")
+							+catalog-item('images/photo/indoor-tuning/indoor-tuning_01.png', 'Панель приборов','Сигнальный свет',"Заводские, Альтернатиыне, LED")
+							+catalog-item('images/photo/indoor-tuning/indoor-tuning_02.png', 'Элементы салона','Сигнальный свет',"Заводские, Альтернатиыне, LED")
+							+catalog-item('images/photo/indoor-tuning/indoor-tuning_03.png', 'Обивка потолка','Сигнальный свет',"Заводские, Альтернатиыне, LED")
 		include ./parts/review-slider.pug
 				
 		.last-seen
