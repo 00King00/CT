@@ -29,47 +29,24 @@ html
 						option Универсал
 					button(type="submit") Найти
 		.section-product-items
-			.catalog-router
-				.wrapper
-					ul.breadcrumbs.left
-						li
-							a(href="#") Главная
-						li
-							a(href="#") Аэродинамические Обвесы
-						li
-							a(href="#") Вся продукция
-					.catalog-router__container
-						ul.catalog-router__route
-							li
-								a(href="#") Аэродинамеческие обвесы
-							li
-								a(href="#") Навестные элементы
-						.btn.btn_change Изменить транспорт
 			.wrapper
-				.title Категории
-				.clearfix
-					mixin product-item(imgUrl,name, text)
-						.col-mobileonly-1-2.col-phablet-1-3.col-tablet-1-4.col-laptop-1-5.col-desktop-1-6.padding-off
+				.row.clearfix
+					mixin product-item(imgUrl,name)
+						.col-mobileonly-1-2.col-phablet-1-3.col-tablet-1-4.col-laptop-1-5
 							a.product-item(href="#")
 								.product-item__img
 									img(src=imgUrl)
 								.product-item__name= name
-								.product-item__sub-text= text
-									
-					+product-item("images/photo/body-elements/body-element_01.png", "Бамперы", "Передние, задние")
-					+product-item("images/photo/body-elements/body-element_03.png", "Губа бампера", "Клыки, губы, юбки")
-					+product-item("images/photo/body-elements/body-element_04.png", "Диффузоры", "Задний бампер")
-					+product-item("images/photo/body-elements/body-element_06.png", "Пороги", "Наружные и вкладные")
-					+product-item("images/photo/body-elements/body-element_05.png", "Спойлеры", "Антикрылья, спойлеры, накладки")
-					+product-item("images/photo/body-elements/body-element_07.png", "Крылья", "Завод и кастом")
-					+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
-					+product-item("images/photo/body-elements/body-element_09.png", "Молдинги", "Накладки кузова")
-					+product-item("images/photo/body-elements/body-element_10.png", "Накладки - на фары", "Реснички")
-					+product-item("images/photo/body-elements/body-element_11.png", "Накладки остальные", "Арки, жабры, вставки бампера")
-					+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
-					+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
-					+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
-					+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
+					+product-item("images/photo/body-elements/body-element_01.png", "Бамперы")
+					+product-item("images/photo/body-elements/body-element_02.png", "Накладки и Сетки - бампера")
+					+product-item("images/photo/body-elements/body-element_03.png", "Губа - передний бампер")
+					+product-item("images/photo/body-elements/body-element_04.png", "Диффузоры - задний бампер")
+					+product-item("images/photo/body-elements/body-element_05.png", "Спойлеры и дефлекторы")
+					+product-item("images/photo/body-elements/body-element_06.png", "Пороги")
+					+product-item("images/photo/body-elements/body-element_07.png", "Крылья")
+					+product-item("images/photo/body-elements/body-element_08.png", "Накладки - на арки")
+					+product-item("images/photo/body-elements/body-element_09.png", "Накладки - боковые")
+					+product-item("images/photo/body-elements/body-element_10.png", "Накладки - на фары")
 		.parts-menu
 			mixin parts-menu-item(url, name)
 				a.parts-menu-item(href="#")
@@ -127,7 +104,7 @@ html
 												span 24 500
 												i "
 											.add-to-fav
-											.add-to-cart
+										.add-to-cart
 							+product("images/photo/product_04.png")
 							+product("images/photo/product_02.png")
 							+product("images/photo/product_03.png")
@@ -136,104 +113,5 @@ html
 							+product("images/photo/product_04.png")
 							+product("images/photo/product_02.png")
 							+product("images/photo/product_03.png")
-	include ./parts/review-slider.pug
-	.last-seen
-		.wrapper
-			.title.off-margin
-				|просмотренные товары
-			.slider-arrows
-				.slider_controls#last-seen
-					span.icon.ls-prevSlide
-					span.icon.ls-nextSlide
-			ul#last-seen-slider
-				li
-					.product
-						a(href="#").product__pic
-							img(src="images/photo/product_03.png", alt="icon")
-						.product__info
-							.product__rating
-								i.fa.fa-star
-								i.fa.fa-star
-								i.fa.fa-star
-								i.fa.fa-star
-								i.fa.fa-star.grey
-							a(href="#").product__name
-								|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
-							.product__price
-								span 24 500
-								i "
-							.add-to-fav
-							.add-to-cart
-				li
-					.product
-						a(href="#").product__pic
-							img(src="images/photo/product_01.png", alt="icon")
-						.product__info
-							.product__rating
-								i.fa.fa-star
-								i.fa.fa-star
-								i.fa.fa-star
-								i.fa.fa-star.grey
-								i.fa.fa-star.grey
-							a(href="#").product__name
-								|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
-							.product__price
-								span 24 500
-								i "
-							.add-to-fav
-							.add-to-cart
-				li
-					.product
-						a(href="#").product__pic
-							img(src="images/photo/product_02.png", alt="icon")
-						.product__info
-							.product__rating
-								i.fa.fa-star
-								i.fa.fa-star
-								i.fa.fa-star
-								i.fa.fa-star
-								i.fa.fa-star.grey
-							a(href="#").product__name
-								|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
-							.product__price
-								span 24 500
-								i "
-							.add-to-fav
-							.add-to-cart
-				li
-					.product
-						a(href="#").product__pic
-							img(src="images/photo/product_04.png", alt="icon")
-						.product__info
-							.product__rating
-								i.fa.fa-star
-								i.fa.fa-star
-								i.fa.fa-star
-								i.fa.fa-star
-								i.fa.fa-star
-							a(href="#").product__name
-								|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
-							.product__price
-								span 24 500
-								i "
-							.add-to-fav
-							.add-to-cart
-				li
-					.product
-						a(href="#").product__pic
-							img(src="images/photo/product_03.png", alt="icon")
-						.product__info
-							.product__rating
-								i.fa.fa-star
-								i.fa.fa-star
-								i.fa.fa-star
-								i.fa.fa-star
-								i.fa.fa-star.grey
-							a(href="#").product__name
-								|Задние фонари "BP" (диодные, красные/белые) для ВАЗ 2108, 2109, 2099 и 2113, 2114
-							.product__price
-								span 24 500
-								i "
-							.add-to-fav
-							.add-to-cart
+
 	include ./parts/footer.pug
