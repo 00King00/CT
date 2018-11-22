@@ -634,9 +634,12 @@ h3.text
 	&.show-laptop
 		+breakpoint(laptop)
 			display: flex
-
+.contacts-box
+	margin-top: 15px
+	+breakpoint(laptop)
+		display: none
 .contacts-phone
-	font:  600 14px $roboto
+	font:  600 21px $roboto
 	font-weight: bold
 	span
 		vertical-align: middle
@@ -646,6 +649,7 @@ h3.text
 			line-height: 1.2!important
 		+breakpoint(laptop)
 			line-height: inherit
+			font-size: 14px
 
 
 	+breakpoint(tablet)
@@ -657,24 +661,22 @@ h3.text
 	+breakpoint(laptop)
 		margin-bottom: 12px
 .contacts-info
-	text-align: right
+
 	font:  300 12px/1.5 $roboto
 	color: #717171
-	margin-bottom: 12px
+	margin-bottom: 8px
 	&:last-child
 		margin-bottom: 25px
-	+breakpoint(tablet)
-		margin-bottom: 0
+
 	+breakpoint(laptop)
 		margin-bottom: inherit
 .contacts-email
-	text-align: right
+
 	display: block
 	font:  400 12px $roboto
 	color: #717171
-	margin: 0 0 5px 0
-	+breakpoint(tablet)
-		margin: 0
+	margin: 0 0 15px 0
+
 	+breakpoint(laptop)
 		margin: 15px 0 25px 0
 .right-laptop
@@ -691,7 +693,7 @@ h3.text
 .footer
 	text-align: center
 	padding-top: 35px
-	+breakpoint(tablet)
+	+breakpoint(laptop)
 		text-align: left
 	&__payment
 		margin-bottom: 25px
@@ -702,21 +704,31 @@ h3.text
 		font-weight: bold
 		margin-bottom: 15px
 		cursor: pointer
+		&.show-laptop
+			display: none
+			+breakpoint(laptop)
+				display: block
+		+breakpoint(laptop)
+			display: block
 	.flex-column
 		flex-grow: 1
 		flex-basis: 100%
 		+breakpoint(tablet)
-			flex-basis: auto
+			//flex-basis: auto
 			&_grid-row
 				flex-grow: 4
-				text-align: right
+				text-align: center
 				+breakpoint(laptop)
 						text-align: left
 						margin-left: 20px
-
+		+breakpoint(laptop)
+			flex-basis: auto
 	&__list
 		font:  300 12px $roboto
 		display: none
+		&.footer__widget
+			margin-bottom: 20px
+			display: block
 		li:last-child
 			padding-bottom: 30px
 			display: block
@@ -755,7 +767,6 @@ h3.text
 		background: #cbcbcb
 .slider-arrows
 	.slider_controls
-		//top: -90px
 		top: -45px
 		position: relative
 		width: 100%
@@ -797,30 +808,58 @@ h3.text
 	margin-top: 40px
 
 	&__content.active
-	  display: block
+		display: block
+		+breakpoint(mobileonly)
+			[class*='col-']
+				padding: 0 3px
+	&__title
+		text-align: center
+		padding-bottom: 20px
+		+breakpoint(mobileonly)
+			display: inline-block
+			padding: 5
 
+	&__img
+		height: 100px
+		display: flex
+		align-items: center
+		justify-content: center
+		+breakpoint(mobileonly)
+			display: none
 	&__caption
 		border-bottom: 1px solid #cbcbcb
 		cursor: pointer
 		margin-bottom: 30px
+		display: flex
+		justify-content: space-around
+		+breakpoint(mobileonly)
+			flex-wrap: wrap
+			border: none
 		li
 			text-transform: uppercase
-			margin-bottom: 10px
 
-			+breakpoint(phablet)
-				padding-bottom: 17px
-				display: inline-block
-				margin-bottom: 0
+			text-align: center
+			+breakpoint(mobileonly)
+				flex-basis: 100%
+				margin-bottom: 10px
+
+			// +breakpoint(phablet)
+			// 	padding-bottom: 17px
+			// 	display: inline-block
+			// 	margin-bottom: 0
 			&.active
+				.tabs__title
+					+breakpoint(mobileonly)
+						border-bottom: 3px solid #f57812
 				+breakpoint(phablet)
 					border-bottom: 3px solid #f57812
-				+breakpoint(mobileonly)
+				//+breakpoint(mobileonly)
 					span
 						border-bottom: 3px solid #f57812
-			&:not(:last-child)
-				margin-right: 10px
-				+breakpoint(tablet)
-					margin-right: 30px
+			// &:not(:last-child)
+			// 	margin-right: 10px
+			// 	+breakpoint(tablet)
+			// 		margin-right: 30px
 .product_card-menu
 	padding: 65px 0 25px 0
 	font: 400 13px $roboto
@@ -853,17 +892,36 @@ h3.text
 	margin-bottom: 30px
 	display: block
 	color: black
+	+breakpoint(mobileonly)
+		margin-bottom: 6px
+		padding: 15px 5px
+		padding-bottom: 10px
 	&__img
 		height: 140px
 		margin-bottom: 25px
 		display: flex
 		justify-content: center
 		align-items: center
+		+breakpoint(mobileonly)
+			height: 60px
+			margin-bottom: 15px
+		img
+			height: inherit
 	&:hover
 		box-shadow: 0px 9px 29px -5px rgba(0,0,0,0.5)
-		color: #f57812
+		.catalog-item__name
+			color: #f57812
 	&__name
-		font-size: 16px
+		font-size: 14px
+		margin-bottom: 5px
+		+breakpoint(mobileonly)
+			font-size: 12px
+	&__sub-text
+		font-size: 12px
+		color: #7d7d7d
+		display: none
+		+breakpoint(phablet)
+			display: block
 .product-item
 	text-align: center
 	margin-bottom: 30px
@@ -888,6 +946,19 @@ h3.text
 			box-shadow: none
 #review-slider_wrapper
 	position: relative
+	.slider-arrows
+		float: right
+		width: 100%
+	.slider_controls
+		.ls-prevSlide,.ls-nextSlide
+			display: none
+		+breakpoint(mobileonly)
+			.ls-prevSlide,.ls-nextSlide
+				display: block
+			top: -70px
+			justify-content: center
+			.icon
+				margin: 0 5px
 	&::after
 		right: 0
 		content: ""

@@ -77,34 +77,46 @@ html
 				.tabs
 					ul.tabs__caption
 						li.active
-							span Внешний Тюнинг
+							.tabs__img
+								img(src="images/photo/main-menu-icon_01.png")
+							.tabs__title Внешний Тюнинг
 						li
-							span Автомобильное освещение
+							.tabs__img
+								img(src="images/photo/main-menu-icon_03.png")
+							.tabs__title Автосвет
 						li
-							span Тюнинг Салона
+							.tabs__img
+								img(src="images/photo/main-menu-icon_02.png")
+							.tabs__title Тюнинг Салона
 					.tabs__content.active
 						.row.clearfix
-							mixin catalog-item(url, name)
-								.col-phablet-1-2.col-table-1-3.col-laptop-1-4
+							mixin catalog-item(url, name, text)
+								.col-mobileonly-1-2.col-phablet-1-2.col-table-1-3.col-laptop-1-4
 									a.catalog-item(href="#")
 										.catalog-item__img
 											img(src=url)
 										.catalog-item__name= name
-							+catalog-item('images/photo/outdoor-tuning_01.png', 'Обвесы')
-							+catalog-item('images/photo/outdoor-tuning_02.png', 'Решетки радиатора')
-							+catalog-item('images/photo/outdoor-tuning_03.png', 'Капоты - тюнинговые')
-							+catalog-item('images/photo/outdoor-tuning_04.png', 'Зеркала - боковые')
-							+catalog-item('images/photo/outdoor-tuning_05.png', 'Ручки дверей')
-							+catalog-item('images/photo/outdoor-tuning_06.png', 'Рейлинги и Поперечины')
-							+catalog-item('images/photo/outdoor-tuning_07.png', 'Прочие элементы')
+										.catalog-item__sub-text= text
+							+catalog-item('images/photo/outdoor-tuning_01.png', 'Обвесы',"Заводские, Альтернатиыне, LED copy 4")
+							+catalog-item('images/photo/outdoor-tuning_02.png', 'Решетки радиатора',"Заводские, Альтернатиыне, LED copy 4")
+							+catalog-item('images/photo/outdoor-tuning_03.png', 'Капоты - тюнинговые',"Заводские, Альтернатиыне, LED copy 4")
+							+catalog-item('images/photo/outdoor-tuning_04.png', 'Зеркала - боковые',"Заводские, Альтернатиыне, LED copy 4")
+							+catalog-item('images/photo/outdoor-tuning_05.png', 'Ручки дверей',"Заводские, Альтернатиыне, LED copy 4")
+							+catalog-item('images/photo/outdoor-tuning_06.png', 'Рейлинги и Поперечины',"Заводские, Альтернатиыне, LED copy 4")
+							+catalog-item('images/photo/outdoor-tuning_07.png', 'Прочие элементы',"Заводские, Альтернатиыне, LED copy 4")
 					.tabs__content
 						.row.clearfix
-							+catalog-item('images/photo/outdoor-tuning_01.png', 'Обвесы')
-							+catalog-item('images/photo/outdoor-tuning_02.png', 'Решетки радиатора')
-							+catalog-item('images/photo/outdoor-tuning_03.png', 'Капоты - тюнинговые')
+							+catalog-item('images/photo/lighting/lighting_01.png', 'Передние фары',"Заводские, Альтернатиыне, LED copy 4")
+							+catalog-item('images/photo/lighting/lighting_03.png', 'Задние фары',"Заводские, Альтернатиыне, LED copy 4")
+							+catalog-item('images/photo/lighting/lighting_05.png', 'Поворотники',"Заводские, Альтернатиыне, LED copy 4")
+							+catalog-item('images/photo/lighting/lighting_06.png', 'Противотуманные',"Заводские, Альтернатиыне, LED copy 4")
+							+catalog-item('images/photo/lighting/lighting_05.png', 'Сигнальный свет',"Заводские, Альтернатиыне, LED copy 4")
+							
 					.tabs__content
 						.row.clearfix
-							+catalog-item('images/photo/outdoor-tuning_01.png', 'Обвесы')
+							+catalog-item('images/photo/outdoor-tuning_01.png', 'Панель приборов','Сигнальный свет',"Заводские, Альтернатиыне, LED copy 4")
+							+catalog-item('images/photo/main-menu-icon_02.png', 'Элементы салона','Сигнальный свет',"Заводские, Альтернатиыне, LED copy 4")
+							+catalog-item('images/photo/outdoor-tuning_01.png', 'Обивка потолка','Сигнальный свет',"Заводские, Альтернатиыне, LED copy 4")
 		include ./parts/review-slider.pug
 				
 		.last-seen
@@ -112,7 +124,7 @@ html
 				.title.off-margin
 					|просмотренные товары
 				.slider-arrows
-					.slider_controls
+					.slider_controls#last-seen
 						span.icon.ls-prevSlide
 						span.icon.ls-nextSlide
 				ul#last-seen-slider
@@ -207,3 +219,4 @@ html
 								.add-to-fav
 								.add-to-cart
 		include ./parts/footer.pug
+		
