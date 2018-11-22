@@ -81,10 +81,10 @@ $('.add-to-fav').click(function(){
 				},
 				],
 		});
-		$(".ls-prevSlide").click(function(){
+		$("#last-seen .ls-prevSlide").click(function(){
 			last_seen_slider.goToPrevSlide();
 		});
-		$(".ls-nextSlide").click(function(){
+		$("#last-seen .ls-nextSlide").click(function(){
 			last_seen_slider.goToNextSlide();
 		});
 	var recommend_slider=$('#recommend-slider').lightSlider({
@@ -164,10 +164,17 @@ $('.add-to-fav').click(function(){
 							item:1.2,
 							slideMove:1,
 							slideMargin: 35,
-							controls: false
+							controls: false,
+
 						}
 				},
 				],
+		});
+		$("#review-slider_wrapper .ls-prevSlide").click(function(){
+			review_slider.goToPrevSlide();
+		});
+		$("#review-slider_wrapper .ls-nextSlide").click(function(){
+			review_slider.goToNextSlide();
 		});
 	var product_cardSlider = $("#product_card-slider").lightSlider({
 		enableDrag: true,
