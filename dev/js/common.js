@@ -246,30 +246,6 @@ $('.add-to-fav').click(function(){
 		  }
   });
 	//product_card script
-	//$("body").click(fixMenuBar)
-	$(window).scroll(function(){
-			// var menuPosition = +document.querySelector(".product_card-menu").getBoundingClientRect().top;
-			// var elem = $(".product_card-menu");
-			// if( menuPosition <= -45 && !elem.hasClass('fixed')){
-			// 	elem.addClass("fixed");
-			// }else {
-			// 	elem.removeClass("fixed");
-			// }
-	});
-	function fixMenuBar(){
-		//var heightMenu = window.innerHeight - document.querySelector(".product_card-menu").getBoundingClientRect().bottom + "px";
-
-		console.log("menuPosition: " + menuPosition)
-		//console.log("heightMenu: " + heightMenu)
-			if( menuPosition <= -45){
-				$(".product_card-menu").addClass("fixed");
-
-			} else {
-				$(".product_card-menu").removeClass("fixed");
-
-
-			}
-	}
 	$(".flex-column__thumbnail .fancybox").mouseover(function(){
 		var src = $(this).prop('href');
 		var srcChild = $(this).children().prop('src');
@@ -439,4 +415,7 @@ $(window).scroll(function(){
 		// );
 		$(".main-menu-mobile").toggleClass('active')
 	})
+	$(".btn_up").click(function(){
+		$("body").animate({scrollTop:0}, '500');
+	});
 });

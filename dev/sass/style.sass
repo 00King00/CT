@@ -68,6 +68,7 @@ h3.text
 	padding-top: 106px
 .btn
 	display: inline-block
+	cursor: pointer
 	&_add-photo
 		cursor: pointer
 		width: 100%
@@ -149,7 +150,24 @@ h3.text
 			right: 15px
 			top: 13px
 			background-image: url("../images/right_arrow.png")
+	&_up
+		padding: 10px 20px
+		color: white
+		background: #f57812
+		font: 400 14px $roboto
+		text-transform: uppercase
+		position: absolute
+		top: -36px
+		right: 0
+		width: 130px
+		text-align: left
+		&::after
+	&_change
 
+		padding: 10px 35px
+		color: white
+		background: #f57812
+		font: 400 14px $roboto
 	&_choose
 		cursor: pointer
 		width: 100%
@@ -241,6 +259,8 @@ h3.text
 	text-align: center
 	margin-bottom: 20px
 	font: 400 12px/16px $roboto
+	&.left
+		text-align: left
 	&_cart
 		display: inline-block
 		text-align: left
@@ -346,7 +366,6 @@ h3.text
 				margin-bottom: 0
 				li
 					font: 400 13px/13px $roboto
-			// display: none
 .header-bottom
 	position: relative
 	padding: 12px 0 0 0
@@ -775,6 +794,7 @@ h3.text
 .footer
 	text-align: center
 	padding-top: 35px
+	position: relative
 	+breakpoint(laptop)
 		text-align: left
 	&__payment
@@ -898,7 +918,6 @@ h3.text
 	&__content
 	  display: none
 	margin-top: 40px
-
 	&__content.active
 		display: block
 		+breakpoint(mobileonly)
@@ -910,7 +929,6 @@ h3.text
 		+breakpoint(mobileonly)
 			display: inline-block
 			padding: 5
-
 	&__img
 		height: 100px
 		width: 170px
@@ -932,7 +950,6 @@ h3.text
 			margin-bottom: 15px
 			img
 				max-width: 100px
-
 	&__caption
 		border-bottom: 1px solid #cbcbcb
 		cursor: pointer
@@ -940,8 +957,6 @@ h3.text
 		display: flex
 		justify-content: center
 		+breakpoint(mobileonly)
-			// flex-wrap: wrap
-			// border: none
 			border-bottom: 1px solid #cbcbcb
 		li
 			text-transform: uppercase
@@ -950,28 +965,11 @@ h3.text
 			+breakpoint(mobileonly)
 				flex-basis: 100%
 				margin: 0 10px
-				margin-bottom: 10px
-
-			// +breakpoint(phablet)
-			// 	padding-bottom: 17px
-			// 	display: inline-block
-			// 	margin-bottom: 0
 			&.active
 				.tabs__img
 					background: #fbfae5
 					box-shadow: 0px 0px 27px 2px rgba(199,199,199,.3)
-				.tabs__title
-					+breakpoint(mobileonly)
-						border-bottom: 3px solid #f57812
-				+breakpoint(phablet)
-					border-bottom: 3px solid #f57812
-				//+breakpoint(mobileonly)
-					span
-						border-bottom: 3px solid #f57812
-			// &:not(:last-child)
-			// 	margin-right: 10px
-			// 	+breakpoint(tablet)
-			// 		margin-right: 30px
+				border-bottom: 3px solid #f57812
 .product_card-menu
 	padding: 65px 0 25px 0
 	font: 400 13px $roboto
@@ -1036,20 +1034,31 @@ h3.text
 			display: block
 .product-item
 	text-align: center
-	margin-bottom: 30px
 	background-color: white
-	padding: 20px
+	padding: 30px 5px
 	display: block
 	color: inherit
 	&:hover
-		box-shadow: 0px 9px 29px -5px rgba(0,0,0,0.5)
+		box-shadow: 0px 0px 27px 2px rgba(199,199,199,.3)
 		color: #f57812
 	&__name
-		height: 40px
+		font-size: 14px
+		margin-bottom: 5px
+	&__sub-text
+		font-size: 12px
+		color: #7d7d7d
+		height: 28px
 		overflow: hidden
 	&__img
 		height: 120px
 		overflow: hidden
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-bottom: 25px
+		+breakpoint(mobileonly)
+			height: 80px
+
 		img
 			max-height: 100%
 	&_small
@@ -1332,7 +1341,6 @@ h3.text
 			padding-right: 15px
 		i
 			font: 600 26px $ruble
-
 .form-label
 	max-width: 300px
 	margin: 0 20px 20px 20px
@@ -1375,7 +1383,6 @@ h3.text
 		color: #1a1818
 		span
 			color: red
-
 .advantages
 	margin: 45px 0
 	li
@@ -2293,3 +2300,29 @@ input[type="radio"]
 		width: 0%
 		height: 21px
 		background: url(../images/rating.png) 0 -22px
+.catalog-router
+	padding: 40px 0 50px 0
+	margin-bottom: 55px
+	background: linear-gradient(to bottom, #e9e9e9 0%,#f6f6f7 100%)
+	&__container
+		display: flex
+		justify-content: space-between
+	&__route
+
+		li
+			display: inline-block
+			font: 600 24px $roboto
+			padding-right: 10px
+			position: relative
+			margin-right: 10px
+			+breakpoint(tablet)
+				font-size: 26
+			&:not(:last-child)::after
+				content: "/"
+				display: inline-block
+				position: absolute
+				right: -10px
+
+			&:last-child
+				font-weight: 300
+				color: #1a1818
