@@ -64,6 +64,8 @@ h3.text
 	background: white
 .pt-30
 	padding-top: 30px
+.pt-106
+	padding-top: 106px
 .btn
 	display: inline-block
 	&_add-photo
@@ -494,10 +496,11 @@ h3.text
 		margin-bottom: 50px
 		text-shadow: 2px 2px 5px black
 	.selection
+		padding: 5px 0 3px 0
 		text-align: center
 		width: 100%
 	button
-		height: 50px
+		height: 36px
 		outline: none
 		background: #f57812
 		text-transform: uppercase
@@ -508,21 +511,38 @@ h3.text
 		position: relative
 		top: -2px
 		left: -1px
+		+breakpoint(laptop)
+			margin: 0
 .model-selection
 	background: url('../images/photo/background_02.png')
 	background-size: cover
 	margin-bottom: 30px
 	&_grey
 		background: #555551
-		padding: 13px 0
+		padding: 0
 		margin-bottom: 0
+		transition: 1s all ease
+		&.fixed
+			position: fixed
+			top: 0
+			left: 0
+			right: 0
+			transition: 1s all ease
+			// width: 1280px
+			z-index: 10
+			// padding: 16px 0 0 0px
 	+breakpoint(laptop)
 		margin-bottom: 60px
 		background-repeat: no-repeat
 	.nice-select
+		height: 36px
+		font: 400 14px/36px $roboto
 		width: 90%
 		+breakpoint(laptop)
 			width: 200px
+			margin:
+				bottom: 0
+				top: 0
 .product
 	text-align: left
 	background: #fff
@@ -1014,7 +1034,7 @@ h3.text
 		width: 100%
 		outline: none
 		padding: 0 10px
-		margin-bottom: 10px
+		margin-bottom: 20px
 		border: 1px solid #dadadc
 	input[type="text"]
 		height: 30px
@@ -1059,9 +1079,9 @@ h3.text
 			color: #010101
 			margin-bottom: 30px
 	&__item
-		margin-bottom: 5px
+		margin-bottom: 0px
 		color: #5e5e5e
-		font-size: 14px
+		font-size: 12px
 		&:last-child
 			margin-bottom: 0px
 	&_slider
