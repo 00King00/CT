@@ -85,8 +85,16 @@ h3.text
 		height: 31px
 		color: #353535
 		font: 400 12px/28px $roboto
+		&_mobile
+			background: #f8f8f8
+			border: none
+
 	&_login
 		border-right: none
+
+	&_register
+		&_mobile
+			border-left: 1px solid #d5d6dc
 	&_buy
 		display: block
 		// border: 1px solid #f57812
@@ -543,7 +551,8 @@ h3.text
 	text-align: left
 	position: relative
 	display: inline-block
-	margin-bottom: 20px
+	+breakpoint(phablet)
+		margin-bottom: 20px
 	.text
 		position: absolute
 		bottom: 18px
@@ -885,7 +894,8 @@ h3.text
 	margin-bottom: 50px
 	text-align: center
 	&.off-margin
-		margin: 0
+		+breakpoint(phablet)
+			margin: 0
 	&.normal
 		letter-spacing: normal
 		margin-bottom: 25px
