@@ -69,8 +69,17 @@ h3.text
 .btn
 	display: inline-block
 	cursor: pointer
+	&_show-filter
+		font: 400 12px/35px $roboto
+		color: #f57812
+		border: 1px solid #f57812
+		width: 100%
+		+breakpoint(laptop)
+			display: none
+		&:hover
+			color: #fff
+			background: #f57812
 	&_add-photo
-		cursor: pointer
 		width: 100%
 		display: block
 		text-align: center
@@ -311,6 +320,16 @@ h3.text
 		background: url(../images/remove_item.png)
 		height: 12px
 		width: 13px
+	&_view-more
+		background: url(../images/photo/view-more.png)
+		height: 18px
+		width: 18px
+		margin-right: 5px
+.view-more
+	margin-top: 10px
+	color: #f57812
+	span
+		vertical-align: middle
 .header-top
 	font: 12px $roboto
 	background: #fff
@@ -342,6 +361,7 @@ h3.text
 	padding: 0 0 30px 0
 	background: #fff
 	transition: 2s all ease
+	box-shadow: 0px 9px 29px -5px rgba(0,0,0,0.5)
 	&.active
 		display: block
 		transition: 0.4s all ease
@@ -660,7 +680,8 @@ h3.text
 	background: #fff
 	margin-bottom: 30px
 	max-width: 276px
-	height: 355px
+	// height: 355px
+	position: relative
 	&_catalog
 		display: flex
 		flex-wrap: wrap
@@ -1161,20 +1182,25 @@ h3.text
 	box-shadow: 0px 9px 29px -5px rgba(0,0,0,0.5)
 	display: flex
 	justify-content: center
+	padding: 3px 0
 	flex-wrap: wrap
-	position: fixed
-	z-index: 10
-	background: #fff
-	left: 0
-	right: 0
-	top: -3000px
+	// position: fixed
+	// z-index: 10
+	// background: #fff
+	// left: 0
+	// right: 0
+	// top: -3000px
 	transition: 1s all ease
 	&.active
 		+breakpoint(laptop)
 			top: 0
 			transition: 1s all ease
 .parts-menu-item
-	margin: 10px 15px
+	margin: 0px 15px
+	padding: 5px
+	border-radius: 3px
+	&:hover
+		background: #fbfae5
 	&__img
 		opacity: 0.5
 		height: 50px
@@ -1197,9 +1223,9 @@ h3.text
 	width: 320px
 	text-align: center
 	box-shadow: 0px 1px 3px 1px rgba(182,183,184,1)
-	// padding: 50px
+	padding: 50px
 	height: 100%
-	background: none
+	background: #fff
 	transition: all 0.4s ease
 	position: fixed
 	top: 0
@@ -1208,6 +1234,9 @@ h3.text
 	overflow-y: scroll
 	visibility: hidden
 	-webkit-overflow-scrolling: touch
+	+breakpoint(laptop)
+		padding: 0
+		background: none
 	&_active
 		transition: all 0.4s ease
 		right: 0
@@ -1777,11 +1806,15 @@ input[type="radio"]
 	span
 		text-transform: uppercase
 		color: #fff
-		font: 600 36px/12px $roboto
+		font: 600 22px/12px $roboto
 		letter-spacing: 4px
 		margin: 30px 5px
+		+breakpoint(tablet)
+			font: 600 36px/12px $roboto
 	.model
-		font: 300 36px/12px $roboto
+		font: 300 22px/12px $roboto
+		+breakpoint(tablet)
+			font: 300 36px/12px $roboto
 table.cart, table.cart-mobile
 	background: #fff
 	margin-bottom: 55px
@@ -2065,21 +2098,6 @@ input[type="radio"]
 				max-width: 72px
 		+breakpoint(phablet)
 			display: inline-block
-.head-image
-	height: 340px
-	background: url(../images/photo/background_03.png)
-	background-size: cover
-	display: flex
-	justify-content: center
-	align-items: center
-	span
-		text-transform: uppercase
-		color: #fff
-		font: 600 36px/12px $roboto
-		letter-spacing: 4px
-		margin: 30px 5px
-	.model
-		font: 300 36px/12px $roboto
 .fixed-overlay
 	position: fixed
 	overflow: auto

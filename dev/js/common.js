@@ -88,9 +88,9 @@ $('.add-to-fav').click(function(){
 					breakpoint: 600,
 					settings:
 						{
-							item:1.2,
+							item:2,
 							slideMove:1,
-							slideMargin: 35,
+							slideMargin: 3,
 
 						}
 				},
@@ -418,4 +418,15 @@ $(window).scroll(function(){
 	$(".btn_up").click(function(){
 		$("body").animate({scrollTop:0}, '500');
 	});
+	//show-hide filters
+		$('.btn_show-filter').click(function(){
+			$(".filters").addClass('filters_active');
+			$('.backdrop').toggleClass('on');
+			$('body').toggleClass('no-scroll');
+		})
+		$('.filters__close-btn').click(function(){
+			$(".filters").removeClass('filters_active');
+			$('.backdrop').toggleClass('on');
+			$('body').toggleClass('no-scroll');
+		})
 });

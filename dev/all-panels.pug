@@ -22,6 +22,28 @@ html
 			+parts-menu-item('images/photo/panel/panel_5.png', 'Ручки дверей')
 			+parts-menu-item('images/photo/panel/panel_6.png', 'Рейлинги и Поперечины')
 			+parts-menu-item('images/photo/panel/panel_7.png', 'Прочие элементы')
+		br
+		.parts-menu
+			mixin parts-menu-item(url, name)
+				a.parts-menu-item(href="#")
+					.parts-menu-item__img
+						img(src=url)
+					.parts-menu-item__name= name
+			+parts-menu-item('images/photo/panel/panel_8.png', 'Передние фары')
+			+parts-menu-item('images/photo/panel/panel_9.png', 'Задние фары')
+			+parts-menu-item('images/photo/panel/panel_10.png', 'Поворотники')
+			+parts-menu-item('images/photo/panel/panel_11.png', 'Противотуманные')
+			+parts-menu-item('images/photo/panel/panel_12.png', 'Сигнальный свет')
+		br
+		.parts-menu
+			mixin parts-menu-item(url, name)
+				a.parts-menu-item(href="#")
+					.parts-menu-item__img
+						img(src=url)
+					.parts-menu-item__name= name
+			+parts-menu-item('images/photo/panel/panel_13.png', 'Панель приборов')
+			+parts-menu-item('images/photo/panel/panel_13.png', 'Элементы салона')
+			+parts-menu-item('images/photo/panel/panel_15.png', 'Обивка потолка')
 		.catalog-router
 			.wrapper
 				ul.breadcrumbs.left
@@ -92,7 +114,6 @@ html
 					.col-laptop-1-6.no-padding-right
 						include ./parts/filters.pug
 					.col-laptop-5-6
-						.btn.btn_show-filter Показать фильтр
 						.filters-select
 							.filters-select__center
 								.show-3
