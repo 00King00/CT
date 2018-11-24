@@ -166,10 +166,12 @@ h3.text
 
 	&_change
 
-		padding: 10px 35px
+		padding: 10px 10px
 		color: white
 		background: #f57812
 		font: 400 14px $roboto
+		+breakpoint(laptop)
+			padding: 10px 35px
 	&_choose
 		cursor: pointer
 		width: 100%
@@ -2314,21 +2316,28 @@ input[type="radio"]
 	&__container
 		display: flex
 		justify-content: space-between
+		flex-wrap: wrap
+		align-items: center
 	&__route
-
+		+breakpoint(mobileonly)
+			margin-bottom: 10px
 		li
 			display: inline-block
-			font: 600 24px $roboto
-			padding-right: 10px
+			font: 600 12px $roboto
+			padding-right: 3px
 			position: relative
-			margin-right: 10px
-			+breakpoint(tablet)
-				font-size: 26
+			margin-right: 3px
+			+breakpoint(laptop)
+				font-size: 26px
+				margin-right: 10px
+				padding-right: 10px
 			&:not(:last-child)::after
 				content: "/"
 				display: inline-block
 				position: absolute
-				right: -7px
+				right: -4px
+				+breakpoint(laptop)
+					right: -7px
 
 			&:last-child
 				font-weight: 300
