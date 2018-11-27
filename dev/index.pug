@@ -45,9 +45,43 @@ html
 		//- 			|Автомобильное освещение
 		.wrapper
 			.section__title.section__title_news Новинки
-			.row.clearfix.brands
+			.news.hide-laptop
+				.slider-arrows
+					.slider_controls#last-seen
+						span.icon.ls-prevSlide
+						span.icon.ls-nextSlide
+				ul#news-slider
+					li
+						a(href="#").new
+							.pic
+								img(src="images/photo/brand-pic_01.png", alt="icon")
+							.text
+								.name
+									|Brembo
+								.description
+									|Truck bed equipment unmatched in functionality and security.
+					li
+						a(href="#").new
+							.pic
+								img(src="images/photo/brand-pic_02.png", alt="icon")
+							.text
+								.name
+									|LB Works
+								.description
+									|Truck bed equipment unmatched in functionality and security.
+					li
+						a(href="#").new
+							.pic
+								img(src="images/photo/brand-pic_03.png", alt="icon")
+							.text
+								.name
+									|Toyota Land Cruiser
+								.description
+									|Truck bed equipment unmatched in functionality and security.
+					
+			.row.clearfix.news.show-laptop
 				.col-tablet-1-3.col-phablet-1-2.no-padding_mobile
-					a(href="#").brand
+					a(href="#").new
 						.pic
 							img(src="images/photo/brand-pic_01.png", alt="icon")
 						.text
@@ -56,7 +90,7 @@ html
 							.description
 								|Truck bed equipment unmatched in functionality and security.
 				.col-tablet-1-3.col-phablet-1-2.no-padding_mobile
-					a(href="#").brand
+					a(href="#").new
 						.pic
 							img(src="images/photo/brand-pic_02.png", alt="icon")
 						.text
@@ -65,7 +99,7 @@ html
 							.description
 								|Truck bed equipment unmatched in functionality and security.
 				.col-tablet-1-3.col-phablet-1-2.no-padding_mobile
-					a(href="#").brand
+					a(href="#").new
 						.pic
 							img(src="images/photo/brand-pic_03.png", alt="icon")
 						.text

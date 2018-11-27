@@ -11,10 +11,11 @@ html
 				span.model Lancer
 		.parts-menu
 			mixin parts-menu-item(url, name)
-				a.parts-menu-item(href="#")
-					.parts-menu-item__img
-						img(src=url)
-					.parts-menu-item__name= name
+				.col-mobileonly-1-2
+					a.parts-menu-item(href="#")
+						.parts-menu-item__img
+							img(src=url)
+						.parts-menu-item__name= name
 			+parts-menu-item('images/photo/panel/panel_1.png', 'Обвесы')
 			+parts-menu-item('images/photo/panel/panel_2.png', 'Решетки радиатора')
 			+parts-menu-item('images/photo/panel/panel_3.png', 'Капоты - тюнинговые')
@@ -25,10 +26,11 @@ html
 		br
 		.parts-menu
 			mixin parts-menu-item(url, name)
-				a.parts-menu-item(href="#")
-					.parts-menu-item__img
-						img(src=url)
-					.parts-menu-item__name= name
+				.col-mobileonly-1-2
+					a.parts-menu-item(href="#")
+						.parts-menu-item__img
+							img(src=url)
+						.parts-menu-item__name= name
 			+parts-menu-item('images/photo/panel/panel_8.png', 'Передние фары')
 			+parts-menu-item('images/photo/panel/panel_9.png', 'Задние фары')
 			+parts-menu-item('images/photo/panel/panel_10.png', 'Поворотники')
@@ -37,10 +39,11 @@ html
 		br
 		.parts-menu
 			mixin parts-menu-item(url, name)
-				a.parts-menu-item(href="#")
-					.parts-menu-item__img
-						img(src=url)
-					.parts-menu-item__name= name
+				.col-mobileonly-1-2
+					a.parts-menu-item(href="#")
+						.parts-menu-item__img
+							img(src=url)
+						.parts-menu-item__name= name
 			+parts-menu-item('images/photo/panel/panel_13.png', 'Панель приборов')
 			+parts-menu-item('images/photo/panel/panel_13.png', 'Элементы салона')
 			+parts-menu-item('images/photo/panel/panel_15.png', 'Обивка потолка')
@@ -64,7 +67,7 @@ html
 						.title Категории
 						.clearfix
 							mixin product-item(imgUrl,name, text)
-								.col-mobileonly-1-2.col-phablet-1-3.col-tablet-1-4.col-laptop-1-5.col-desktop-1-6.padding-off
+								.col-mobileonly-1-2.col-phablet-1-3.col-tablet-1-4.col-laptop-1-5.col-desktop-1-6
 									a.product-item(href="#")
 										.product-item__img
 											img(src=imgUrl)

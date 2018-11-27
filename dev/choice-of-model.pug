@@ -9,12 +9,20 @@ html
 				span.year 2014
 				span.brand Mitsubishi
 				span.model Lancer
-		.parts-menu
+			.catalog-router__container
+				ul.catalog-router__route
+					li
+						a(href="#") Обвесы
+					li
+						a(href="#") Навестные элементы
+				.btn.btn_change Изменить транспорт 
+		ul#parts-menu-slider.hide-laptop
 			mixin parts-menu-item(url, name)
-				a.parts-menu-item(href="#")
-					.parts-menu-item__img
-						img(src=url)
-					.parts-menu-item__name= name
+				li
+					a.parts-menu-item(href="#")
+						.parts-menu-item__img
+							img(src=url)
+						.parts-menu-item__name= name
 			+parts-menu-item('images/photo/panel/panel_1.png', 'Обвесы')
 			+parts-menu-item('images/photo/panel/panel_2.png', 'Решетки радиатора')
 			+parts-menu-item('images/photo/panel/panel_3.png', 'Капоты - тюнинговые')
@@ -22,7 +30,22 @@ html
 			+parts-menu-item('images/photo/panel/panel_5.png', 'Ручки дверей')
 			+parts-menu-item('images/photo/panel/panel_6.png', 'Рейлинги и Поперечины')
 			+parts-menu-item('images/photo/panel/panel_7.png', 'Прочие элементы')
-		.catalog-router
+			
+		.parts-menu
+			mixin parts-menu-item(url, name)
+				.col-mobileonly-1-2
+					a.parts-menu-item(href="#")
+						.parts-menu-item__img
+							img(src=url)
+						.parts-menu-item__name= name
+			+parts-menu-item('images/photo/panel/panel_1.png', 'Обвесы')
+			+parts-menu-item('images/photo/panel/panel_2.png', 'Решетки радиатора')
+			+parts-menu-item('images/photo/panel/panel_3.png', 'Капоты - тюнинговые')
+			+parts-menu-item('images/photo/panel/panel_4.png', 'Зеркала - боковые')
+			+parts-menu-item('images/photo/panel/panel_5.png', 'Ручки дверей')
+			+parts-menu-item('images/photo/panel/panel_6.png', 'Рейлинги и Поперечины')
+			+parts-menu-item('images/photo/panel/panel_7.png', 'Прочие элементы')
+		.catalog-router.show-laptop
 			.wrapper
 				ul.breadcrumbs.left
 					li
@@ -39,30 +62,31 @@ html
 							a(href="#") Навестные элементы
 					.btn.btn_change Изменить транспорт 
 		.wrapper
-						.title Категории
-						.clearfix
-							mixin product-item(imgUrl,name, text)
-								.col-mobileonly-1-2.col-phablet-1-3.col-tablet-1-4.col-laptop-1-5.col-desktop-1-6.padding-off
-									a.product-item(href="#")
-										.product-item__img
-											img(src=imgUrl)
-										.product-item__name= name
-										.product-item__sub-text= text
-											
-							+product-item("images/photo/body-elements/body-element_01.png", "Бамперы", "Передние, задние")
-							+product-item("images/photo/body-elements/body-element_03.png", "Губа бампера", "Клыки, губы, юбки")
-							+product-item("images/photo/body-elements/body-element_04.png", "Диффузоры", "Задний бампер")
-							+product-item("images/photo/body-elements/body-element_06.png", "Пороги", "Наружные и вкладные")
-							+product-item("images/photo/body-elements/body-element_05.png", "Спойлеры", "Антикрылья, спойлеры, накладки")
-							+product-item("images/photo/body-elements/body-element_07.png", "Крылья", "Завод и кастом")
-							+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
-							+product-item("images/photo/body-elements/body-element_09.png", "Молдинги", "Накладки кузова")
-							+product-item("images/photo/body-elements/body-element_10.png", "Накладки - на фары", "Реснички")
-							+product-item("images/photo/body-elements/body-element_11.png", "Накладки остальные", "Арки, жабры, вставки бампера")
-							+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
-							+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
-							+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
-							+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
+			.categories
+				.title Категории
+				.clearfix
+					mixin product-item(imgUrl,name, text)
+						.col-mobileonly-1-2.col-phablet-1-3.col-tablet-1-4.col-laptop-1-5.col-desktop-1-6.no-padding-rigth
+							a.product-item(href="#")
+								.product-item__img
+									img(src=imgUrl)
+								.product-item__name= name
+								.product-item__sub-text= text
+									
+					+product-item("images/photo/body-elements/body-element_01.png", "Бамперы", "Передние, задние")
+					+product-item("images/photo/body-elements/body-element_03.png", "Губа бампера", "Клыки, губы, юбки")
+					+product-item("images/photo/body-elements/body-element_04.png", "Диффузоры", "Задний бампер")
+					+product-item("images/photo/body-elements/body-element_06.png", "Пороги", "Наружные и вкладные")
+					+product-item("images/photo/body-elements/body-element_05.png", "Спойлеры", "Антикрылья, спойлеры, накладки")
+					+product-item("images/photo/body-elements/body-element_07.png", "Крылья", "Завод и кастом")
+					+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
+					+product-item("images/photo/body-elements/body-element_09.png", "Молдинги", "Накладки кузова")
+					+product-item("images/photo/body-elements/body-element_10.png", "Накладки - на фары", "Реснички")
+					+product-item("images/photo/body-elements/body-element_11.png", "Накладки остальные", "Арки, жабры, вставки бампера")
+					+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
+					+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
+					+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
+					+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
 		.page-background
 			.model-selection.model-selection_grey
 				.selection
@@ -86,13 +110,13 @@ html
 							option Пикап
 							option Универсал
 						button(type="submit") Найти
-			.wrapper.clearfix.border-transparent.text-align
+			.wrapper.clearfix.border-transparent.text-align.border-transparent_catalog
 				.title Каталог товаров
+				.btn.btn_show-filter Показать фильтр
 				.row.clearfix
 					.col-laptop-1-6.no-padding-right
 						include ./parts/filters.pug
 					.col-laptop-5-6
-						.btn.btn_show-filter Показать фильтр
 						.filters-select
 							.filters-select__center
 								.show-3
@@ -140,7 +164,7 @@ html
 							+product("images/photo/product_02.png")
 							+product("images/photo/product_03.png")
 				.btn.btn_show-more
-					img(src="images/photo/show-more.png")
+					img(src="images/show-more.svg")
 					span Показать еще
 		include ./parts/review-slider.pug
 		.last-seen
