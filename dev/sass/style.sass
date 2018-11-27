@@ -698,8 +698,14 @@ h3.text
 #parts-menu-slider
 	padding: 10px 0
 	margin-bottom: 30px
+	.parts-menu-item
+		margin: 0
+		+breakpoint(laptop)
+			margin: 0 15px
 .categories
-	padding: 55px 0
+	padding: 20px 0
+	+breakpoint(laptop)
+		padding: 55px 0
 .model-selection
 	background: url('../images/photo/background_02.png')
 	background-size: cover
@@ -1301,6 +1307,8 @@ h3.text
 	&__name
 		color: #1a1818
 		font-size: 12px
+		height: 30px
+		overflow: hidden
 	&:hover
 		.parts-menu-item__img
 			opacity: 1
