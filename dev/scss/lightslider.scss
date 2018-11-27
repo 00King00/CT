@@ -90,16 +90,22 @@
 /** /!!! End of core css Should not edit !!!/**/
 
 /* Pager */
+
 .lSSlideOuter .lSPager.lSpg {
     margin: 10px 0 0;
     padding: 0;
     text-align: center;
 	margin-bottom: 40px;
+	
+}
+//my code not native
+#review-slider_wrapper .lSSlideOuter .lSPager.lSpg{
 	@include breakpoint(mobileonly){
         opacity: 0;
 		margin: 25px 0
     }
 }
+// end
 .lSSlideOuter .lSPager.lSpg > li {
     cursor: pointer;
     display: inline-block;
@@ -113,8 +119,7 @@
 	height: 3px;
     overflow: hidden;
     text-indent: -999em;
-    //width: 10px;
-	width: 38px;
+    width: 10px;
     position: relative;
     z-index: 4;
     -webkit-transition: all 0.5s linear 0s;
@@ -127,6 +132,7 @@
 
 .lSSlideOuter .lSPager.lSpg > li:hover a, .lSSlideOuter .lSPager.lSpg > li.active a {
     background-color: #717178;
+	width: 38px;
 
 }
 .lSSlideOuter .media {
