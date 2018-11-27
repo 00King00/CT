@@ -47,22 +47,10 @@ html
 					+product-item("images/photo/body-elements/body-element_08.png", "Накладки - на арки")
 					+product-item("images/photo/body-elements/body-element_09.png", "Накладки - боковые")
 					+product-item("images/photo/body-elements/body-element_10.png", "Накладки - на фары")
-		.parts-menu
-			mixin parts-menu-item(url, name)
-				a.parts-menu-item(href="#")
-					.parts-menu-item__img
-						img(src=url)
-					.parts-menu-item__name= name
-			+parts-menu-item('images/photo/parts-menu_01.png', 'Обвесы')
-			+parts-menu-item('images/photo/parts-menu_02.png', 'Решетки радиатора')
-			+parts-menu-item('images/photo/parts-menu_03.png', 'Капоты - тюнинговые')
-			+parts-menu-item('images/photo/parts-menu_04.png', 'Зеркала - боковые')
-			+parts-menu-item('images/photo/outdoor-tuning_05.png', 'Ручки дверей')
-			+parts-menu-item('images/photo/parts-menu_06.png', 'Рейлинги и Поперечины')
-			+parts-menu-item('images/photo/parts-menu_07.png', 'Прочие элементы')
 		.section-product-catalog
 			.wrapper
 				.title Каталог товаров
+				.btn.btn_show-filter Показать фильтр
 				.row.clearfix
 					.col-laptop-1-6.no-padding-right
 						include ./parts/filters.pug
