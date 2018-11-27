@@ -191,7 +191,7 @@ $('.add-to-fav').click(function(){
 		$("#review-slider_wrapper .ls-nextSlide").click(function(){
 			review_slider.goToNextSlide();
 		});
-		var news_slider=$('#news-slider').lightSlider({
+	var news_slider=$('#news-slider').lightSlider({
 				slideMargin: 25,
 				item: 4,
 				slideMove:1,
@@ -236,6 +236,12 @@ $('.add-to-fav').click(function(){
 					},
 					],
 			});
+		$("#news-slider .ls-prevSlide").click(function(){
+			news_slide.goToPrevSlide();
+		});
+		$("#news-slider .ls-nextSlide").click(function(){
+			news_slide.goToNextSlide();
+		});
 	var menu_slider=$('#parts-menu-slider').lightSlider({
 			slideMargin: 25,
 			item: 4,
@@ -270,6 +276,7 @@ $('.add-to-fav').click(function(){
 							item:3,
 							slideMove:1,
 							slideMargin: 1,
+							pager: true
 
 						}
 				}
