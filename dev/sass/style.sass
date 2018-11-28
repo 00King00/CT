@@ -1320,7 +1320,6 @@ h3.text
 		display: flex
 		justify-content: center
 		padding: 3px 0
-		flex-wrap: wrap
 		transition: 1s all ease
 	&.active
 		+breakpoint(laptop)
@@ -1329,10 +1328,11 @@ h3.text
 ul.parts-menu
 	list-style: none
 .parts-menu-item
-	margin: 0px 15px
+	margin: 0px 5px
 	padding: 5px
 	border-radius: 3px
 	display: block
+	width: 150px
 	border: 1px solid transparent
 	&:hover
 		+breakpoint(laptop)
@@ -1351,7 +1351,7 @@ ul.parts-menu
 	&__name
 		color: #1a1818
 		font-size: 12px
-		height: 30px
+		height: 35px
 		overflow: hidden
 	&:hover
 		.parts-menu-item__img
@@ -1477,7 +1477,7 @@ ul.parts-menu
 			margin-left: 20px
 			cursor: pointer
 			span
-				top: -26px
+				top: -27px
 				left: 0
 				width: 155px
 				position: absolute

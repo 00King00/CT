@@ -262,9 +262,21 @@ $('.add-to-fav').click(function(){
 					breakpoint: 1000,
 					settings:
 						{
-							item:6,
+							item:5,
 							slideMove:1,
 							slideMargin: 1,
+							pager: true
+
+						}
+				},
+				{
+					breakpoint: 600,
+					settings:
+						{
+							item:4,
+							slideMove:1,
+							slideMargin: 1,
+							pager: true
 
 						}
 				},
@@ -397,19 +409,22 @@ $('.add-to-fav').click(function(){
 	//show menu parts
 	if (window.location.pathname == '/product_card.html'){
 		var menu_pos = $('.product_card-menu').offset().top + 50;
-	}
+	} else{ var menu_pos = null}
 	if (window.location.pathname == '/choice-of-model.html'){
 		var filterPos = $('.model-selection_grey').offset().top;
-	}
+	} else{ var menu_pos = null}
 	if (window.location.pathname == '/catalog2.html'){
 		var filterPos = $('.model-selection_grey').offset().top;
-	}
+	} else{ var menu_pos = null}
 	if (window.location.pathname == '/catalog.html'){
 		var pos_top = $('.section-product-catalog').offset().top;
-	}
-$(window).scroll(function(){
+	} else{ var menu_pos = null}
+	var scrollTop;
+
+	$(window).scroll(function(){
 		var browserMinWidth = window.innerWidth;
-		var scrollTop = $('body').scrollTop();
+		scrollTop = $(window).scrollTop();
+
 		if(scrollTop > pos_top){
 			$(".parts-menu").addClass("active")
 		}
