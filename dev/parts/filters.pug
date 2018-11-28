@@ -1,5 +1,5 @@
 .filters
-	form
+	form(action="#" method="get")
 		.filters__close-btn.hide-laptop
 			img(src="images/remove_item.png", alt="Спрятать фильтр")
 		.filter__block.filter__block_top
@@ -26,11 +26,10 @@
 			.filter__block__name Цена,руб.
 			.filter__block__item
 				.price-filter
-					form
-						input(type="text",name="price-from", placeholder="от")
-						span.separate &mdash;
-						input(type="text",name="price-to", placeholder="до")
-						button(type="submit") ОК
+					input(type="text",name="price-from", placeholder="от")
+					span.separate &mdash;
+					input(type="text",name="price-to", placeholder="до")
+					button(type="submit") ОК
 		.filter__block
 			.filter__block__name Бренд
 			.filter__block__item

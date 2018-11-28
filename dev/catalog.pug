@@ -1,8 +1,9 @@
-html
+
+html(lang="ru")
 	head
 		include ./parts/head.pug
-		include ./parts/pgs.pug
 	body
+		include ./parts/pgs.pug
 		include ./parts/header.pug
 		.model-selection
 			.title
@@ -35,7 +36,7 @@ html
 						.col-mobileonly-1-2.col-phablet-1-3.col-tablet-1-4.col-laptop-1-5
 							a.product-item(href="#")
 								.product-item__img
-									img(src=imgUrl)
+									img(src=imgUrl, alt="")
 								.product-item__name= name
 					+product-item("images/photo/body-elements/body-element_01.png", "Бамперы")
 					+product-item("images/photo/body-elements/body-element_02.png", "Накладки и Сетки - бампера")
@@ -75,7 +76,7 @@ html
 									option Рекомендуемое 3
 						.clearfix.filters-select-col
 							mixin product(url)
-								.col-phablet-1-3.col-tablet-1-4
+								.col-mobileonly-1-2.col-phablet-1-3.col-tablet-1-4.padding-5_mobile
 									.product.product_catalog
 										a(href="#").product__pic
 											img(src=url, alt="icon")
@@ -102,4 +103,4 @@ html
 							+product("images/photo/product_02.png")
 							+product("images/photo/product_03.png")
 
-	include ./parts/footer.pug
+		include ./parts/footer.pug

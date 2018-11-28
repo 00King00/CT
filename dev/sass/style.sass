@@ -14,6 +14,9 @@ body
 	min-width: 320px
 	z-index: 0
 	font-family: $roboto // Основной шрифт
+	padding-top: 40px
+	+breakpoint(laptop)
+		padding-top: 0
 
 button, input[type="button"], input[type="reset"], input[type="submit"]
 	padding: 0
@@ -93,23 +96,30 @@ h3.text
 		border-radius: 0
 		margin: 0 -3px
 		border: 1px solid #d5d6dc
+		background: #fff
 		padding: 0 15px
 		height: 31px
 		color: #353535
 		font: 400 12px/28px $roboto
+		&:hover
+			background: #f8f8f8
 		&_mobile
 			background: #f8f8f8
 			border: none
 
 	&_login
 		border-right: none
+		// position: relative
+		// z-index: 1
 
 	&_register
+		// position: relative
+		// z-index: 2
 		&_mobile
+
 			border-left: 1px solid #d5d6dc
 	&_buy
 		display: block
-		// border: 1px solid #f57812
 		background: #f57812
 		text-align: center
 		color: #fff
@@ -177,6 +187,7 @@ h3.text
 		background: #f57812
 		font: 400 14px $roboto
 		text-transform: uppercase
+		border-radius: 5px 5px 0 0
 		position: absolute
 		top: -36px
 		right: 0
@@ -398,25 +409,37 @@ h3.text
 				color: #f57812
 			&:hover
 				color: #f57812
+		span
+			display: block
+			position: relative
+			z-index: 2
 
-			i
-				position: absolute
-				right: 0
-				top: 4px
-				font-size: 10px
+		i
+			position: absolute
+			z-index: 1
+			right: 0
+			top: 4px
+			font-size: 10px
+			transition: all 0.15s ease-in-out
+			&.active
 				transition: all 0.15s ease-in-out
-				&.active
-					transition: all 0.15s ease-in-out
-					transform: rotate(-180deg)
-			ul.sub-menu-mobile
-				padding: 15px 0 10px 0
-				margin-bottom: 0
-				li
-					font: 400 13px/13px $roboto
+				transform: rotate(-180deg)
+		ul.sub-menu-mobile
+			padding: 15px 0 10px 0
+			margin-bottom: 0
+			li
+				font: 400 13px/13px $roboto
 .header-bottom
-	position: relative
+	background: #fff
+	z-index: 4
 	padding: 12px 0 0 0
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	border-bottom: 1px solid grey
 	+breakpoint(laptop)
+		position: relative
 		padding: 20px 0 0 0
 	.logo
 		float: left
@@ -474,7 +497,6 @@ h3.text
 					&:hover
 						color: #1a1818
 				.login
-					// display: inline-block
 					flex-grow: 1
 					vertical-align: top
 	.second-line
@@ -503,8 +525,11 @@ h3.text
 							transform: rotate(-135deg)
 						ul
 							display: block
+							transition: 0.25s all ease
 							li
+								transition: 0.25s all ease
 								&:hover
+									transition: 0.5s all ease
 									color: #1a1818
 					&:after
 						border-bottom: 1px solid #1a1818
@@ -512,7 +537,7 @@ h3.text
 						content: ''
 						display: inline-block
 						height: 5px
-						margin-top: -4px
+						margin-top: -6px
 						pointer-events: none
 						position: absolute
 						right: -12px
@@ -537,7 +562,6 @@ h3.text
 				font: 400 15px $roboto
 				text-transform: capitalize
 				padding: 40px 10px 10px 15px
-				box-shadow: 0px 0px 27px 2px rgba(199,199,199,.3)
 				&::before
 					content: ""
 					display: block
@@ -657,7 +681,7 @@ h3.text
 	background-size: cover
 	padding: 50px 0
 	+breakpoint(laptop)
-		padding: 120 0 200 0
+		padding: 120px 0 200px 0
 	.title
 		width: 100%
 		text-align: center
@@ -666,7 +690,6 @@ h3.text
 		color: #fff
 		text-transform: uppercase
 		margin-bottom: 20px
-		text-shadow: 2px 2px 5px black
 		+breakpoint(laptop)
 			font: 36px/40px $roboto
 			margin-bottom: 50px
@@ -717,13 +740,16 @@ h3.text
 		text-transform: uppercase
 		color: #fff
 		border: 1px solid #f57812
-		width: 120px
+		width: 90%
+		border-radius: 5px
 		margin: 10px 0
 		position: relative
 		top: -2px
 		left: -1px
 		+breakpoint(laptop)
 			margin: 0
+			border-radius: 0
+			width: 120px
 	&_grey
 		background: #555551
 		padding: 0
@@ -735,9 +761,7 @@ h3.text
 			left: 0
 			right: 0
 			transition: 0.3s all ease
-			// width: 1280px
 			z-index: 10
-			// padding: 16px 0 0 0px
 	+breakpoint(laptop)
 		margin-bottom: 60px
 		background-repeat: no-repeat
@@ -755,11 +779,15 @@ h3.text
 	background: #fff
 	margin-bottom: 30px
 	max-width: 276px
-	// height: 355px
 	position: relative
+	transition: 0.4s all ease
 	&_catalog
 		display: flex
 		flex-wrap: wrap
+		max-width: 100%
+		height: 290px
+		@media(min-width:400px)
+			height: 355px
 		+breakpoint(phablet)
 			max-width: 100%
 			height: 355px
@@ -769,6 +797,7 @@ h3.text
 	+breakpoint(mobileonly)
 		margin: 0 auto 30px auto
 	&:hover
+		transition: 0.4s all ease
 		box-shadow: 0px 0px 30px 0px rgba(199,199,199,.4)
 	&__pic
 		flex-basis: 100%
@@ -826,11 +855,11 @@ h3.text
 			width: 34px
 			height: 34px
 			display: block
-.last-seen
+.last-seen,.products-your-need
 	text-align: center
 	background: #f6f6f7
 	position: relative
-	padding: 65px 0
+	padding: 70px 0
 	+breakpoint(mobileonly)
 		padding: 65px 0 80px 0
 	.title
@@ -844,12 +873,27 @@ h3.text
 			position: absolute
 			bottom: -83px
 			left: 50%
-			margin-left: -64px
+			margin-left: -60px
 	.slider_controls
 			.ls-prevSlide,.ls-nextSlide
 				display: block
 			.icon
 				margin: 0 5px
+.products-you-need
+	position: relative
+	padding-bottom: 65px
+	.slider-arrows
+		+breakpoint(mobileonly)
+			position: absolute
+			bottom: -37px
+			left: 50%
+			margin-left: -60px
+	.slider_controls
+		top: 0
+		.ls-prevSlide,.ls-nextSlide
+			display: block
+		.icon
+			margin: 0 5px
 .flex-container
 	+breakpoint(laptop)
 		display: flex
@@ -942,7 +986,6 @@ h3.text
 		flex-grow: 1
 		flex-basis: 100%
 		+breakpoint(tablet)
-			//flex-basis: auto
 			&_grid-row
 				flex-grow: 4
 				text-align: center
@@ -1089,7 +1132,6 @@ h3.text
 				margin: 0 10px
 			&.active
 				.tabs__img
-					// background: #fbfae5
 					border: 1px solid #f57812
 					border-radius: 10px
 					box-shadow: 0px 0px 27px 2px rgba(199,199,199,.3)
@@ -1126,6 +1168,7 @@ h3.text
 	margin-bottom: 30px
 	display: block
 	color: black
+	transition: 0.3s all ease
 	+breakpoint(mobileonly)
 		margin-bottom: 6px
 		padding: 15px 5px
@@ -1137,16 +1180,19 @@ h3.text
 		justify-content: center
 		align-items: center
 		+breakpoint(mobileonly)
-			height: 60px
+			height: 92px
 			margin-bottom: 15px
 		img
 			height: inherit
 	&:hover
+		transition: 0.3s all ease
 		box-shadow: 0px 0px 27px 2px rgba(199,199,199,.3)
 		.catalog-item__name
+			transition: 0.3s all ease
 			color: #f57812
 	&__name
 		font-size: 16px
+		transition: 0.3s all ease
 		margin-bottom: 5px
 		+breakpoint(mobileonly)
 			font-size: 12px
@@ -1161,9 +1207,11 @@ h3.text
 	background-color: white
 	padding: 25px 5px 25px 5px
 	margin-bottom: 10px
+	transition: 0.3s all ease
 	display: block
 	color: inherit
 	&:hover
+		transition: 0.3s all ease
 		box-shadow: 0px 0px 30px 0px rgba(199,199,199,.2)
 		color: #f57812
 	&__name
@@ -1207,13 +1255,14 @@ h3.text
 				margin: 0 5px
 	&::after
 		right: 0
-		content: ""
 		display: inline-block
 		width: 55px
 		position: absolute
 		top: 0
 		bottom: 0
 		background: linear-gradient( to right, rgba(255,255,255,0.1) 0%, rgba(255,255,255,1) 90%)
+		+breakpoint(laptop)
+			content: ""
 	.lSSlideWrapper
 		+breakpoint(laptop)
 			padding: 0 15px
@@ -1248,7 +1297,6 @@ h3.text
 		display: none
 .ls-nextSlide
 	background-image: url(../images/slider-controls_right.svg)
-	// background-position: 53px 0
 	width: 50px
 	height: 50px
 	+breakpoint(mobileonly)
@@ -1273,17 +1321,13 @@ h3.text
 		justify-content: center
 		padding: 3px 0
 		flex-wrap: wrap
-		// position: fixed
-		// z-index: 10
-		// background: #fff
-		// left: 0
-		// right: 0
-		// top: -3000px
 		transition: 1s all ease
 	&.active
 		+breakpoint(laptop)
 			top: 0
 			transition: 1s all ease
+ul.parts-menu
+	list-style: none
 .parts-menu-item
 	margin: 0px 15px
 	padding: 5px
@@ -1314,6 +1358,14 @@ h3.text
 			opacity: 1
 		.parts-menu-item__name
 			color: #f57812
+	&.active
+		.parts-menu-item__img
+			opacity: 1
+		.parts-menu-item__name
+			color: #f57812
+		+breakpoint(laptop)
+			border: 1px solid #f57812
+			border-radius: 10px
 .filters
 	width: 320px
 	text-align: center
@@ -1838,16 +1890,11 @@ input[type="checkbox"]
 	font-size: 11px
 	width: 20px
 	height: auto
-	// background-color: transparent
-	// margin-top: -16px
-	// visibility: hidden
 	padding-left: 30px
 	margin-bottom: 13px
-	// vertical-align: top
 	display: inline-block
 label
 	font: 400 12px/12px $roboto
-	// margin-right: 25px
 	+breakpoint(mobileonly)
 		margin-right: 15px
 input[type="radio"]
@@ -2019,8 +2066,6 @@ table.cart, table.cart-mobile
 table.cart-mobile
 	margin-bottom: 20px
 	input
-		// position: relative
-		// top: -6px
 		margin-top: 15px
 		margin-right: 10px
 		text-align: center
@@ -2192,16 +2237,11 @@ input[type="checkbox"]
 	font-size: 11px
 	width: 20px
 	height: auto
-	// background-color: transparent
-	// margin-top: -16px
-	// visibility: hidden
 	padding-left: 30px
 	margin-bottom: 13px
-	// vertical-align: top
 	display: inline-block
 label
 	font: 400 12px/12px $roboto
-	// margin-right: 25px
 	+breakpoint(mobileonly)
 		margin-right: 15px
 input[type="radio"]
@@ -2411,7 +2451,6 @@ input[type="radio"]
 	align-items: center
 	margin-bottom: 35px
 	flex-wrap: wrap
-	// padding-top: 55px
 	+breakpoint(tablet)
 		display: flex
 	+breakpoint(laptop)
