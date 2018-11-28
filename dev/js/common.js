@@ -262,9 +262,21 @@ $('.add-to-fav').click(function(){
 					breakpoint: 1000,
 					settings:
 						{
-							item:6,
+							item:5,
 							slideMove:1,
 							slideMargin: 1,
+							pager: true
+
+						}
+				},
+				{
+					breakpoint: 600,
+					settings:
+						{
+							item:4,
+							slideMove:1,
+							slideMargin: 1,
+							pager: true
 
 						}
 				},
@@ -395,7 +407,6 @@ $('.add-to-fav').click(function(){
 		$(this).addClass("active")
 	})
 	//show menu parts
-
 	if (window.location.pathname == '/product_card.html'){
 		var menu_pos = $('.product_card-menu').offset().top + 50;
 	} else{ var menu_pos = null}
@@ -437,6 +448,7 @@ $('.add-to-fav').click(function(){
 			}
 		}
 	});
+
 	// scroll to anchor
 
 	$(".product_card-menu").on("click","a", function (event) {
