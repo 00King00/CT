@@ -45,13 +45,13 @@ html(lang="ru")
 								.title Адрес доставки
 								.input-wrap
 									span.name Фамилия
-									input(type="text")
+									input(type="text", name="user-name" required)
 								.input-wrap
 									span.name  Имя
-									input(type="text")
+									input(type="text", name="user-surname" required)
 								.input-wrap.input-wrap_checkbox
-									input#adress(type="checkbox",name="adress")
-									label.agred(for="adress") Это юридический адрес
+									input#adress(type="checkbox",name="jur-adress")
+									label.agred(for="jur-adress") Это юридический адрес
 								.input-wrap
 									span.name  Город
 									input(type="text")
@@ -63,18 +63,18 @@ html(lang="ru")
 									select
 								.input-wrap
 									span.name  Адрес
-									input(type="text")
+									input(type="text", name="adress" required)
 								.input-wrap
 									span.name  Индекс
-									input.index(type="text")
+									input.index(type="number" name="index" required)
 							.form-section
 								.title Контакты
 								.input-wrap
 									span.name  Телефон
-									input(type="text")
+									input(type="tel" placeholder="+7(___) ___ - __ - __", name="phone")
 								.input-wrap.clearfix
 									span.name  E-mail
-									input(type="text")
+									input(type="email", name="mail")
 							.form-section.form-section_checkbox
 								.input-wrap
 									input#create-account(type="checkbox",name='create-account')
@@ -82,7 +82,7 @@ html(lang="ru")
 								.input-wrap
 									input#subscribe(type="checkbox",name='subscribe')
 									label.options(for="subscribe") Подписка на новости
-							a(href="#").btn.btn_submit-order.btn_so-order-page
+							button(type="submit").btn.btn_submit-order.btn_so-order-page
 								|Оформить заказ
 					.col-laptop-1-4
 						.your-order.your-order_order-page
