@@ -395,7 +395,6 @@ $('.add-to-fav').click(function(){
 		$(this).addClass("active")
 	})
 	//show menu parts
-$(document).on('load', function() {
 	if (window.location.pathname == '/product_card.html'){
 		var menu_pos = $('.product_card-menu').offset().top + 50;
 	}
@@ -434,8 +433,6 @@ $(window).scroll(function(){
 			}
 		}
 	});
-});
-
 
 	// scroll to anchor
 
