@@ -761,6 +761,9 @@ h3.text
 	&_catalog
 		display: flex
 		flex-wrap: wrap
+		+breakpoint(mobileonly)
+			max-width: 100%
+			// height: 280px
 		+breakpoint(phablet)
 			max-width: 100%
 			height: 355px

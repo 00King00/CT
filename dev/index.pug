@@ -1,3 +1,4 @@
+DOCTYPE
 html
 	head
 		include ./parts/head.pug
@@ -9,7 +10,7 @@ html
 				|Выберите автомомбиль
 			.selection
 				form
-					select(name="brand") Марка автомобиля
+					select(name="brand")
 						option(selected) Марка автомобиля
 						option BMW
 						option VW
@@ -47,7 +48,7 @@ html
 			.section__title.section__title_news Новинки
 			.news.hide-laptop
 				.slider-arrows
-					.slider_controls#last-seen
+					.slider_controls#news-slider-controls
 						span.icon.ls-prevSlide
 						span.icon.ls-nextSlide
 				ul#news-slider
@@ -114,15 +115,15 @@ html
 					ul.tabs__caption
 						li.active
 							.tabs__img
-								img(src="images/photo/main-menu-icon_01.png")
+								img(src="images/photo/main-menu-icon_01.png",alt="")
 							.tabs__title Внешний Тюнинг
 						li
 							.tabs__img
-								img(src="images/photo/main-menu-icon_03.png")
+								img(src="images/photo/main-menu-icon_03.png",alt="")
 							.tabs__title Автосвет
 						li
 							.tabs__img
-								img(src="images/photo/main-menu-icon_02.png")
+								img(src="images/photo/main-menu-icon_02.png",alt="")
 							.tabs__title Тюнинг Салона
 					.tabs__content.active
 						.row.clearfix
@@ -130,7 +131,7 @@ html
 								.col-mobileonly-1-2.col-phablet-1-2.col-table-1-3.col-laptop-1-4
 									a.catalog-item(href="#")
 										.catalog-item__img
-											img(src=url)
+											img(src=url,alt="icon")
 										.catalog-item__name= name
 										.catalog-item__sub-text= text
 							+catalog-item('images/photo/outdoor-tuning/outdoor-tuning_01.png', 'Обвесы',"Заводские, Альтернатиыне, LED")
