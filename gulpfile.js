@@ -6,7 +6,9 @@ var gulp 			= require('gulp'),
 	reload 			= browserSync.reload,
 	server     		= require('gulp-server-livereload'),
 	watch 			= require('gulp-watch'),
-	cleancss 		= require('gulp-cleancss'),
+	cleanCSS       = require('gulp-clean-css'),
+	rename         = require('gulp-rename'),
+	minify = require('gulp-minify'),
 	plumber     = require('gulp-plumber');
 
 
@@ -35,6 +37,12 @@ gulp.task('html', function(){
   gulp.src('./dev/js/*.js')
 	  .pipe(watch ('./dev/js/*.js'))
     .pipe(plumber())
+	.pipe(minify({
+	  ext:{
+		min:'.min.js'
+        },
+	  ignoreFiles: ['*.min.js']
+  		}))
 	  .pipe(gulp.dest('./app/js'))
 });
 
@@ -43,6 +51,8 @@ gulp.task('scss', function() {
 	.pipe(watch(['./dev/sass/*.sass','./dev/scss/*.scss' ]))
   .pipe(plumber())
 	.pipe(scss())
+	.pipe(cleanCSS())
+	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer({
 		browsers: ['last 20 versions']
 
