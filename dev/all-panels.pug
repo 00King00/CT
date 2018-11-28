@@ -1,20 +1,42 @@
-html
+
+html(lang="ru")
 	head
 		include ./parts/head.pug
-		include ./parts/pgs.pug
 	body
+		include ./parts/pgs.pug
 		include ./parts/header.pug
 		.head-image
 			.head-image__title
 				span.year 2014
 				span.brand Mitsubishi
 				span.model Lancer
+			.catalog-router__container
+				ul.catalog-router__route
+					li
+						a(href="#") Обвесы
+					li
+						a(href="#") Навестные элементы
+				.btn.btn_change Изменить транспорт 
+		ul#parts-menu-slider.hide-laptop
+			mixin parts-menu-item(url, name, cls)
+				li
+					a.parts-menu-item(class=cls href="#")
+						.parts-menu-item__img
+							img(src=url, alt="")
+						.parts-menu-item__name= name
+			+parts-menu-item('images/photo/panel/panel_1.png', 'Обвесы')
+			+parts-menu-item('images/photo/panel/panel_2.png', 'Решетки радиатора')
+			+parts-menu-item('images/photo/panel/panel_3.png', 'Капоты - тюнинговые', 'active')
+			+parts-menu-item('images/photo/panel/panel_4.png', 'Зеркала - боковые')
+			+parts-menu-item('images/photo/panel/panel_5.png', 'Ручки дверей')
+			+parts-menu-item('images/photo/panel/panel_6.png', 'Рейлинги и Поперечины')
+			+parts-menu-item('images/photo/panel/panel_7.png', 'Прочие элементы')
 		.parts-menu
 			mixin parts-menu-item(url, name)
 				.col-mobileonly-1-2
 					a.parts-menu-item(href="#")
 						.parts-menu-item__img
-							img(src=url)
+							img(src=url, alt="")
 						.parts-menu-item__name= name
 			+parts-menu-item('images/photo/panel/panel_1.png', 'Обвесы')
 			+parts-menu-item('images/photo/panel/panel_2.png', 'Решетки радиатора')
@@ -23,26 +45,26 @@ html
 			+parts-menu-item('images/photo/panel/panel_5.png', 'Ручки дверей')
 			+parts-menu-item('images/photo/panel/panel_6.png', 'Рейлинги и Поперечины')
 			+parts-menu-item('images/photo/panel/panel_7.png', 'Прочие элементы')
-		br
+			br
 		.parts-menu
 			mixin parts-menu-item(url, name)
 				.col-mobileonly-1-2
 					a.parts-menu-item(href="#")
 						.parts-menu-item__img
-							img(src=url)
+							img(src=url, alt="")
 						.parts-menu-item__name= name
 			+parts-menu-item('images/photo/panel/panel_8.png', 'Передние фары')
 			+parts-menu-item('images/photo/panel/panel_9.png', 'Задние фары')
 			+parts-menu-item('images/photo/panel/panel_10.png', 'Поворотники')
 			+parts-menu-item('images/photo/panel/panel_11.png', 'Противотуманные')
 			+parts-menu-item('images/photo/panel/panel_12.png', 'Сигнальный свет')
-		br
+			br
 		.parts-menu
 			mixin parts-menu-item(url, name)
 				.col-mobileonly-1-2
 					a.parts-menu-item(href="#")
 						.parts-menu-item__img
-							img(src=url)
+							img(src=url, alt="")
 						.parts-menu-item__name= name
 			+parts-menu-item('images/photo/panel/panel_13.png', 'Панель приборов')
 			+parts-menu-item('images/photo/panel/panel_13.png', 'Элементы салона')
@@ -64,30 +86,31 @@ html
 							a(href="#") Навестные элементы
 					.btn.btn_change Изменить транспорт 
 		.wrapper
-						.title Категории
-						.clearfix
-							mixin product-item(imgUrl,name, text)
-								.col-mobileonly-1-2.col-phablet-1-3.col-tablet-1-4.col-laptop-1-5.col-desktop-1-6
-									a.product-item(href="#")
-										.product-item__img
-											img(src=imgUrl)
-										.product-item__name= name
-										.product-item__sub-text= text
-											
-							+product-item("images/photo/body-elements/body-element_01.png", "Бамперы", "Передние, задние")
-							+product-item("images/photo/body-elements/body-element_03.png", "Губа бампера", "Клыки, губы, юбки")
-							+product-item("images/photo/body-elements/body-element_04.png", "Диффузоры", "Задний бампер")
-							+product-item("images/photo/body-elements/body-element_06.png", "Пороги", "Наружные и вкладные")
-							+product-item("images/photo/body-elements/body-element_05.png", "Спойлеры", "Антикрылья, спойлеры, накладки")
-							+product-item("images/photo/body-elements/body-element_07.png", "Крылья", "Завод и кастом")
-							+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
-							+product-item("images/photo/body-elements/body-element_09.png", "Молдинги", "Накладки кузова")
-							+product-item("images/photo/body-elements/body-element_10.png", "Накладки - на фары", "Реснички")
-							+product-item("images/photo/body-elements/body-element_11.png", "Накладки остальные", "Арки, жабры, вставки бампера")
-							+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
-							+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
-							+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
-							+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
+			.categories
+				.title Категории
+				.clearfix
+					mixin product-item(imgUrl,name, text)
+						.col-mobileonly-1-2.col-phablet-1-3.col-tablet-1-4.col-laptop-1-5.col-desktop-1-6.no-padding-rigth
+							a.product-item(href="#")
+								.product-item__img
+									img(src=imgUrl, alt="")
+								.product-item__name= name
+								.product-item__sub-text= text
+									
+					+product-item("images/photo/body-elements/body-element_01.png", "Бамперы", "Передние, задние")
+					+product-item("images/photo/body-elements/body-element_03.png", "Губа бампера", "Клыки, губы, юбки")
+					+product-item("images/photo/body-elements/body-element_04.png", "Диффузоры", "Задний бампер")
+					+product-item("images/photo/body-elements/body-element_06.png", "Пороги", "Наружные и вкладные")
+					+product-item("images/photo/body-elements/body-element_05.png", "Спойлеры", "Антикрылья, спойлеры, накладки")
+					+product-item("images/photo/body-elements/body-element_07.png", "Крылья", "Завод и кастом")
+					+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
+					+product-item("images/photo/body-elements/body-element_09.png", "Молдинги", "Накладки кузова")
+					+product-item("images/photo/body-elements/body-element_10.png", "Накладки - на фары", "Реснички")
+					+product-item("images/photo/body-elements/body-element_11.png", "Накладки остальные", "Арки, жабры, вставки бампера")
+					+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
+					+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
+					+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
+					+product-item("images/photo/body-elements/body-element_12.png", "Бампера завод", "Покраска, любой цвет")
 		.page-background
 			.model-selection.model-selection_grey
 				.selection
@@ -137,7 +160,7 @@ html
 									option Рекомендуемое 3
 						.clearfix.filters-select-col
 							mixin product(url)
-								.col-phablet-1-3.col-tablet-1-4
+								.col-mobileonly-1-2.col-phablet-1-3.col-tablet-1-4.padding-5_mobile
 									.product.product_catalog
 										a(href="#").product__pic
 											img(src=url, alt="icon")
@@ -164,7 +187,7 @@ html
 							+product("images/photo/product_02.png")
 							+product("images/photo/product_03.png")
 				.btn.btn_show-more
-					img(src="images/photo/show-more.png")
+					img(src="images/photo/show-more.png", alt="")
 					span Показать еще
 		include ./parts/review-slider.pug
 		.last-seen

@@ -1,8 +1,9 @@
-html
+
+html(lang="ru")
 	head
 		include ./parts/head.pug
-		include ./parts/pgs.pug
 	body
+		include ./parts/pgs.pug
 		include ./parts/header.pug
 		.page-base
 			.wrapper
@@ -17,17 +18,17 @@ html
 					.step.active
 						.step__img
 							a.cart-modal(href="#")
-								img(src="images/man-icon.png")
+								img(src="images/man-icon.png", alt="")
 						.step__name
 							|Общая информация
 					.step
 						.step__img
-							img(src="images/card-icon.png")
+							img(src="images/card-icon.png", alt="")
 						.step__name
 							|Оплата заказа
 					.step
 						.step__img
-							img(src="images/receipt-icon.png")
+							img(src="images/receipt-icon.png", alt="")
 						.step__name
 							|Чек об оплате
 				.row.clearfix.cart-section
@@ -49,17 +50,17 @@ html
 									span.name  Имя
 									input(type="text")
 								.input-wrap.input-wrap_checkbox
-									input#adress(type="checkbox")
-									label.agred(for="agred") Это юридический адрес
+									input#adress(type="checkbox",name="adress")
+									label.agred(for="adress") Это юридический адрес
 								.input-wrap
 									span.name  Город
 									input(type="text")
 								.input-wrap
 									span.name  Область
-									select(type="text")
+									select
 								.input-wrap
 									span.name  Город
-									select(type="text")
+									select
 								.input-wrap
 									span.name  Адрес
 									input(type="text")

@@ -1,9 +1,9 @@
-DOCTYPE
-html
+
+html(lang="ru")
 	head
 		include ./parts/head.pug
-		include ./parts/pgs.pug
 	body
+		include ./parts/pgs.pug
 		include ./parts/header.pug
 		.car-selection
 			.title
@@ -28,22 +28,6 @@ html
 						option 2013
 						option 2014
 					button(type="submit") Найти
-		//- .main-menu
-		//- 	a(href="#").menu__item
-		//- 		.menu__item__icon
-		//- 			img(src="images/photo/main-menu-icon_01.png", alt="icon")
-		//- 		.menu__item__name
-		//- 			|Внешний Тюнинг
-		//- 	a(href="#").menu__item
-		//- 		.menu__item__icon
-		//- 			img(src="images/photo/main-menu-icon_02.png", alt="icon")
-		//- 		.menu__item__name
-		//- 			|Тюнинг Салона
-		//- 	a(href="#").menu__item
-		//- 		.menu__item__icon
-		//- 			img(src="images/photo/main-menu-icon_03.png", alt="icon")
-		//- 		.menu__item__name
-		//- 			|Автомобильное освещение
 		.wrapper
 			.section__title.section__title_news Новинки
 			.news.hide-laptop
@@ -256,4 +240,3 @@ html
 								.add-to-fav
 								.add-to-cart
 		include ./parts/footer.pug
-		
